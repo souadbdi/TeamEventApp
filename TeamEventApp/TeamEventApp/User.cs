@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 
 using static TeamEventApp.DataBase;
@@ -9,9 +10,10 @@ namespace TeamEventApp
         public long userId { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set; }
-        private string pseudo { get; set; }
-        private string email { get; set; }
-        private string password { get; set; }
+        public string pseudo { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+        public List<Group> groups { get; set; }
 
         public User(string firstname, string lastname, string Pseudo, string eMail, string passWord)
         {
@@ -20,6 +22,7 @@ namespace TeamEventApp
             this.pseudo = Pseudo;
             this.email = eMail;
             this.password = passWord;
+            this.groups = new List<Group>();
         }
 
         public static User addUser(User user)
@@ -37,6 +40,11 @@ namespace TeamEventApp
         public void updateUser(User user, string newPseudo)
         {
             user.pseudo = newPseudo;
+        }
+
+        public void addGroup(Group grp)
+        {
+            this.groups.Add(grp);
         }
     }
 }

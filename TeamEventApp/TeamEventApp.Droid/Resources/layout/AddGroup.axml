@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+	<TextView
+		android:text="Ajout d'un nouveau groupe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF4D"
+		android:id="@+id/textView"/>
+	<TableLayout
+        android:id="@+id/formTable"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+		<TableRow>
+            <TextView
+                android:text="Nom : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:textColor="#FFFF4D" />
+			<EditText
+				android:hint="Nom du groupe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:textColor="#FFFF4D" 
+				android:id="@+id/nomGrpEditText" />
+		</TableRow>
+	</TableLayout>
+	<Button
+        android:id="@+id/validGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" OK " />
+	<TextView
+        android:id="@+id/tvTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test addGroup" />
+		
+
+</LinearLayout>

@@ -25,6 +25,14 @@ namespace TeamEventApp.Droid
 
 
             User user1 = new User("user", "one", "us1", "mail", "password");
+            user1.userId = users_db.Count + 1;
+            users_db.Add(user1.userId, user1);
+
+            Group grp = new Group("Grp1",user1);
+            user1.addGroup(grp);
+
+            Group grp2 = new Group("Grp2", user1);
+            users_db[1].addGroup(grp2);
 
             // Get our button from the layout resource,
             // and attach an event to it
@@ -32,9 +40,12 @@ namespace TeamEventApp.Droid
             TextView tv = FindViewById<TextView>(Resource.Id.textviewTest);
 
             button.Click += delegate {
-                User.addUser(user1);
-                button.Text = "L'utilisateur a bien été ajouté!";
-                tv.Text = string.Format("{0} {1} a bien été ajouté à la liste", users_db[1L].firstName, users_db[1L].lastName);
+                Intent intent = new Intent(this.ApplicationContext, typeof(AccueilActivity));
+                intent.SetFlags(ActivityFlags.NewTask);
+                StartActivity(intent);
+
+               /* tv.Text = string.Format("Prénom : {0}, Nom : {1}, Id : {2}, Groups : {3}",user1.firstName,
+                                            user1.lastName,user1.userId,user1.groups[0].groupName);*/
 
             };
         }

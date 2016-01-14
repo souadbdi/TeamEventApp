@@ -12,7 +12,7 @@
         android:id="@+id/inscriptionButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Inscription" />
+        android:text="Vers Accueil" />
     <TextView
         android:id="@+id/textviewTest"
         android:layout_width="match_parent"

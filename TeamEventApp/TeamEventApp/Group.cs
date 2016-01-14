@@ -5,14 +5,17 @@ namespace TeamEventApp
     public class Group
     {
         public string groupName { get; set; }
-        public List<User> members { get; set; }
+        public List<User> members { get; set; } = new List<User>();
         public User admin { get; set; }
         public List<Event> events { get; set; }
+
+        public Group()
+        { }
 
         public Group(string name, User user)
         {
             this.groupName = name;
-            this.events = null;
+            this.events = new List<Event>();
             this.admin = user;
             this.members.Add(user);
         }
