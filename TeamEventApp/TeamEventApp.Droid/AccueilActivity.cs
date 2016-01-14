@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using static TeamEventApp.DataBase;
+
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "Accueil")]
@@ -22,7 +24,16 @@ namespace TeamEventApp.Droid
             // Set our view from the "accueil" layout resource
             SetContentView(Resource.Layout.Accueil);
 
-            // Create your application here
+            ListView lv = FindViewById<ListView>(Resource.Id.List);
+            List<string> items = new List<string>();
+           
+            foreach (Group grp in users_db[1].groups)
+            {
+                items.Add(grp.groupName);   
+            }
+
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, items);
+            lv.Adapter = adapter;
 
             Button agbutton = FindViewById<Button>(Resource.Id.addGroupButton);
 

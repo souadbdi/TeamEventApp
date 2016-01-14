@@ -31,8 +31,6 @@ namespace TeamEventApp.Droid
             Group grp = new Group("Grp1",user1);
             user1.addGroup(grp);
 
-            Group grp2 = new Group("Grp2", user1);
-            users_db[1].addGroup(grp2);
 
             // Get our button from the layout resource,
             // and attach an event to it
