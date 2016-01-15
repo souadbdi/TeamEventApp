@@ -28,11 +28,31 @@ namespace TeamEventApp.Droid
             string admins = "";
             string events = "";
 
-            foreach(User mb in users_db[1].groups)
+            //on récupère dans gs le nom du group selectionné dans AccueilActivity
+            string gs = this.Intent.GetStringExtra(AccueilActivity.groupSelect);
+
+            TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
+            TextView mtv = FindViewById<TextView>(Resource.Id.membersTextView);
+            TextView atv = FindViewById<TextView>(Resource.Id.adminTextView);
+            gntv.Text = gs;
+
+            foreach(Group grp in users_db[1].groups)
             {
+                if (grp.groupName==gs)
+                {
+                    foreach (User user in grp.members)
+                    {
+                        names += user.firstName;
+                    }
 
+                    admins = grp.admin.firstName;
+
+                    mtv.Text = names;
+                    atv.Text = admins;
+                
+                }
             }
-
+            
 
         }
     }

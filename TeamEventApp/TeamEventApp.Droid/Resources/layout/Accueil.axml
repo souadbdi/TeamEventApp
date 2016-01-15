@@ -14,12 +14,6 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:cacheColorHint="#FFDAFF7F"
-		
-		<Button
-        android:id="@+id/groupButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="  " />
     />
 
 
