@@ -44,12 +44,12 @@ namespace TeamEventApp.Droid
             registerButton.Click += delegate
             {
 
-                string nom = FindViewById<EditText>(Resource.Id.reg_fname_text).Text.ToString();
-                string prenom = FindViewById<EditText>(Resource.Id.reg_lname_text).Text.ToString();
-                string email = FindViewById<EditText>(Resource.Id.reg_email_text).Text.ToString();
-                string mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text).Text.ToString();
-                string mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text).Text.ToString();
-                FindViewById<EditText>(Resource.Id.reg_fname_text).SetError("error", null);
+                EditText nom = FindViewById<EditText>(Resource.Id.reg_fname_text);
+                EditText prenom = FindViewById<EditText>(Resource.Id.reg_lname_text);
+                EditText email = FindViewById<EditText>(Resource.Id.reg_email_text);
+                EditText mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text);
+                EditText mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text);
+                //FindViewById<EditText>(Resource.Id.reg_fname_text).SetError("error", null);
                 
                 // verification 
                 bool error = false;
@@ -64,10 +64,10 @@ namespace TeamEventApp.Droid
                 if (!error)
                     error = verifText("confirmation de mot de passe", mdp2);
                 
-                if (!error && mdp == mdp2)
+                if (!error && mdp.Text.ToString() == mdp2.Text.ToString())
                 {
                     error = true;
-                    Toast.MakeText(this, "Les mots de passe ne correspondent pas", ToastLength.Short).Show();
+                    mdp2.SetError("Les mots de passe ne correspondent pas", null);
                 }
 
 
@@ -80,12 +80,12 @@ namespace TeamEventApp.Droid
         }
 
         // fonction de verification des informations
-         public bool verifText(string name, string champs)
+         public bool verifText(string name, EditText edittext)
          {
-             if(champs == "")
-             {
-                 Toast.MakeText(this, "Vous n'avez pas entré votre " +name, ToastLength.Short).Show();
-                 return true;
+             if(edittext.Text.ToString() == "")
+            {
+                edittext.SetError("Vous n'avez pas entré votre " + name, null);
+                return true;
              }
              return false;
              
