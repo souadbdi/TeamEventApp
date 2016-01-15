@@ -11,7 +11,7 @@ using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
-	[Activity (Label = "TeamEventApp.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
         bool connected = false;
