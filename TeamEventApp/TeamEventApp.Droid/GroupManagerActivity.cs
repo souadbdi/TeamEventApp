@@ -25,7 +25,7 @@ namespace TeamEventApp.Droid
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "accueil" layout resource
-            SetContentView(Resource.Layout.Accueil);
+            SetContentView(Resource.Layout.GroupManager);
 
             //Vue qui va contenir la liste des groupes de l'utilisateur
             ListView lv = FindViewById<ListView>(Resource.Id.List);

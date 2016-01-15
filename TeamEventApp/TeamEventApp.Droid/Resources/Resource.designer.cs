@@ -311,8 +311,8 @@ namespace TeamEventApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080013
-			public const int List = 2131230739;
+			// aapt resource value: 0x7f080026
+			public const int List = 2131230758;
 			
 			// aapt resource value: 0x7f080040
 			public const int about_item = 2131230784;
@@ -320,11 +320,11 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080041
 			public const int action_settings = 2131230785;
 			
-			// aapt resource value: 0x7f080012
-			public const int addGroupButton = 2131230738;
+			// aapt resource value: 0x7f080025
+			public const int addGroupButton = 2131230757;
 			
-			// aapt resource value: 0x7f080022
-			public const int adminTextView = 2131230754;
+			// aapt resource value: 0x7f080020
+			public const int adminTextView = 2131230752;
 			
 			// aapt resource value: 0x7f08000c
 			public const int automatic = 2131230732;
@@ -374,26 +374,26 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080035
 			public const int cnx_register_text = 2131230773;
 			
+			// aapt resource value: 0x7f080018
+			public const int com_facebook_body_frame = 2131230744;
+			
 			// aapt resource value: 0x7f08001a
-			public const int com_facebook_body_frame = 2131230746;
+			public const int com_facebook_button_xout = 2131230746;
+			
+			// aapt resource value: 0x7f080016
+			public const int com_facebook_fragment_container = 2131230742;
+			
+			// aapt resource value: 0x7f080017
+			public const int com_facebook_login_activity_progress_bar = 2131230743;
 			
 			// aapt resource value: 0x7f08001c
-			public const int com_facebook_button_xout = 2131230748;
-			
-			// aapt resource value: 0x7f080018
-			public const int com_facebook_fragment_container = 2131230744;
-			
-			// aapt resource value: 0x7f080019
-			public const int com_facebook_login_activity_progress_bar = 2131230745;
-			
-			// aapt resource value: 0x7f08001e
-			public const int com_facebook_tooltip_bubble_view_bottom_pointer = 2131230750;
-			
-			// aapt resource value: 0x7f08001d
-			public const int com_facebook_tooltip_bubble_view_text_body = 2131230749;
+			public const int com_facebook_tooltip_bubble_view_bottom_pointer = 2131230748;
 			
 			// aapt resource value: 0x7f08001b
-			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131230747;
+			public const int com_facebook_tooltip_bubble_view_text_body = 2131230747;
+			
+			// aapt resource value: 0x7f080019
+			public const int com_facebook_tooltip_bubble_view_top_pointer = 2131230745;
 			
 			// aapt resource value: 0x7f08000d
 			public const int display_always = 2131230733;
@@ -404,17 +404,17 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08003f
 			public const int event_manager_item = 2131230783;
 			
-			// aapt resource value: 0x7f080026
-			public const int eventsTextView = 2131230758;
+			// aapt resource value: 0x7f080024
+			public const int eventsTextView = 2131230756;
 			
-			// aapt resource value: 0x7f080015
-			public const int formTable = 2131230741;
+			// aapt resource value: 0x7f080013
+			public const int formTable = 2131230739;
 			
-			// aapt resource value: 0x7f08001f
-			public const int groupNameTextView = 2131230751;
+			// aapt resource value: 0x7f08001d
+			public const int groupNameTextView = 2131230749;
 			
-			// aapt resource value: 0x7f080020
-			public const int groupTable = 2131230752;
+			// aapt resource value: 0x7f08001e
+			public const int groupTable = 2131230750;
 			
 			// aapt resource value: 0x7f08003e
 			public const int group_manager_item = 2131230782;
@@ -434,8 +434,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000a
 			public const int left = 2131230730;
 			
-			// aapt resource value: 0x7f080024
-			public const int membersTextView = 2131230756;
+			// aapt resource value: 0x7f080022
+			public const int membersTextView = 2131230754;
 			
 			// aapt resource value: 0x7f080042
 			public const int menu_add = 2131230786;
@@ -449,8 +449,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000e
 			public const int never_display = 2131230734;
 			
-			// aapt resource value: 0x7f080016
-			public const int nomGrpEditText = 2131230742;
+			// aapt resource value: 0x7f080014
+			public const int nomGrpEditText = 2131230740;
 			
 			// aapt resource value: 0x7f080010
 			public const int normal = 2131230736;
@@ -518,17 +518,17 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080005
 			public const int standard = 2131230725;
 			
-			// aapt resource value: 0x7f080014
-			public const int textView = 2131230740;
+			// aapt resource value: 0x7f080012
+			public const int textView = 2131230738;
+			
+			// aapt resource value: 0x7f08001f
+			public const int textView1 = 2131230751;
 			
 			// aapt resource value: 0x7f080021
-			public const int textView1 = 2131230753;
+			public const int textView2 = 2131230753;
 			
 			// aapt resource value: 0x7f080023
-			public const int textView2 = 2131230755;
-			
-			// aapt resource value: 0x7f080025
-			public const int textView3 = 2131230757;
+			public const int textView3 = 2131230755;
 			
 			// aapt resource value: 0x7f08002b
 			public const int textView4 = 2131230763;
@@ -545,8 +545,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
 			
-			// aapt resource value: 0x7f080017
-			public const int validGroup = 2131230743;
+			// aapt resource value: 0x7f080015
+			public const int validGroup = 2131230741;
 			
 			// aapt resource value: 0x7f080037
 			public const int versAccueilButton = 2131230775;
@@ -568,25 +568,25 @@ namespace TeamEventApp.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Accueil = 2130903040;
+			public const int AddGroup = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int AddGroup = 2130903041;
+			public const int com_facebook_activity_layout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int com_facebook_activity_layout = 2130903042;
+			public const int com_facebook_login_fragment = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int com_facebook_login_fragment = 2130903043;
+			public const int com_facebook_tooltip_bubble = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int com_facebook_tooltip_bubble = 2130903044;
+			public const int EventManager = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int EventManager = 2130903045;
+			public const int Group = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int Group = 2130903046;
+			public const int GroupManager = 2130903046;
 			
 			// aapt resource value: 0x7f030007
 			public const int Inscription = 2130903047;
