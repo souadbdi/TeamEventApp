@@ -44,48 +44,56 @@ namespace TeamEventApp.Droid
             registerButton.Click += delegate
             {
 
-                string nom = FindViewById<EditText>(Resource.Id.reg_fname_text).Text;
-                string prenom = FindViewById<EditText>(Resource.Id.reg_lname_text).Text;
-                string email = FindViewById<EditText>(Resource.Id.reg_email_text).Text;
-                string mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text).Text;
-                string mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text).Text;
-
-                if (nom == "")
+                string nom = FindViewById<EditText>(Resource.Id.reg_fname_text).Text.ToString();
+                string prenom = FindViewById<EditText>(Resource.Id.reg_lname_text).Text.ToString();
+                string email = FindViewById<EditText>(Resource.Id.reg_email_text).Text.ToString();
+                string mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text).Text.ToString();
+                string mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text).Text.ToString();
+                FindViewById<EditText>(Resource.Id.reg_fname_text).SetError("error", null);
+                
+                // verification 
+                bool error = false;
+                if (!error)
+                    error = verifText("prenom", prenom);
+                if (!error)
+                    error = verifText("nom", nom);
+                if (!error)
+                    error = verifText("email", email);
+                if (!error)
+                    error = verifText("mot de passe", mdp);
+                if (!error)
+                    error = verifText("confirmation de mot de passe", mdp2);
+                
+                if (!error && mdp == mdp2)
                 {
-                    Toast.MakeText(this, "Vous n'avez pas entré votre nom", ToastLength.Short).Show();
-                }
-                if (prenom == "")
-                {
-                    Toast.MakeText(this, "Vous n'avez pas entré votre prénom", ToastLength.Short).Show();
-                }
-                if (email == "")
-                {
-                    Toast.MakeText(this, "Vous n'avez pas entré votre email", ToastLength.Short).Show();
-                }
-                if (mdp == "")
-                {
-                    Toast.MakeText(this, "Vous n'avez pas entré votre mot de passe", ToastLength.Short).Show();
-                }
-                if (mdp2 == "")
-                {
-                    Toast.MakeText(this, "Vous n'avez pas entré votre confirmation de mot de passe", ToastLength.Short).Show();
-                }
-                if (mdp == mdp2)
-                {
+                    error = true;
                     Toast.MakeText(this, "Les mots de passe ne correspondent pas", ToastLength.Short).Show();
                 }
 
 
                 // Vérification de la saisie !!!
 
-                if (true)
+                if (!error)
                     StartActivity(typeof(Notification));
+                error = false;
             };
         }
 
-        // Facebook Interface methods
+        // fonction de verification des informations
+         public bool verifText(string name, string champs)
+         {
+             if(champs == "")
+             {
+                 Toast.MakeText(this, "Vous n'avez pas entré votre " +name, ToastLength.Short).Show();
+                 return true;
+             }
+             return false;
+             
+         }
 
-        public void OnCancel()
+// Facebook Interface methods
+
+public void OnCancel()
         {
             //throw new NotImplementedException();
         }
@@ -104,7 +112,7 @@ namespace TeamEventApp.Droid
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            mCallbackManager.OnActivityResult(requestCode, (int)requestCode, data);
+            mCallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
         }
     }
 }
