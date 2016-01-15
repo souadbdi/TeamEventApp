@@ -1,5 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
-	<string name="app_name">TeamEventApp.Droid</string>
+  <!-- App Section -->
+
+  <string name="app_name">TeamEvent</string>
+  <string name="legend">Connect with your friends, Plan your events !</string>
+  <string name="loading">Chargemenet de vos paramètres...</string>
+
+  <!-- Facebook -->
+  <string name="facebook_app_id">172290079801747</string>
+
+  <!-- Activities Labels -->
+  <string name="label_register_account">Création d\'un compte</string>
+  <string name="label_notifications">Notifications</string>
+  <string name="label_reset_password">Réinitialisation du mot de passe</string>
+  <string name="label_event_manager">Evenements</string>
+  <string name="label_group_manager">Groupes</string>
+
+  <!-- Login Section -->
+
+  <string name="email">Email</string>
+  <string name="password">Mot de passe</string>
+  <string name="sign_in">Se connecter</string>
+  <string name="forgot_mdp">Mot de passe oublié?</string>
+
+  <!-- Registration Section -->
+
+  <string name="reg_legend_text">
+    Vous êtes sur le point de créer un compte TeamEvent.
+    Veuillez renseignez les cases ci-dessous. Ou cliquez sur \"Se connecter avec Facebook\"
+    pour vous connecter avec votre compte Facebook
+  </string>
+
+  <string name="first_name">Prénom</string>
+  <string name="last_name">Nom</string>
+  <string name="confirm_password">Confirmation mot de passe</string>
+  <string name="register">Créer un compte</string>
+  <string name="reg_or_text">OU</string>
+  <string name="already_member">Déjà membre? Se connecter</string>
+
+  <!-- Reset Password Section -->
+  <string name="resetpass_legend_text">
+    Entrez votre adresse mail.
+    Vous recevrez un mot de passe temporaire. Changez-le après votre connexion.
+  </string>
+
+  <string name="resetpass_send">Envoyer mail</string>
+
+  <!-- Menu Items Section -->
+
+  <string name="action_notifications">Notifications</string>
+  <string name="action_profile">Profil</string>
+  <string name="action_event">Evénements</string>
+  <string name="action_group">Groupes</string>
+  <string name="action_settings">Paramètres</string>
+  <string name="action_about">A propos ?</string>
+
 </resources>
