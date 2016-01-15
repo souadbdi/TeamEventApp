@@ -44,13 +44,6 @@ namespace TeamEventApp.Droid
             
             lv.ItemClick += OnListItemClick;
 
-            Button agbutton = FindViewById<Button>(Resource.Id.addGroupButton);
-
-            agbutton.Click += delegate {
-                Intent intent = new Intent(this.ApplicationContext, typeof(AddGroupActivity));
-                intent.SetFlags(ActivityFlags.NewTask);
-                StartActivity(intent);
-            };
         }
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -104,11 +97,11 @@ namespace TeamEventApp.Droid
                     StartActivity(typeof(SettingsActivity));
                     return true;
 
-                case Resource.Id.action_menu_search:
+                case Resource.Id.action_search:
                     // afficher la barre de recherche
                     return true;
 
-                case Resource.Id.action_menu_add:
+                case Resource.Id.action_add:
                     startAddActivity();
                     return true;
 
