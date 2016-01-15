@@ -34,23 +34,23 @@ namespace TeamEventApp.Droid
         {
             switch (item.ItemId)
             {
-                case Resource.Id.notifications_item:
+                case Resource.Id.action_notifications:
                     StartActivity(typeof(NotificationActivity));
                     return true;
 
-                case Resource.Id.profile_item:
+                case Resource.Id.action_profile:
                     StartActivity(typeof(ProfileActivity));
                     return true;
 
-                case Resource.Id.event_manager_item:
+                case Resource.Id.action_event_manager:
                     StartActivity(typeof(EventManagerActivity));
                     return true;
 
-                case Resource.Id.group_manager_item:
+                case Resource.Id.action_group_manager:
                     StartActivity(typeof(GroupManagerActivity));
                     return true;
 
-                case Resource.Id.about_item:
+                case Resource.Id.action_about:
                     StartActivity(typeof(AboutActivity));
                     return true;
 
