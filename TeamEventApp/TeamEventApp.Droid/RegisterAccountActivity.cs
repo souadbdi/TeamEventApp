@@ -18,7 +18,7 @@ using Xamarin.Facebook.Login;
 
 namespace TeamEventApp.Droid
 {
-    [Activity(Label = "RegisterAccountActivity")]
+    [Activity(Label = "@string/label_register_account")]
     public class RegisterAccountActivity : Activity, IFacebookCallback
     {
         private ICallbackManager mCallbackManager;
@@ -30,6 +30,14 @@ namespace TeamEventApp.Droid
 
             // Setting Layout
             SetContentView(Resource.Layout.RegisterAccount);
+
+            // Login if already have an account
+            TextView loginTextView = FindViewById<TextView>(Resource.Id.reg_signin_text);
+
+            loginTextView.Click += delegate
+            {
+                StartActivity(typeof(LoginActivity));
+            };
 
             // Facebook Configuration
 
