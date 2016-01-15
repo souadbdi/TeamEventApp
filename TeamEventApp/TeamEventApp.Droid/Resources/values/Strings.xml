@@ -18,6 +18,7 @@
   <string name="label_profile">Profil</string>
   <string name="label_about">TeamEvent</string>
   <string name="label_settings">Paramètres</string>
+  <string name="label_add_group">Nouveau groupe</string>
 
   <!-- Login Section -->
 

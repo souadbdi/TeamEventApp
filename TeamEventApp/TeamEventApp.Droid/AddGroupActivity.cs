@@ -14,7 +14,7 @@ using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
-    [Activity(Label = "AddGroupActivity")]
+    [Activity(Label = "@string/label_add_group")]
     public class AddGroupActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
