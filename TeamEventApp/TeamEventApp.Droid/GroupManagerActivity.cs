@@ -32,6 +32,7 @@ namespace TeamEventApp.Droid
             lv.ChoiceMode = ChoiceMode.Single;  //On ne peut selectionné qu'un item
             
             //On remplit la liste items avec les noms de groupes du user
+
             foreach (Group grp in users_db[1].groups)
             {
                 items.Add(grp.groupName);
