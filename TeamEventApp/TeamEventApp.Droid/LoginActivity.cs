@@ -43,15 +43,7 @@ namespace TeamEventApp.Droid
 
             noPwdTextView.Click += delegate {
                 StartActivity(typeof(ResetPasswordActivity));
-            };
-
-            Button button = FindViewById<Button>(Resource.Id.versAccueilButton);
-
-            button.Click += delegate {
-                Intent intent = new Intent(this.ApplicationContext, typeof(GroupManagerActivity));
-                intent.SetFlags(ActivityFlags.NewTask);
-                StartActivity(intent);
-            };
+            };         
         }
     }
 }
