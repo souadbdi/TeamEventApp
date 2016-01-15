@@ -643,26 +643,26 @@ namespace TeamEventApp.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f04002c
-			public const int action_about = 2130968620;
+			// aapt resource value: 0x7f04002f
+			public const int action_about = 2130968623;
 			
-			// aapt resource value: 0x7f040029
-			public const int action_event = 2130968617;
+			// aapt resource value: 0x7f04002c
+			public const int action_event = 2130968620;
+			
+			// aapt resource value: 0x7f04002d
+			public const int action_group = 2130968621;
 			
 			// aapt resource value: 0x7f04002a
-			public const int action_group = 2130968618;
-			
-			// aapt resource value: 0x7f040027
-			public const int action_notifications = 2130968615;
-			
-			// aapt resource value: 0x7f040028
-			public const int action_profile = 2130968616;
+			public const int action_notifications = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int action_settings = 2130968619;
+			public const int action_profile = 2130968619;
 			
-			// aapt resource value: 0x7f040024
-			public const int already_member = 2130968612;
+			// aapt resource value: 0x7f04002e
+			public const int action_settings = 2130968622;
+			
+			// aapt resource value: 0x7f040027
+			public const int already_member = 2130968615;
 			
 			// aapt resource value: 0x7f040011
 			public const int app_name = 2130968593;
@@ -715,20 +715,23 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f04000f
 			public const int com_facebook_tooltip_default = 2130968591;
 			
-			// aapt resource value: 0x7f040021
-			public const int confirm_password = 2130968609;
+			// aapt resource value: 0x7f040024
+			public const int confirm_password = 2130968612;
 			
-			// aapt resource value: 0x7f04001a
-			public const int email = 2130968602;
+			// aapt resource value: 0x7f04001d
+			public const int email = 2130968605;
 			
 			// aapt resource value: 0x7f040014
 			public const int facebook_app_id = 2130968596;
 			
-			// aapt resource value: 0x7f04001f
-			public const int first_name = 2130968607;
+			// aapt resource value: 0x7f040022
+			public const int first_name = 2130968610;
 			
-			// aapt resource value: 0x7f04001d
-			public const int forgot_mdp = 2130968605;
+			// aapt resource value: 0x7f040020
+			public const int forgot_mdp = 2130968608;
+			
+			// aapt resource value: 0x7f04001b
+			public const int label_about = 2130968603;
 			
 			// aapt resource value: 0x7f040018
 			public const int label_event_manager = 2130968600;
@@ -739,14 +742,20 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f040016
 			public const int label_notifications = 2130968598;
 			
+			// aapt resource value: 0x7f04001a
+			public const int label_profile = 2130968602;
+			
 			// aapt resource value: 0x7f040015
 			public const int label_register_account = 2130968597;
 			
 			// aapt resource value: 0x7f040017
 			public const int label_reset_password = 2130968599;
 			
-			// aapt resource value: 0x7f040020
-			public const int last_name = 2130968608;
+			// aapt resource value: 0x7f04001c
+			public const int label_settings = 2130968604;
+			
+			// aapt resource value: 0x7f040023
+			public const int last_name = 2130968611;
 			
 			// aapt resource value: 0x7f040012
 			public const int legend = 2130968594;
@@ -757,26 +766,26 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f040010
 			public const int messenger_send_button_text = 2130968592;
 			
-			// aapt resource value: 0x7f04001b
-			public const int password = 2130968603;
-			
 			// aapt resource value: 0x7f04001e
-			public const int reg_legend_text = 2130968606;
+			public const int password = 2130968606;
 			
-			// aapt resource value: 0x7f040023
-			public const int reg_or_text = 2130968611;
-			
-			// aapt resource value: 0x7f040022
-			public const int register = 2130968610;
-			
-			// aapt resource value: 0x7f040025
-			public const int resetpass_legend_text = 2130968613;
+			// aapt resource value: 0x7f040021
+			public const int reg_legend_text = 2130968609;
 			
 			// aapt resource value: 0x7f040026
-			public const int resetpass_send = 2130968614;
+			public const int reg_or_text = 2130968614;
 			
-			// aapt resource value: 0x7f04001c
-			public const int sign_in = 2130968604;
+			// aapt resource value: 0x7f040025
+			public const int register = 2130968613;
+			
+			// aapt resource value: 0x7f040028
+			public const int resetpass_legend_text = 2130968616;
+			
+			// aapt resource value: 0x7f040029
+			public const int resetpass_send = 2130968617;
+			
+			// aapt resource value: 0x7f04001f
+			public const int sign_in = 2130968607;
 			
 			static String()
 			{

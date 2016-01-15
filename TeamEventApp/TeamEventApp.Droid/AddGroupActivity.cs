@@ -42,7 +42,7 @@ namespace TeamEventApp.Droid
                     groups += " " + g.groupName;
                 }
 
-                StartActivity(typeof(AccueilActivity));
+                StartActivity(typeof(GroupManagerActivity));
             };
 
         }

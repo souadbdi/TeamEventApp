@@ -48,7 +48,7 @@ namespace TeamEventApp.Droid
             Button button = FindViewById<Button>(Resource.Id.versAccueilButton);
 
             button.Click += delegate {
-                Intent intent = new Intent(this.ApplicationContext, typeof(AccueilActivity));
+                Intent intent = new Intent(this.ApplicationContext, typeof(GroupManagerActivity));
                 intent.SetFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             };

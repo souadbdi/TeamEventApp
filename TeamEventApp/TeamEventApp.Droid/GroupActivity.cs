@@ -14,7 +14,7 @@ using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
-    [Activity(Label = "GroupActivity")]
+    [Activity(Label = "@string/label_group_manager")]
     public class GroupActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -29,7 +29,7 @@ namespace TeamEventApp.Droid
             string events = "";
 
             //on récupère dans gs le nom du group selectionné dans AccueilActivity
-            string gs = this.Intent.GetStringExtra(AccueilActivity.groupSelect);
+            string gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
 
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
             TextView mtv = FindViewById<TextView>(Resource.Id.membersTextView);

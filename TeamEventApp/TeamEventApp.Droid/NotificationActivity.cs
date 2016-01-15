@@ -39,7 +39,7 @@ namespace TeamEventApp.Droid
                     return true;
 
                 case Resource.Id.profile_item:
-                    //StartActivity(typeof(ProfileActivity));
+                    StartActivity(typeof(ProfileActivity));
                     return true;
 
                 case Resource.Id.event_manager_item:
@@ -47,22 +47,20 @@ namespace TeamEventApp.Droid
                     return true;
 
                 case Resource.Id.group_manager_item:
-                    //StartActivity(typeof(GroupManagerActivity));
+                    StartActivity(typeof(GroupManagerActivity));
                     return true;
 
                 case Resource.Id.about_item:
-                    //StartActivity(typeof(AboutActivity));
+                    StartActivity(typeof(AboutActivity));
                     return true;
 
                 case Resource.Id.action_settings:
-                    //StartActivity(typeof(SettingNotifActivity));
+                    StartActivity(typeof(SettingsActivity));
                     return true;
-
 
                 default:
                     return base.OnOptionsItemSelected(item);
             }
-
         }
     }
 }

@@ -14,8 +14,8 @@ using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
-    [Activity(Label = "Accueil")]
-    public class AccueilActivity : Activity
+    [Activity(Label = "@string/label_group_manager")]
+    public class GroupManagerActivity : Activity
     {
         public static string groupSelect;
         List<string> items = new List<string>();
@@ -65,6 +65,48 @@ namespace TeamEventApp.Droid
             Intent intent = new Intent(this.ApplicationContext, typeof(GroupActivity));
             intent.PutExtra(groupSelect, items[e.Position]);
             StartActivity(intent);
+        }
+
+
+        // Setting the Menu
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Layout.Menu_add_option, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.notifications_item:
+                    StartActivity(typeof(NotificationActivity));
+                    return true;
+
+                case Resource.Id.profile_item:
+                    StartActivity(typeof(ProfileActivity));
+                    return true;
+
+                case Resource.Id.event_manager_item:
+                    StartActivity(typeof(EventManagerActivity));
+                    return true;
+
+                case Resource.Id.group_manager_item:
+                    StartActivity(typeof(GroupManagerActivity));
+                    return true;
+
+                case Resource.Id.about_item:
+                    StartActivity(typeof(AboutActivity));
+                    return true;
+
+                case Resource.Id.action_settings:
+                    StartActivity(typeof(SettingsActivity));
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+
         }
     }
 }
