@@ -446,44 +446,65 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080001
 			public const int page = 2131230721;
 			
-			// aapt resource value: 0x7f080040
-			public const int reg_cnxFacebook_btn = 2131230784;
-			
-			// aapt resource value: 0x7f08003d
-			public const int reg_confPwd_text = 2131230781;
+			// aapt resource value: 0x7f08003a
+			public const int profile_email = 2131230778;
 			
 			// aapt resource value: 0x7f08003b
-			public const int reg_email_text = 2131230779;
-			
-			// aapt resource value: 0x7f080039
-			public const int reg_fname_text = 2131230777;
-			
-			// aapt resource value: 0x7f080038
-			public const int reg_legend_text = 2131230776;
-			
-			// aapt resource value: 0x7f08003a
-			public const int reg_lname_text = 2131230778;
-			
-			// aapt resource value: 0x7f08003f
-			public const int reg_or_text = 2131230783;
+			public const int profile_events_number = 2131230779;
 			
 			// aapt resource value: 0x7f08003c
-			public const int reg_pwd_text = 2131230780;
+			public const int profile_events_text = 2131230780;
 			
-			// aapt resource value: 0x7f080041
-			public const int reg_signin_text = 2131230785;
+			// aapt resource value: 0x7f08003d
+			public const int profile_groups_number = 2131230781;
 			
 			// aapt resource value: 0x7f08003e
-			public const int register_btn = 2131230782;
+			public const int profile_groups_text = 2131230782;
 			
-			// aapt resource value: 0x7f080043
-			public const int resetpass_email_text = 2131230787;
+			// aapt resource value: 0x7f080038
+			public const int profile_header_layout = 2131230776;
 			
-			// aapt resource value: 0x7f080042
-			public const int resetpass_legend_text = 2131230786;
+			// aapt resource value: 0x7f080039
+			public const int profile_name = 2131230777;
+			
+			// aapt resource value: 0x7f080047
+			public const int reg_cnxFacebook_btn = 2131230791;
 			
 			// aapt resource value: 0x7f080044
-			public const int resetpass_send_btn = 2131230788;
+			public const int reg_confPwd_text = 2131230788;
+			
+			// aapt resource value: 0x7f080042
+			public const int reg_email_text = 2131230786;
+			
+			// aapt resource value: 0x7f080040
+			public const int reg_fname_text = 2131230784;
+			
+			// aapt resource value: 0x7f08003f
+			public const int reg_legend_text = 2131230783;
+			
+			// aapt resource value: 0x7f080041
+			public const int reg_lname_text = 2131230785;
+			
+			// aapt resource value: 0x7f080046
+			public const int reg_or_text = 2131230790;
+			
+			// aapt resource value: 0x7f080043
+			public const int reg_pwd_text = 2131230787;
+			
+			// aapt resource value: 0x7f080048
+			public const int reg_signin_text = 2131230792;
+			
+			// aapt resource value: 0x7f080045
+			public const int register_btn = 2131230789;
+			
+			// aapt resource value: 0x7f08004a
+			public const int resetpass_email_text = 2131230794;
+			
+			// aapt resource value: 0x7f080049
+			public const int resetpass_legend_text = 2131230793;
+			
+			// aapt resource value: 0x7f08004b
+			public const int resetpass_send_btn = 2131230795;
 			
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
@@ -586,10 +607,13 @@ namespace TeamEventApp.Droid
 			public const int Notifications = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int RegisterAccount = 2130903058;
+			public const int Profile = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int ResetPassword = 2130903059;
+			public const int RegisterAccount = 2130903059;
+			
+			// aapt resource value: 0x7f030014
+			public const int ResetPassword = 2130903060;
 			
 			static Layout()
 			{
@@ -735,6 +759,18 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f040020
 			public const int password = 2130968608;
+			
+			// aapt resource value: 0x7f040032
+			public const int profile_events = 2130968626;
+			
+			// aapt resource value: 0x7f040033
+			public const int profile_groups = 2130968627;
+			
+			// aapt resource value: 0x7f040034
+			public const int profile_tab_events = 2130968628;
+			
+			// aapt resource value: 0x7f040035
+			public const int profile_tab_groups = 2130968629;
 			
 			// aapt resource value: 0x7f040023
 			public const int reg_legend_text = 2130968611;

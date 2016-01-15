@@ -60,5 +60,12 @@
   <string name="action_group">Groupes</string>
   <string name="action_settings">Paramètres</string>
   <string name="action_about">A propos ?</string>
+  
+  <!-- Profile Section -->
+  <string name="profile_events">EVENEMENTS</string>
+  <string name="profile_groups">GROUPES</string>
+  <string name="profile_tab_events">Evénements</string>
+  <string name="profile_tab_groups">Groupes</string>
+  
 
 </resources>
