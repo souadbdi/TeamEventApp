@@ -26,15 +26,18 @@ namespace TeamEventApp.Droid
 
             ListView lv = FindViewById<ListView>(Resource.Id.List);
             List<string> items = new List<string>();
-           
+
+
+
             foreach (Group grp in users_db[1].groups)
             {
-                items.Add(grp.groupName);   
+                items.Add(grp.groupName);
             }
 
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, items);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemActivated1, items);
             lv.Adapter = adapter;
 
+            lv.ItemClick += OnListItemClick;
             Button agbutton = FindViewById<Button>(Resource.Id.addGroupButton);
 
             agbutton.Click += delegate {
@@ -42,6 +45,11 @@ namespace TeamEventApp.Droid
                 intent.SetFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             };
+        }
+
+        void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            StartActivity(typeof(GroupActivity));
         }
     }
 }

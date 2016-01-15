@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+	<TextView
+		android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFF4D"
+		android:id="@+id/groupNameTextView"/>
+	<TableLayout
+        android:id="@+id/groupTable"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+		
+		<TableRow>
+			<TextView
+				android:text="Admins : "
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="0"
+				android:textColor="#FFFF4D"
+				android:id="@+id/textView1"/>
+				
+			<TextView
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:textColor="#FFFF4D"
+				android:id="@+id/adminTextView"/>
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+				android:text="Membres : "
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="0"
+				android:textColor="#FFFF4D"
+				android:id="@+id/textView2"/>
+				
+			<TextView
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:textColor="#FFFF4D"
+				android:id="@+id/membersTextView"/>
+		</TableRow>
+		
+		<TableRow>
+			<TextView
+				android:text="Evènements : "
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="0"
+				android:textColor="#FFFF4D"
+				android:id="@+id/textView3"/>
+				
+			<TextView
+				android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_column="1"
+				android:textColor="#FFFF4D"
+				android:id="@+id/eventsTextView"/>
+		</TableRow>
+		
+	</TableLayout>
+
+	</TableLayout>
+
+</LinearLayout>

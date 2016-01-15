@@ -30,7 +30,6 @@ namespace TeamEventApp.Droid
             //retour sur la page d'accueil et affichage du groupe
 
             Button button = FindViewById<Button>(Resource.Id.validGroup);
-            TextView tv = FindViewById<TextView>(Resource.Id.tvTest);
 
             button.Click += delegate
             {
@@ -43,8 +42,6 @@ namespace TeamEventApp.Droid
                     groups += " " + g.groupName;
                 }
 
-               /* tv.Text = string.Format("Prénom : {0}, Nom : {1}, Id : {2}, Groups : "+ groups, users_db[1].firstName,
-                                            users_db[1].lastName, users_db[1].userId); */
                 StartActivity(typeof(AccueilActivity));
             };
 
