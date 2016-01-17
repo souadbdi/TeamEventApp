@@ -72,6 +72,8 @@
     <Compile Include="Activities\ProfileActivity.cs" />
     <Compile Include="Activities\RegisterAccountActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
+    <Compile Include="Fragments\ProfileEventFragment.cs" />
+    <Compile Include="Fragments\ProfileGroupFragment.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
@@ -90,10 +92,10 @@
     <AndroidResource Include="Resources\layout\Group.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\menus\Menu.axml">
+    <AndroidResource Include="Resources\layout\Menu.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\menus\Menu_add_option.axml">
+    <AndroidResource Include="Resources\layout\Menu_add_option.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Notifications.axml">
@@ -112,6 +114,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Profile.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProfileFragment.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -135,7 +140,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Fragments\" />
+    <Folder Include="Resources\layout\menus\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

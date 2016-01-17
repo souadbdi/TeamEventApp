@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
     android:fillViewport="false">
@@ -12,7 +12,9 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:paddingBottom="@dimen/activity_vertical_margin"
-        android:layout_marginTop="@dimen/login_top_margin">
+        android:layout_marginTop="@dimen/login_top_margin"
+        android:stretchColumns="*">
+    <!-- Nom de l'application -->
         <TextView
             android:id="@+id/cnx_appName_text"
             android:layout_width="match_parent"
@@ -22,16 +24,19 @@
             android:text="@string/app_name"
             android:textSize="30sp"
             android:gravity="center" />
+    <!-- Champs de formulaire -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+        <!-- Champs de formulaire Email -->
             <EditText
                 android:id="@+id/cnx_email_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="@string/email" />
+        <!-- Champs de formulaire Mot de passe -->
             <EditText
                 android:id="@+id/cnx_pwd_text"
                 android:layout_width="match_parent"
@@ -39,6 +44,7 @@
                 android:layout_marginTop="5dp"
                 android:hint="@string/password"
                 android:inputType="textPassword" />
+        <!-- Champs de formulaire Bouton connecté -->
             <Button
                 android:id="@+id/cnx_connection_btn"
                 android:layout_width="match_parent"
@@ -46,6 +52,7 @@
                 android:layout_marginTop="5dp"
                 android:text="@string/sign_in" />
         </LinearLayout>
+    <!-- Boutons bas de page -->
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -53,6 +60,7 @@
             android:paddingBottom="16dp"
             android:layout_marginTop="32dp"
             android:gravity="bottom">
+        <!-- Texte création de compte -->
             <TextView
                 android:id="@+id/cnx_register_text"
                 android:layout_width="wrap_content"
@@ -61,6 +69,7 @@
                 android:text="@string/register"
                 android:onClick="onClick"
                 android:clickable="true" />
+        <!-- Texte mot de passe oublié -->
             <TextView
                 android:id="@+id/cnx_fpwd_text"
                 android:layout_width="wrap_content"
