@@ -28,5 +28,6 @@ namespace TeamEventApp.Droid
             MenuInflater.Inflate(Resource.Layout.Menu_add_option, menu);
             return base.OnCreateOptionsMenu(menu);
         }
+        
     }
 }

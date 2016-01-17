@@ -21,6 +21,10 @@
   <string name="label_settings">Paramètres</string>
   
   <string name="label_add_group">Nouveau groupe</string>
+  <string name="label_infos_group">Infos groupe</string>
+  <string name="label_add_event">Nouvel événement</string>
+  <string name="label_infos_event">Infos évenement</string>
+  
 
   <!-- Login Section -->
 

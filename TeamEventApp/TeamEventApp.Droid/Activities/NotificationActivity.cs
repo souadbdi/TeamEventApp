@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid
 {
@@ -51,7 +52,7 @@ namespace TeamEventApp.Droid
                     return true;
 
                 case Resource.Id.action_about:
-                    StartActivity(typeof(AboutActivity));
+                    StartActivity(typeof(EventActivity));
                     return true;
 
                 case Resource.Id.action_settings:
