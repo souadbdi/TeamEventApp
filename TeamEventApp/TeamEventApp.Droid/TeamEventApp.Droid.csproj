@@ -90,10 +90,10 @@
     <AndroidResource Include="Resources\layout\Group.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Menu.axml">
+    <AndroidResource Include="Resources\menus\Menu.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Menu_add_option.axml">
+    <AndroidResource Include="Resources\menus\Menu_add_option.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Notifications.axml">
