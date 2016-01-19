@@ -164,9 +164,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\Search.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\Home.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Calendar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -203,11 +200,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\fGroup.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\Profilef.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\fLocation.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\fEdit.png" />
     <AndroidResource Include="Resources\drawable-hdpi\fSettings.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ToDo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\fOk.png" />
@@ -216,13 +208,15 @@
     <AndroidResource Include="Resources\drawable-hdpi\Cancel.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Alerts.png" />
     <AndroidResource Include="Resources\drawable-hdpi\QuoteLeft.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\QuoteRight.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\TrueFalse.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

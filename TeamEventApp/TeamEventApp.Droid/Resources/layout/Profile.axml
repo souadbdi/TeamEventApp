@@ -16,8 +16,16 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="60dp"
+            android:paddingTop="16dp"
             android:gravity="center">
+        <!-- Bouton d'édition -->
+            <ImageButton
+                android:id="@+id/profile_editProfile_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@null"
+                android:src="@drawable/Edit" />
             <TextView
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
@@ -81,6 +89,14 @@
             android:drawablePadding="10dp"
             android:text="Votre statut ici, je suis toujours là quand il faut et comme il faut... Ne me juge pas, apprends à me connaître d'abord!"
             android:clickable="true" />
+    <!-- Bouton d'édition -->
+        <ImageButton
+            android:id="@+id/profile_editStatus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@null"
+            android:src="@drawable/Edit" />
     <!-- Demandes d'ajouts -->
         <LinearLayout
             android:orientation="vertical"
