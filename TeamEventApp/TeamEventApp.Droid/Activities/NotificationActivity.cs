@@ -10,17 +10,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using TeamEventApp.Droid.Activities;
+using TeamEventApp.Droid.Fragments;
 
 namespace TeamEventApp.Droid
 {
-    [Activity(Label = "@string/label_notifications")]
+    [Activity(Label ="")]
     public class NotificationActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Notifications);
 
-            // Create your application here
         }
 
         // Adding the menu

@@ -73,10 +73,13 @@
     <Compile Include="Activities\ProfileActivity.cs" />
     <Compile Include="Activities\RegisterAccountActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
+    <Compile Include="Activities\UserEventRequestsActivity.cs" />
+    <Compile Include="Adapters\UserEventRequestLVA.cs" />
     <Compile Include="Fragments\EventComsFragment.cs" />
     <Compile Include="Fragments\EventDetailsFragment.cs" />
     <Compile Include="Fragments\EventMembersFragment.cs" />
     <Compile Include="Fragments\EventNotificationsFragment.cs" />
+    <Compile Include="ListViewRows\UserEventRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
@@ -120,9 +123,18 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EventListFragment.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EventLayout.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Toolbar.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserRequestRow.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserEventRequestList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -147,6 +159,64 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\layout\menus\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Event.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Comments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Important.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Members.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Comments_Filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Members_Filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\fProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\fGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Profilef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\fLocation.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fEdit.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fSettings.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ToDo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\fOk.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Minus.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Ok.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Cancel.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Alerts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\QuoteLeft.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\QuoteRight.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

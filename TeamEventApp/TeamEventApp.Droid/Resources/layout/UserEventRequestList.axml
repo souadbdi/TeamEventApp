@@ -3,10 +3,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <FrameLayout
-        android:id="@+id/event_fragmentContainer"
+<!-- Liste des demandes à des événements ou d'ajout aux groupes -->
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:textSize="16dp" />
+        android:layout_height="match_parent"
+        android:id="@+id/profile_req_list" />
 </LinearLayout>

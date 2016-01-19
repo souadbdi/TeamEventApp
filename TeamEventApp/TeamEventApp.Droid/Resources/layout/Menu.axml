@@ -3,24 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <item
-        android:id="@+id/action_search"
-        android:title="o"
-        android:showAsAction="ifRoom" />
-    <item
         android:id="@+id/action_notifications"
-        android:title="@string/action_notifications" />
+        android:icon="@drawable/Alerts"
+        android:title="@string/action_notifications"
+        android:showAsAction="always" />
     <item
         android:id="@+id/action_profile"
-        android:title="@string/action_profile" />
+        android:icon="@drawable/fProfile"
+        android:title="@string/action_profile"
+        android:showAsAction="always" />
     <item
         android:id="@+id/action_group_manager"
-        android:title="@string/action_group" />
+        android:icon="@drawable/fGroup"
+        android:title="@string/action_group"
+        android:showAsAction="always" />
     <item
         android:id="@+id/action_event_manager"
-        android:title="@string/action_event" />
+        android:icon="@drawable/Event"
+        android:title="@string/action_event"
+        android:showAsAction="always" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/Search"
+        android:showAsAction="always" />
     <item
         android:id="@+id/action_about"
-        android:title="@string/action_about" />
+        android:title="@string/action_about"
+        android:showAsAction="never" />
     <item
         android:id="@+id/action_settings"
         android:title="@string/action_settings"
