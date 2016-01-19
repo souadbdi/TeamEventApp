@@ -218,5 +218,11 @@
     <AndroidResource Include="Resources\drawable-hdpi\QuoteLeft.png" />
     <AndroidResource Include="Resources\drawable-hdpi\QuoteRight.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\TrueFalse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Checked.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>
