@@ -14,13 +14,13 @@ using TeamEventApp.Droid.ListViewRows;
 
 namespace TeamEventApp.Droid.Adapters
 {
-    class UserEventRequestLVA : BaseAdapter<UserEventRequest>
+    class UserGroupRequestAdapter : BaseAdapter<UserGroupRequest>
     {
-        public List<UserEventRequest> uerList;
+        public List<UserGroupRequest> uerList;
         private Context context;
 
         // Constructor
-        public UserEventRequestLVA (Context context, List<UserEventRequest> eList)
+        public UserGroupRequestAdapter (Context context, List<UserGroupRequest> eList)
         {
             this.uerList = eList;
             this.context = context;
@@ -42,7 +42,7 @@ namespace TeamEventApp.Droid.Adapters
         }
 
         //
-        public override UserEventRequest this[int position]
+        public override UserGroupRequest this[int position]
         {
             get
             {
@@ -57,7 +57,7 @@ namespace TeamEventApp.Droid.Adapters
 
             if (row == null)
             {
-                row = LayoutInflater.From(context).Inflate(Resource.Layout.UserRequestRow, null, false);
+                row = LayoutInflater.From(context).Inflate(Resource.Layout.UserGroupRequestRow, null, false);
             }
 
             TextView textTitle = row.FindViewById<TextView>(Resource.Id.rowReq_title);

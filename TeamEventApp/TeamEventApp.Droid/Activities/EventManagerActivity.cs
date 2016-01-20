@@ -67,7 +67,7 @@ namespace TeamEventApp.Droid
             });
 
             // Create the adapter
-            EventLVAdapter adapter = new EventLVAdapter(this, eventList);
+            EventAdapter adapter = new EventAdapter(this, eventList);
 
             // set the adapter
             listView.Adapter = adapter;

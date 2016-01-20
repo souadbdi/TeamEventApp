@@ -28,7 +28,7 @@ namespace TeamEventApp.Droid
 
             textReqList.Click += delegate
             {
-                StartActivity(typeof(UserEventRequestsActivity));
+                StartActivity(typeof(UserGroupRequestActivity));
             };
 
         }

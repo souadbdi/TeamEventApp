@@ -73,14 +73,14 @@
     <Compile Include="Activities\ProfileActivity.cs" />
     <Compile Include="Activities\RegisterAccountActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
-    <Compile Include="Activities\UserEventRequestsActivity.cs" />
-    <Compile Include="Adapters\EventLVAdapter.cs" />
-    <Compile Include="Adapters\UserEventRequestLVA.cs" />
+    <Compile Include="Activities\UserGroupRequestActivity.cs" />
+    <Compile Include="Adapters\EventAdapter.cs" />
+    <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Fragments\EventComsFragment.cs" />
     <Compile Include="Fragments\EventDetailsFragment.cs" />
     <Compile Include="Fragments\EventMembersFragment.cs" />
     <Compile Include="Fragments\EventNotificationsFragment.cs" />
-    <Compile Include="ListViewRows\UserEventRequest.cs" />
+    <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
@@ -132,10 +132,10 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\UserRequestRow.axml">
+    <AndroidResource Include="Resources\layout\UserGroupRequestRow.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\UserEventRequestList.axml">
+    <AndroidResource Include="Resources\layout\UserGroupRequestList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EventListRow.axml">

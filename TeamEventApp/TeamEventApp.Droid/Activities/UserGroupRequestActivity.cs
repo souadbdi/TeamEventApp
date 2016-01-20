@@ -14,54 +14,54 @@ using TeamEventApp.Droid.Adapters;
 
 namespace TeamEventApp.Droid.Activities
 {
-    [Activity(Label = "@string/label_event_requests")]
-    public class UserEventRequestsActivity : Activity
+    [Activity(Label = "@string/label_group_requests")]
+    public class UserGroupRequestActivity : Activity
     {
-        private List<UserEventRequest> uerList;
+        private List<UserGroupRequest> uerList;
         private ListView listView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.UserEventRequestList);
+            SetContentView(Resource.Layout.UserGroupRequestList);
 
             // Ajout de la liste d'affichages des demandes
             listView = FindViewById<ListView>(Resource.Id.profile_req_list);
 
-            uerList = new List<UserEventRequest> { };
+            uerList = new List<UserGroupRequest> { };
 
-            uerList.Add(new UserEventRequest
+            uerList.Add(new UserGroupRequest
             {
-                Title = "Partie Bowling",
-                Subtitle = "Partie de bowling pour l'anniversaire de Dalie le vendredi",
+                Title = "Friends du 78",
+                Subtitle = "Ajouté par Leslie Kipole",
                 Date = "20 Jan 16"
             });
 
-            uerList.Add(new UserEventRequest
+            uerList.Add(new UserGroupRequest
             {
-                Title = "Culte des jeunes",
-                Subtitle = "Dernier culte des jeunes de l'année",
+                Title = "Cercle des jeunes",
+                Subtitle = "Ajouté par Henri Villard",
                 Date = "10 Juin 16"
             });
 
-            uerList.Add(new UserEventRequest
+            uerList.Add(new UserGroupRequest
             {
                 Title = "AGAPE GI 78",
-                Subtitle = "Communion fraternelle du GI des Yvelines!!!",
+                Subtitle = "Ajouté par Franck Berger",
                 Date = "5 Mars 16"
             });
 
-            uerList.Add(new UserEventRequest
+            uerList.Add(new UserGroupRequest
             {
-                Title = "Répétition ICJ 2016",
-                Subtitle = "Répétition pour la conférence des jeunes du 28 Avril!!!",
+                Title = "Révélation",
+                Subtitle = "Ajouté par Rollande DAN",
                 Date = "20 Mars 16"
             });
 
 
             // Create the adapter
-            UserEventRequestLVA adapter = new UserEventRequestLVA(this, uerList);
+            UserGroupRequestAdapter adapter = new UserGroupRequestAdapter(this, uerList);
 
             // set the adapter
             listView.Adapter = adapter;

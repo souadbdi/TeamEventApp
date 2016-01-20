@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace TeamEventApp.Droid.ListViewRows
 {
-    class UserEventRequest
+    class UserGroupRequest
     {
         public string Title { get; set; }
         public string Subtitle { get; set; }

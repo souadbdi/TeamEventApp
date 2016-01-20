@@ -12,13 +12,13 @@ using Android.Widget;
 
 namespace TeamEventApp.Droid.Adapters
 {
-    class EventLVAdapter : BaseAdapter<Event>
+    class EventAdapter : BaseAdapter<Event>
     {
         public List<Event> eventList;
         public Context context;
 
         // Constructor
-        public EventLVAdapter(Context ctx, List<Event> elist)
+        public EventAdapter(Context ctx, List<Event> elist)
         {
             this.eventList = elist;
             this.context = ctx;

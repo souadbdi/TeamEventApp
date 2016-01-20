@@ -24,7 +24,7 @@
   <string name="label_infos_group">Infos groupe</string>
   <string name="label_add_event">Nouvel événement</string>
   <string name="label_infos_event">Infos évenement</string>
-  <string name="label_event_requests">Demandes aux événements</string>
+  <string name="label_group_requests">Demandes de groupes</string>
   
 
   <!-- Login Section -->
