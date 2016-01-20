@@ -74,6 +74,7 @@
     <Compile Include="Activities\RegisterAccountActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
     <Compile Include="Activities\UserEventRequestsActivity.cs" />
+    <Compile Include="Adapters\EventLVAdapter.cs" />
     <Compile Include="Adapters\UserEventRequestLVA.cs" />
     <Compile Include="Fragments\EventComsFragment.cs" />
     <Compile Include="Fragments\EventDetailsFragment.cs" />
@@ -137,6 +138,9 @@
     <AndroidResource Include="Resources\layout\UserEventRequestList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\EventListRow.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -156,9 +160,6 @@
     <AndroidResource Include="Resources\values\Dimens.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\layout\menus\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Search.png" />
@@ -217,6 +218,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\eventImg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

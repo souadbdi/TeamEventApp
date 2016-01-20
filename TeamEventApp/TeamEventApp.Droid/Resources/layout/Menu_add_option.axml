@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
     <item
         android:id="@+id/action_search"
-        android:title="o"
+        android:icon="@drawable/Search"
         android:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_add"
-        android:title="+"
+        android:icon="@drawable/Plus"
         android:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_notifications"

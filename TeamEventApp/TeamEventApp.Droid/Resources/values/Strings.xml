@@ -75,4 +75,8 @@
   <string name="profile_requests">Demandes d\'ajouts</string>
   <string name="profile_logout">Se déconnecter</string>
 
+  <!-- Event Manager Section -->
+  <string name="evm_yes">OUI</string>
+  <string name="evm_no">NON</string>
+  <string name="evm_maybe">PEUT-ETRE</string>
 </resources>

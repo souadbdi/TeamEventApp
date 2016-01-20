@@ -10,7 +10,17 @@ namespace TeamEventApp
         public DateTime startDate { get; set; }
         public DateTime endDate { get; set; }
         public string address { get; set; }
+        public string group { get; set; }
         public List<Notification> notifications { get; set; }
         public List<Comment> comments { get; set; }
+
+
+        // Return start-end date to string format
+        public string toStringStartEndDate()
+        {
+            return this.startDate.ToString() + " à " + this.endDate.ToString();
     }
+    }
+
+    
 }
