@@ -19,7 +19,7 @@ namespace TeamEventApp
         public string toStringStartEndDate()
         {
             return this.startDate.ToString() + " à " + this.endDate.ToString();
-    }
+        }
     }
 
     

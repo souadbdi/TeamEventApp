@@ -26,6 +26,7 @@
                 android:layout_gravity="right"
                 android:background="@null"
                 android:src="@drawable/Edit" />
+        <!-- Nom de l'utilisateur -->
             <TextView
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"

@@ -33,17 +33,20 @@ namespace TeamEventApp.Droid
 
             // Connecting actions
 
-            loginButton.Click += delegate {
-                StartActivity(typeof(NotificationActivity));
-            };
+            if (loginButton != null) 
+                loginButton.Click += delegate {
+                    StartActivity(typeof(NotificationActivity));
+                };
 
-            registerTextView.Click += delegate {
-                StartActivity(typeof(RegisterAccountActivity));
-            };
+            if (registerTextView != null)
+                registerTextView.Click += delegate {
+                    StartActivity(typeof(RegisterAccountActivity));
+                };
 
-            noPwdTextView.Click += delegate {
-                StartActivity(typeof(ResetPasswordActivity));
-            };         
+            if (noPwdTextView != null)
+                noPwdTextView.Click += delegate {
+                    StartActivity(typeof(ResetPasswordActivity));
+                };         
         }
     }
 }

@@ -79,6 +79,18 @@
   <string name="evm_yes">OUI</string>
   <string name="evm_no">NON</string>
   <string name="evm_maybe">PEUT-ETRE</string>
+  
+  <!-- Event Section -->
+  <string name="event_hostedBy">Tenu par</string>
+  <string name="event_participants">participants</string>
+  <string name="event_interested">intéressés</string>
+  <string name="event_guests">invités</string>
+  <string name="event_status_req">Participerez vous?</string>
+  <string name="event_yes">Oui</string>
+  <string name="event_no">Non</string>
+  <string name="event_maybe">Peut-être</string>
+  <string name="event_invite_friends">Invite des amis</string>
+  <string name="event_about">Description</string>
 
   <!-- GroupMenu Items Section -->
   <string name="action_addMember">Ajouter Membre</string>
