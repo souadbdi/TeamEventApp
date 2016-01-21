@@ -20,22 +20,12 @@ namespace TeamEventApp.Droid.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.EventLayout);
-
-            // Enable navigation mode to suppot tab layout
-            this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-
-            // Adding tabs
-            AddTab("", Resource.Drawable.Details, new EventDetailsFragment());
-            AddTab("", Resource.Drawable.Important, new EventNotificationsFragment());
-            AddTab("", Resource.Drawable.Comments_Filled, new EventComsFragment());
-            AddTab("", Resource.Drawable.Members_Filled, new EventMembersFragment());
-            
+            SetContentView(Resource.Layout.EventLayout);            
         }
 
         // Adding a dynamic tab
 
-        private void AddTab(string tabText, int resourceIcon, Fragment fragment)
+        private void AddTab(string tabText, int resourceIcon, Fragment view)
         {
             var tab = this.ActionBar.NewTab();
             tab.SetText(tabText);
@@ -43,11 +33,21 @@ namespace TeamEventApp.Droid.Activities
 
             // Send event handler to replace tabs
             tab.TabSelected += delegate (object sender, ActionBar.TabEventArgs e)
-            {        
-                e.FragmentTransaction.Replace(Resource.Id.event_fragmentContainer, fragment);
+            {
+                var fragment = this.FragmentManager.FindFragmentById(Resource.Id.event_fragmentContainer);
+
+                if (fragment != null)
+                    e.FragmentTransaction.Remove(fragment);
+
+                e.FragmentTransaction.Add(Resource.Id.event_fragmentContainer, view);
             };
 
-            //this.ActionBar.AddTab(tab);
+            tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)
+            {
+                e.FragmentTransaction.Remove(view);
+            };
+
+            this.ActionBar.AddTab(tab);
         }
     }
 }
