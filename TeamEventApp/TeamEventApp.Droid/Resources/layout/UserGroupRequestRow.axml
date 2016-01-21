@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+<!-- Layout Titre et date sur la mm ligne -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:weightSum="100">
+        <TextView
+            android:id="@+id/rowReq_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="Evenement du XIe siecle"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/rowReq_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:text="21 Oct 16"
+            android:textSize="12sp" />
+    </LinearLayout>
+<!-- Sous titre -->
+    <TextView
+        android:id="@+id/rowReq_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Groupe Seventy's" />
+<!-- Layout boutons de confirmation -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+        <ImageButton
+            android:id="@+id/rowReq_validate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/Ok"
+            android:background="@null" />
+        <ImageButton
+            android:id="@+id/rowReq_refuse_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/Cancel"
+            android:background="@null" />
+    </LinearLayout>
+</LinearLayout>

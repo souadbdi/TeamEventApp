@@ -21,6 +21,11 @@
   <string name="label_settings">Paramètres</string>
   
   <string name="label_add_group">Nouveau groupe</string>
+  <string name="label_infos_group">Infos groupe</string>
+  <string name="label_add_event">Nouvel événement</string>
+  <string name="label_infos_event">Infos évenement</string>
+  <string name="label_group_requests">Demandes de groupes</string>
+  
 
   <!-- Login Section -->
 
@@ -60,12 +65,18 @@
   <string name="action_group">Groupes</string>
   <string name="action_settings">Paramètres</string>
   <string name="action_about">A propos ?</string>
+  
+  <!-- Profile Section -->
+  <string name="profile_events">EVENEMENTS</string>
+  <string name="profile_groups">GROUPES</string>
+  <string name="profile_tab_events">Evénements</string>
+  <string name="profile_tab_groups">Groupes</string>
+  <string name="profile_settings">Paramètres</string>
+  <string name="profile_requests">Demandes d\'ajouts</string>
+  <string name="profile_logout">Se déconnecter</string>
 
-  <!-- GroupMenu Items Section -->
-
-  <string name="action_addMember">Ajouter Membre</string>
-  <string name="action_addAdmin">Ajouter Admin</string>
-  <string name="action_addEvent">Ajouter Evénements</string>
-  <string name="action_changeName">Modifier Nom</string>
-
+  <!-- Event Manager Section -->
+  <string name="evm_yes">OUI</string>
+  <string name="evm_no">NON</string>
+  <string name="evm_maybe">PEUT-ETRE</string>
 </resources>

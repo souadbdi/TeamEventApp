@@ -9,17 +9,30 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "@string/label_profile")]
     public class ProfileActivity : Activity
-    {
+    {        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Profile);
 
-            // Create your application here
+
+            // Actions pour la liste des demandes à des événements
+            TextView textReqList = FindViewById<TextView>(Resource.Id.profile_req_text);
+
+            textReqList.Click += delegate
+            {
+                StartActivity(typeof(UserGroupRequestActivity));
+            };
+
         }
+
+        
     }
 }
