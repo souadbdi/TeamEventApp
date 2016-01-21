@@ -311,14 +311,35 @@ namespace TeamEventApp.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080025
-			public const int List = 2131230757;
+			// aapt resource value: 0x7f08001f
+			public const int AdminList = 2131230751;
+			
+			// aapt resource value: 0x7f080020
+			public const int EventList = 2131230752;
+			
+			// aapt resource value: 0x7f080021
+			public const int List = 2131230753;
+			
+			// aapt resource value: 0x7f08001e
+			public const int MemberList = 2131230750;
 			
 			// aapt resource value: 0x7f080034
 			public const int action_about = 2131230772;
 			
 			// aapt resource value: 0x7f080036
 			public const int action_add = 2131230774;
+			
+			// aapt resource value: 0x7f080024
+			public const int action_addAdmin = 2131230756;
+			
+			// aapt resource value: 0x7f080025
+			public const int action_addEvent = 2131230757;
+			
+			// aapt resource value: 0x7f080023
+			public const int action_addMember = 2131230755;
+			
+			// aapt resource value: 0x7f080026
+			public const int action_changeName = 2131230758;
 			
 			// aapt resource value: 0x7f080033
 			public const int action_event_manager = 2131230771;
@@ -332,14 +353,11 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080031
 			public const int action_profile = 2131230769;
 			
-			// aapt resource value: 0x7f08002f
-			public const int action_search = 2131230767;
+			// aapt resource value: 0x7f080022
+			public const int action_search = 2131230754;
 			
 			// aapt resource value: 0x7f080035
 			public const int action_settings = 2131230773;
-			
-			// aapt resource value: 0x7f080020
-			public const int adminTextView = 2131230752;
 			
 			// aapt resource value: 0x7f08000c
 			public const int automatic = 2131230732;
@@ -356,23 +374,23 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080009
 			public const int center = 2131230729;
 			
-			// aapt resource value: 0x7f080026
-			public const int cnx_appName_text = 2131230758;
-			
-			// aapt resource value: 0x7f080029
-			public const int cnx_connection_btn = 2131230761;
-			
 			// aapt resource value: 0x7f080027
-			public const int cnx_email_text = 2131230759;
-			
-			// aapt resource value: 0x7f08002b
-			public const int cnx_fpwd_text = 2131230763;
-			
-			// aapt resource value: 0x7f080028
-			public const int cnx_pwd_text = 2131230760;
+			public const int cnx_appName_text = 2131230759;
 			
 			// aapt resource value: 0x7f08002a
-			public const int cnx_register_text = 2131230762;
+			public const int cnx_connection_btn = 2131230762;
+			
+			// aapt resource value: 0x7f080028
+			public const int cnx_email_text = 2131230760;
+			
+			// aapt resource value: 0x7f08002c
+			public const int cnx_fpwd_text = 2131230764;
+			
+			// aapt resource value: 0x7f080029
+			public const int cnx_pwd_text = 2131230761;
+			
+			// aapt resource value: 0x7f08002b
+			public const int cnx_register_text = 2131230763;
 			
 			// aapt resource value: 0x7f080018
 			public const int com_facebook_body_frame = 2131230744;
@@ -398,17 +416,11 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000d
 			public const int display_always = 2131230733;
 			
-			// aapt resource value: 0x7f080024
-			public const int eventsTextView = 2131230756;
-			
 			// aapt resource value: 0x7f080013
 			public const int formTable = 2131230739;
 			
 			// aapt resource value: 0x7f08001d
 			public const int groupNameTextView = 2131230749;
-			
-			// aapt resource value: 0x7f08001e
-			public const int groupTable = 2131230750;
 			
 			// aapt resource value: 0x7f080007
 			public const int inline = 2131230727;
@@ -416,17 +428,14 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000f
 			public const int large = 2131230735;
 			
-			// aapt resource value: 0x7f08002c
-			public const int launcher_appname_text = 2131230764;
-			
 			// aapt resource value: 0x7f08002d
-			public const int launcher_legend_text = 2131230765;
+			public const int launcher_appname_text = 2131230765;
+			
+			// aapt resource value: 0x7f08002e
+			public const int launcher_legend_text = 2131230766;
 			
 			// aapt resource value: 0x7f08000a
 			public const int left = 2131230730;
-			
-			// aapt resource value: 0x7f080022
-			public const int membersTextView = 2131230754;
 			
 			// aapt resource value: 0x7f080037
 			public const int messenger_send_button = 2131230775;
@@ -497,15 +506,6 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080012
 			public const int textView = 2131230738;
 			
-			// aapt resource value: 0x7f08001f
-			public const int textView1 = 2131230751;
-			
-			// aapt resource value: 0x7f080021
-			public const int textView2 = 2131230753;
-			
-			// aapt resource value: 0x7f080023
-			public const int textView3 = 2131230755;
-			
 			// aapt resource value: 0x7f080008
 			public const int top = 2131230728;
 			
@@ -515,8 +515,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080015
 			public const int validGroup = 2131230741;
 			
-			// aapt resource value: 0x7f08002e
-			public const int versConnexionButton = 2131230766;
+			// aapt resource value: 0x7f08002f
+			public const int versConnexionButton = 2131230767;
 			
 			static Id()
 			{
@@ -553,43 +553,46 @@ namespace TeamEventApp.Droid
 			public const int GroupManager = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int Login = 2130903047;
+			public const int GroupMenu = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int Main = 2130903048;
+			public const int Login = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int Menu = 2130903049;
+			public const int Main = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Menu_add_option = 2130903050;
+			public const int Menu = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int messenger_button_send_blue_large = 2130903051;
+			public const int Menu_add_option = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int messenger_button_send_blue_round = 2130903052;
+			public const int messenger_button_send_blue_large = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int messenger_button_send_blue_small = 2130903053;
+			public const int messenger_button_send_blue_round = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int messenger_button_send_white_large = 2130903054;
+			public const int messenger_button_send_blue_small = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int messenger_button_send_white_round = 2130903055;
+			public const int messenger_button_send_white_large = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int messenger_button_send_white_small = 2130903056;
+			public const int messenger_button_send_white_round = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int Notifications = 2130903057;
+			public const int messenger_button_send_white_small = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int RegisterAccount = 2130903058;
+			public const int Notifications = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int ResetPassword = 2130903059;
+			public const int RegisterAccount = 2130903059;
+			
+			// aapt resource value: 0x7f030014
+			public const int ResetPassword = 2130903060;
 			
 			static Layout()
 			{
@@ -606,6 +609,18 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f040031
 			public const int action_about = 2130968625;
+			
+			// aapt resource value: 0x7f040033
+			public const int action_addAdmin = 2130968627;
+			
+			// aapt resource value: 0x7f040034
+			public const int action_addEvent = 2130968628;
+			
+			// aapt resource value: 0x7f040032
+			public const int action_addMember = 2130968626;
+			
+			// aapt resource value: 0x7f040035
+			public const int action_changeName = 2130968629;
 			
 			// aapt resource value: 0x7f04002e
 			public const int action_event = 2130968622;

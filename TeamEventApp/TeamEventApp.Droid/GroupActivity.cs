@@ -24,36 +24,90 @@ namespace TeamEventApp.Droid
             // Set our view from the "group" layout resource
             SetContentView(Resource.Layout.Group);
 
-            string names = "";
-            string admins = "";
-            string events = "";
+            //Vue qui va contenir la liste des membres du groupe
+            List<string> membersNames = new List<string>();
+            ListView members_lv = FindViewById<ListView>(Resource.Id.MemberList);
+
+            //Vue qui va contenir la liste des membres du groupe
+            List<string> adminsNames = new List<string>();
+            ListView admins_lv = FindViewById<ListView>(Resource.Id.AdminList);
+
+            //Vue qui va contenir la liste des membres du groupe
+            List<string> eventsNames = new List<string>();
+            ListView events_lv = FindViewById<ListView>(Resource.Id.EventList);
 
             //on récupère dans gs le nom du group selectionné dans AccueilActivity
             string gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
 
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
-            TextView mtv = FindViewById<TextView>(Resource.Id.membersTextView);
-            TextView atv = FindViewById<TextView>(Resource.Id.adminTextView);
             gntv.Text = gs;
 
             foreach(Group grp in users_db[1].groups)
             {
                 if (grp.groupName==gs)
                 {
-                    foreach (User user in grp.members)
+                    //listview avec noms des membres
+                    foreach (User us in grp.members)
                     {
-                        names += user.firstName;
+                        membersNames.Add(us.firstName);
                     }
+                    ArrayAdapter<string> adapt = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, membersNames);
+                    members_lv.Adapter = adapt;
 
-                    admins = grp.admin.firstName;
+                    //listview avec noms des admins
+                    foreach (User us in grp.admins)
+                    {
+                        adminsNames.Add(us.firstName);
+                    }
+                    adminsNames.Add("julie");
+                    adminsNames.Add("Marie");
+                    ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, adminsNames);
+                    admins_lv.Adapter = adapter;
 
-                    mtv.Text = names;
-                    atv.Text = admins;
-                
+                    //listview avec noms des events
+                    foreach (Event e in grp.events)
+                    {
+                        eventsNames.Add(e.eventName);
+                    }
+                    ArrayAdapter<string> ad = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, eventsNames);
+                    events_lv.Adapter = ad;
+
                 }
-            }
-            
-
+            }          
         }
+
+        // Adding the menu
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Layout.GroupMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_addMember:
+                    //StartActivity(typeof(NotificationActivity));
+                    return true;
+
+                case Resource.Id.action_addAdmin:
+                    //StartActivity(typeof(ProfileActivity));
+                    return true;
+
+                case Resource.Id.action_addEvent:
+                    //StartActivity(typeof(EventManagerActivity));
+                    return true;
+
+                case Resource.Id.action_changeName:
+                    //StartActivity(typeof(GroupManagerActivity));
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
     }
 }

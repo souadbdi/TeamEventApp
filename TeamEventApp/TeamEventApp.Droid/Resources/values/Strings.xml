@@ -61,4 +61,11 @@
   <string name="action_settings">Paramètres</string>
   <string name="action_about">A propos ?</string>
 
+  <!-- GroupMenu Items Section -->
+
+  <string name="action_addMember">Ajouter Membre</string>
+  <string name="action_addAdmin">Ajouter Admin</string>
+  <string name="action_addEvent">Ajouter Evénements</string>
+  <string name="action_changeName">Modifier Nom</string>
+
 </resources>

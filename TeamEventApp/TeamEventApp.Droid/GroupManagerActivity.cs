@@ -48,7 +48,7 @@ namespace TeamEventApp.Droid
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-           // on affect le nom de l'item selectionné à groupSelect
+           // on affecte le nom de l'item selectionné à groupSelect
             groupSelect = items[e.Position];
 
             //apparition d'un ToastMessage avec le nom de l'item selectionné

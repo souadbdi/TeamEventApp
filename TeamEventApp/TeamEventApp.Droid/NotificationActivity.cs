@@ -20,6 +20,7 @@ namespace TeamEventApp.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your application here
+
         }
 
         // Adding the menu
