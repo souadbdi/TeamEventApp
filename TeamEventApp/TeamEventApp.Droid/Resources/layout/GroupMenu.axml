@@ -19,3 +19,4 @@
       android:id="@+id/action_changeName"
       android:title="@string/action_changeName" />
 </menu>
+

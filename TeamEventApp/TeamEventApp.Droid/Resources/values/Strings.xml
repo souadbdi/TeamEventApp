@@ -79,4 +79,10 @@
   <string name="evm_yes">OUI</string>
   <string name="evm_no">NON</string>
   <string name="evm_maybe">PEUT-ETRE</string>
+
+  <!-- GroupMenu Items Section -->
+  <string name="action_addMember">Ajouter Membre</string>
+  <string name="action_addAdmin">Ajouter Admin</string>
+  <string name="action_addEvent">Ajouter Evénements</string>
+  <string name="action_changeName">Modifier Nom</string>
 </resources>
