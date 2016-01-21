@@ -6,7 +6,7 @@ namespace TeamEventApp
     {
         public string groupName { get; set; }
         public List<User> members { get; set; } = new List<User>();
-        public User admin { get; set; }
+        public List<User> admins { get; set; } = new List<User>();
         public List<Event> events { get; set; }
 
         public Group()
@@ -16,7 +16,7 @@ namespace TeamEventApp
         {
             this.groupName = name;
             this.events = new List<Event>();
-            this.admin = user;
+            this.admins.Add(user);
             this.members.Add(user);
         }
 
@@ -32,6 +32,17 @@ namespace TeamEventApp
             return members;
         }
 
+        public List<User> addAdmin(User user)
+        {
+            this.admins.Add(user);
+            return admins;
+        }
+
+        public List<User> removeAdmin(User user)
+        {
+            this.admins.Remove(user);
+            return admins;
+        }
 
     }
 }

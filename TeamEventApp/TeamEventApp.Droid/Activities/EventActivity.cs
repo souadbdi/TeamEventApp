@@ -23,31 +23,6 @@ namespace TeamEventApp.Droid.Activities
             SetContentView(Resource.Layout.EventLayout);            
         }
 
-        // Adding a dynamic tab
-
-        private void AddTab(string tabText, int resourceIcon, Fragment view)
-        {
-            var tab = this.ActionBar.NewTab();
-            tab.SetText(tabText);
-            tab.SetIcon(resourceIcon);
-
-            // Send event handler to replace tabs
-            tab.TabSelected += delegate (object sender, ActionBar.TabEventArgs e)
-            {
-                var fragment = this.FragmentManager.FindFragmentById(Resource.Id.event_fragmentContainer);
-
-                if (fragment != null)
-                    e.FragmentTransaction.Remove(fragment);
-
-                e.FragmentTransaction.Add(Resource.Id.event_fragmentContainer, view);
-            };
-
-            tab.TabUnselected += delegate (object sender, ActionBar.TabEventArgs e)
-            {
-                e.FragmentTransaction.Remove(view);
-            };
-
-            this.ActionBar.AddTab(tab);
-        }
+        
     }
 }
