@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+  <!-- Tableau -->
+  <TableLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <!-- Image de l'événement -->
+      <ImageView
+          android:id="@+id/evm_image"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="5dp"
+          android:src="@drawable/eventImg" />
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp">
+        <!-- Texte Titre -->
+        <TextView
+            android:id="@+id/evm_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titre de l'événement" />
+        <!-- Texte Date -->
+        <TextView
+            android:id="@+id/evm_date_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date de l'événement" />
+        <!-- Texte Lieu -->
+        <TextView
+            android:id="@+id/evm_location_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lieu de l'événement" />
+        <!-- Texte Groupe -->
+        <TextView
+            android:id="@+id/evm_group_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Groupe hôte" />
+      </LinearLayout>
+    </TableRow>
+  </TableLayout>
+  <!-- Layout pour les boutons de validation -->
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:weightSum="90">
+    <!-- Bouton YES -->
+    <Button
+        android:id="@+id/evm_yes_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:text="@string/evm_yes"
+        android:layout_weight="30" />
+    <!-- Bouton NO -->
+    <Button
+        android:id="@+id/evm_no_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:text="@string/evm_no"
+        android:layout_weight="30" />
+    <!-- Bouton MAYBE -->
+    <Button
+        android:id="@+id/evm_maybe_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:text="@string/evm_maybe"
+        android:layout_weight="30" />
+  </LinearLayout>
+</LinearLayout>
