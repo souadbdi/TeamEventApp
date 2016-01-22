@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,48 +10,73 @@ namespace TeamEventApp
 {
     class UserController
     {
-        public static async Task<string> addUser()
+        public static async Task<User> addUser(User user)
         {
 
-            string queryString = "";
-            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            return "personne ajoutée";
+            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string content = JsonConvert.SerializeObject(user);
+            HttpMethod method = HttpMethod.Post;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<User>(results);
 
         }
 
-        public static async Task<string> getUser(int id)
+        public static async Task<User> getUser(int id)
         {
 
-            string queryString = "";
-            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            return "personne ajoutée";
+            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string content = "";
+            HttpMethod method = HttpMethod.Get;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<User>(results);
 
         }
 
-        public static async Task<string> getAllUsers()
+        public static async Task<List<User>> getAllUsers()
         {
 
-            string queryString = "";
-            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            return "personne ajoutée";
+            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string content = "";
+            HttpMethod method = HttpMethod.Get;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<List<User>>(results);
 
         }
 
-        public static async Task<string> delUser(int id)
+        public static async void delUser(int id)
         {
 
-            string queryString = "";
-            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            return "personne ajoutée";
+            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string content = "";
+            HttpMethod method = HttpMethod.Delete;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
         }
 
-        public static async Task<string> modifUser(int id)
+        public static async Task<User> modifUser(User user)
         {
 
-            string queryString = "";
-            dynamic results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            return "personne ajoutée";
+            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string content = JsonConvert.SerializeObject(user);
+            HttpMethod method = HttpMethod.Put;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<User>(results);
+
+        }
+
+        public static async Task<User> login(User user)
+        {
+
+            string queryString = "http://teamevent.azurewebsites.net/api/userLogin";
+            string content = JsonConvert.SerializeObject(user);
+            HttpMethod method = HttpMethod.Post;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            return JsonConvert.DeserializeObject<User>(results);
 
         }
 

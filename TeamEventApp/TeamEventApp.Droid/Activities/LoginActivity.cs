@@ -25,6 +25,10 @@ namespace TeamEventApp.Droid
 
             SetContentView(Resource.Layout.Login);
 
+            // recuperation des champs
+            EditText email = FindViewById<EditText>(Resource.Id.cnx_email_text);
+            EditText pwd = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
+
             // Connexion du bouton
             loginButton = FindViewById<Button>(Resource.Id.cnx_connection_btn);
             registerTextView = FindViewById<TextView>(Resource.Id.cnx_register_text);
@@ -34,7 +38,15 @@ namespace TeamEventApp.Droid
             // Connecting actions
 
             loginButton.Click += delegate {
-                StartActivity(typeof(NotificationActivity));
+                bool error = false;
+                if (!error)
+                    error = verifText("email", email);
+                if (!error)
+                    error = verifText("mot de passe", pwd);
+
+                if (!error)
+                    StartActivity(typeof(Notification));
+                error = false;
             };
 
             registerTextView.Click += delegate {
@@ -44,6 +56,16 @@ namespace TeamEventApp.Droid
             noPwdTextView.Click += delegate {
                 StartActivity(typeof(ResetPasswordActivity));
             };         
+        }
+        public bool verifText(string name, EditText edittext)
+        {
+            if (edittext.Text.ToString() == "")
+            {
+                edittext.SetError("Vous n'avez pas entré votre " + name, null);
+                return true;
+            }
+            return false;
+
         }
     }
 }
