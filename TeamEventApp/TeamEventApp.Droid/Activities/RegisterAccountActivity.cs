@@ -14,22 +14,43 @@ using Xamarin.Facebook;
 using Xamarin.Facebook.Login.Widget;
 using Java.Lang;
 using Xamarin.Facebook.Login;
-
+using Org.Json;
+using Newtonsoft.Json;
 
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "@string/label_register_account")]
-    public class RegisterAccountActivity : Activity, IFacebookCallback
+    public class RegisterAccountActivity : Activity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
-        private ICallbackManager mCallbackManager;
+        private ICallbackManager mCallBackManager;
+        private MyProfileTracker mProfileTracker;
+
+        private EditText nom;
+        private EditText prenom;
+        private EditText email;
+        private EditText mdp;
+        private EditText mdp2;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
             FacebookSdk.SdkInitialize(this.ApplicationContext);
+
+            mProfileTracker = new MyProfileTracker();
+            mProfileTracker.mOnProfileChanged += mProfileTracker_mOnProfileChanged;
+            mProfileTracker.StartTracking();
 
             // Setting Layout
             SetContentView(Resource.Layout.RegisterAccount);
+
+            // getting editText
+            nom = FindViewById<EditText>(Resource.Id.reg_fname_text);
+            prenom = FindViewById<EditText>(Resource.Id.reg_lname_text);
+            email = FindViewById<EditText>(Resource.Id.reg_email_text);
+            mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text);
+            mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text);
+
 
             // Login if already have an account
             TextView loginTextView = FindViewById<TextView>(Resource.Id.reg_signin_text);
@@ -41,10 +62,10 @@ namespace TeamEventApp.Droid
 
             // Facebook Configuration
 
-            LoginButton facebookButton = FindViewById<LoginButton>(Resource.Id.reg_cnxFacebook_btn);
-            facebookButton.SetReadPermissions("user_friends");
-            mCallbackManager = CallbackManagerFactory.Create();
-            facebookButton.RegisterCallback(mCallbackManager, this);
+            LoginButton button = FindViewById<LoginButton>(Resource.Id.reg_cnxFacebook_btn);
+            button.SetReadPermissions(new List<string> { "public_profile", "user_friends", "email" });
+            mCallBackManager = CallbackManagerFactory.Create();
+            button.RegisterCallback(mCallBackManager, this);
 
 
             // bouton enregistrement inscription
@@ -52,12 +73,7 @@ namespace TeamEventApp.Droid
             registerButton.Click += delegate
             {
 
-                EditText nom = FindViewById<EditText>(Resource.Id.reg_fname_text);
-                EditText prenom = FindViewById<EditText>(Resource.Id.reg_lname_text);
-                EditText email = FindViewById<EditText>(Resource.Id.reg_email_text);
-                EditText mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text);
-                EditText mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text);
-                //FindViewById<EditText>(Resource.Id.reg_fname_text).SetError("error", null);
+                
                 
                 // verification 
                 bool error = false;
@@ -87,8 +103,30 @@ namespace TeamEventApp.Droid
             };
         }
 
+        void mProfileTracker_mOnProfileChanged(object sender, OnProfileChangedEventArgs e)
+        {
+            if (e.mProfile != null)
+            {
+                GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
+
+                Bundle parameters = new Bundle();
+                parameters.PutString("fields", "email");
+                request.Parameters = parameters;
+                request.ExecuteAsync();
+
+                nom.Text = e.mProfile.FirstName;
+                prenom.Text = e.mProfile.LastName;
+
+            }
+
+            else
+            {
+               
+            }
+        }
+
         // fonction de verification des informations
-         public bool verifText(string name, EditText edittext)
+        public bool verifText(string name, EditText edittext)
          {
              if(edittext.Text.ToString() == "")
             {
@@ -99,9 +137,9 @@ namespace TeamEventApp.Droid
              
          }
 
-// Facebook Interface methods
+        // Facebook Interface methods
 
-public void OnCancel()
+        public void OnCancel()
         {
             //throw new NotImplementedException();
         }
@@ -114,13 +152,46 @@ public void OnCancel()
         public void OnSuccess(Java.Lang.Object result)
         {
             LoginResult loginResult = result as LoginResult;
-            Console.WriteLine(loginResult.AccessToken.UserId);
+            Console.WriteLine(AccessToken.CurrentAccessToken.UserId);
         }
 
-        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            mCallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+            mCallBackManager.OnActivityResult(requestCode, (int)resultCode, data);
         }
+
+        protected override void OnDestroy()
+        {
+            mProfileTracker.StopTracking();
+            base.OnDestroy();
+        }
+
+        public void OnCompleted(Org.Json.JSONObject json, GraphResponse response)
+        {
+            string data = json.GetString("email");
+            email.Text = data;
+        }
+    }
+
+    public class MyProfileTracker : ProfileTracker
+    {
+        public event EventHandler<OnProfileChangedEventArgs> mOnProfileChanged;
+
+        protected override void OnCurrentProfileChanged(Profile oldProfile, Profile newProfile)
+        {
+            if (mOnProfileChanged != null)
+            {
+                mOnProfileChanged.Invoke(this, new OnProfileChangedEventArgs(newProfile));
+            }
+        }
+    }
+
+    public class OnProfileChangedEventArgs : EventArgs
+    {
+        public Profile mProfile;
+
+        public OnProfileChangedEventArgs(Profile profile) { mProfile = profile; }
     }
 }
