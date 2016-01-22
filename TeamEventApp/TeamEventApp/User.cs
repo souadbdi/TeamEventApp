@@ -5,6 +5,7 @@ using static TeamEventApp.DataBase;
 
 namespace TeamEventApp
 {
+
     public class User
     {
         public long userId { get; set; }
@@ -14,6 +15,9 @@ namespace TeamEventApp
         public string email { get; set; }
         public string password { get; set; }
         public List<Group> groups { get; set; }
+        public List<User> contacts { get; set; }
+        public string status { get; set; }
+        public string localisation { get; set; }
 
         public User(string firstname, string lastname, string Pseudo, string eMail, string passWord)
         {

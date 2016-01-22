@@ -75,6 +75,7 @@
     <Compile Include="Activities\ResetPasswordActivity.cs" />
     <Compile Include="Activities\UserGroupRequestActivity.cs" />
     <Compile Include="Adapters\EventAdapter.cs" />
+    <Compile Include="Adapters\ExpandableListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Fragments\EventComsFragment.cs" />
     <Compile Include="Fragments\EventDetailsFragment.cs" />

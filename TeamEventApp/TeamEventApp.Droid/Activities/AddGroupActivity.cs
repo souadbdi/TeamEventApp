@@ -36,12 +36,6 @@ namespace TeamEventApp.Droid
                 Group grp = new Group(nomGrp.Text, users_db[1]);
                 users_db[1].addGroup(grp);
 
-                string groups = "";
-                foreach (Group g in users_db[1].groups)
-                {
-                    groups += " " + g.groupName;
-                }
-
                 StartActivity(typeof(GroupManagerActivity));
             };
 

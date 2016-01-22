@@ -4,10 +4,12 @@ namespace TeamEventApp
 {
     public class Group
     {
+        public long groupId { get; set; }
         public string groupName { get; set; }
         public List<User> members { get; set; } = new List<User>();
         public List<User> admins { get; set; } = new List<User>();
-        public List<Event> events { get; set; }
+        public List<Event> events { get; set; } = new List<Event>();
+        public List<Comment> comments { get; set; } = new List<Comment>();
 
         public Group()
         { }
@@ -15,7 +17,6 @@ namespace TeamEventApp
         public Group(string name, User user)
         {
             this.groupName = name;
-            this.events = new List<Event>();
             this.admins.Add(user);
             this.members.Add(user);
         }

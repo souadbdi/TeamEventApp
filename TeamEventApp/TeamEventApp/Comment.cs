@@ -4,8 +4,11 @@ namespace TeamEventApp
 {
     public class Comment
     {
-        public string message { get; set; }
-        public User user;
+        public long commentId {get; set; }
+        public string message {get; set; }
+        public long userID {get; set; }
         public DateTime date;
+        public long eventId { get; set; }
+        public long groupID { get; set; }
     }
 }
