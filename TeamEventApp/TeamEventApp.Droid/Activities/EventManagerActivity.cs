@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using TeamEventApp.Droid.Adapters;
 
+
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "@string/label_event_manager")]
@@ -35,8 +36,7 @@ namespace TeamEventApp.Droid
                 eventName = "Répétition ICJ 2016",
                 startDate = new DateTime(2016, 11, 1),
                 endDate = new DateTime(2016, 11, 2),
-                address = "19 rue Fustel de Coulanges, Paris",
-                group = "Révélation"                
+                address = "19 rue Fustel de Coulanges, Paris",               
             });
 
             eventList.Add(new Event
@@ -44,8 +44,7 @@ namespace TeamEventApp.Droid
                 eventName = "Réunion Responsables",
                 startDate = new DateTime(2016, 3, 10),
                 endDate = new DateTime(2016, 3, 10),
-                address = "Boissy, France",
-                group = "Révélation"
+                address = "Boissy, France"
             });
 
             eventList.Add(new Event
@@ -53,8 +52,7 @@ namespace TeamEventApp.Droid
                 eventName = "Restaurant",
                 startDate = new DateTime(2016, 2, 14),
                 endDate = new DateTime(2016, 2, 14),
-                address = "Paris, France",
-                group = "MJI"
+                address = "Paris, France"
             });
 
             eventList.Add(new Event
@@ -62,8 +60,7 @@ namespace TeamEventApp.Droid
                 eventName = "Mariage Bribrik",
                 startDate = new DateTime(2016, 12, 14),
                 endDate = new DateTime(2016, 12, 14),
-                address = "Paris, France",
-                group = "Amis"
+                address = "Paris, France"
             });
 
             // Create the adapter

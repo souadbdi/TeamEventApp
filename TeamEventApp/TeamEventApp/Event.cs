@@ -14,7 +14,6 @@ namespace TeamEventApp
         public long groupId { get; set; }
         public List<Notification> notifications { get; set; }
         public List<Comment> comments { get; set; }
-
         public List<User> userList { get; set; }
 
 
