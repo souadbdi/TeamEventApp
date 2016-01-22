@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
+    <Compile Include="Activities\AddContactActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
+    <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,18 +145,6 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\GroupMenu.axml">
       <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\EventNotifRow.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\EventNotifList.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\EventCommentRow.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\EventCommentList.axml">
-      <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

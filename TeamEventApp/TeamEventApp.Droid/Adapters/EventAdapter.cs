@@ -73,7 +73,7 @@ namespace TeamEventApp.Droid.Adapters
 
             // Group of Event
             TextView textGroup = row.FindViewById<TextView>(Resource.Id.evm_group_text);
-            textGroup.Text = "Du groupe " + eventList[position].group;
+            textGroup.Text = "Du groupe ";//+ eventList[position].group;
 
             return row;
         }

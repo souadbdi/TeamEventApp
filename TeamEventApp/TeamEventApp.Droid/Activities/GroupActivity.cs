@@ -11,12 +11,19 @@ using Android.Views;
 using Android.Widget;
 
 using static TeamEventApp.DataBase;
+using TeamEventApp.Droid.Adapters;
 
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "@string/label_group")]
     public class GroupActivity : Activity
     {
+        //tableItems va contenir "membres","admins","events"
+        List<GroupRow> tableItems = new List<GroupRow>();
+        List<GroupRowItem> mb = new List<GroupRowItem>();
+        List<GroupRowItem> adm = new List<GroupRowItem>();
+        List<GroupRowItem> ev = new List<GroupRowItem>();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,56 +31,61 @@ namespace TeamEventApp.Droid
             // Set our view from the "group" layout resource
             SetContentView(Resource.Layout.Group);
 
-            //Vue qui va contenir la liste des membres du groupe
-            List<string> membersNames = new List<string>();
-            ListView members_lv = FindViewById<ListView>(Resource.Id.MemberList);
-
-            //Vue qui va contenir la liste des membres du groupe
-            List<string> adminsNames = new List<string>();
-            ListView admins_lv = FindViewById<ListView>(Resource.Id.AdminList);
-
-            //Vue qui va contenir la liste des membres du groupe
-            List<string> eventsNames = new List<string>();
-            ListView events_lv = FindViewById<ListView>(Resource.Id.EventList);
-
             //on récupère dans gs le nom du group selectionné dans AccueilActivity
             string gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
 
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
             gntv.Text = gs;
 
-            foreach(Group grp in users_db[1].groups)
+            ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
+
+            foreach (Group grp in users_db[1].groups)
             {
-                if (grp.groupName==gs)
+                if (grp.groupName == gs)
                 {
-                    //listview avec noms des membres
+                    //liste avec noms des membres
                     foreach (User us in grp.members)
                     {
-                        membersNames.Add(us.firstName);
+                        GroupRowItem gri = new GroupRowItem();
+                        gri.Name = us.firstName;
+                        mb.Add(gri);
                     }
-                    ArrayAdapter<string> adapt = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, membersNames);
-                    members_lv.Adapter = adapt;
+                    tableItems.Add(new GroupRow() {
+                        Row = "Membres",
+                        RowItems = mb
+                        });
 
-                    //listview avec noms des admins
+                    //liste avec noms des admins
                     foreach (User us in grp.admins)
                     {
-                        adminsNames.Add(us.firstName);
+                        GroupRowItem gri = new GroupRowItem();
+                        gri.Name = us.firstName;
+                        adm.Add(gri);
                     }
-                    adminsNames.Add("julie");
-                    adminsNames.Add("Marie");
-                    ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, adminsNames);
-                    admins_lv.Adapter = adapter;
 
-                    //listview avec noms des events
+                    tableItems.Add(new GroupRow()
+                    {
+                        Row = "Admins",
+                        RowItems = adm
+                    });
+
+                    //liste avec noms des events
                     foreach (Event e in grp.events)
                     {
-                        eventsNames.Add(e.eventName);
+                        GroupRowItem gri = new GroupRowItem();
+                        gri.Name = e.eventName;
+                        ev.Add(gri);
                     }
-                    ArrayAdapter<string> ad = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleExpandableListItem1, eventsNames);
-                    events_lv.Adapter = ad;
 
+                    tableItems.Add(new GroupRow()
+                    {
+                        Row = "Evènements",
+                        RowItems = ev
+                    });
                 }
-            }          
+            }
+            ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
+            elv.SetAdapter(adapter);
         }
 
         // Adding the menu

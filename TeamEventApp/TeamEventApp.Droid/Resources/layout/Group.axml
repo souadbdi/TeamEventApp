@@ -10,26 +10,11 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
 		   android:id="@+id/groupNameTextView"/>
-  <ListView
-       android:id="@+id/MemberList"
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="5dp"
-       android:cacheColorHint="#FFDAFF7F"
-       android:text="Membres"/>
-  <ListView
-     android:id="@+id/AdminList"
+  <ExpandableListView
+     android:id="@+id/ExLV"
      android:layout_width="fill_parent"
      android:layout_height="wrap_content"
      android:layout_marginTop="5dp"
-     android:cacheColorHint="#FFDAFF7F"
-     android:text="Admins"/>
-  <ListView
-     android:id="@+id/EventList"
-     android:layout_width="fill_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="5dp"
-     android:cacheColorHint="#FFDAFF7F"
-     android:text="Evènements"/>
+     android:cacheColorHint="#FFDAFF7F"/>
 
 </LinearLayout>

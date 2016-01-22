@@ -10,10 +10,11 @@ namespace TeamEventApp
 {
     class DataService
     {
-            public static async Task<dynamic> getDataFromService(string queryString)
+            public static async Task<dynamic> getDataFromService(string queryString, HttpMethod method, string content)
             {
 
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, queryString);
+                HttpRequestMessage request = new HttpRequestMessage(method, queryString);
+                request.Content = new StringContent(content);
                 HttpClient httpClient = new HttpClient();
 
                 HttpResponseMessage httpResponse = await httpClient.SendAsync(request);
