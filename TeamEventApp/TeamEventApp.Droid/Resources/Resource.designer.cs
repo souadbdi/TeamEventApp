@@ -835,82 +835,88 @@ namespace TeamEventApp.Droid
 			public const int com_facebook_tooltip_bubble = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int EventLayout = 2130903044;
+			public const int EventCommentList = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int EventListFragment = 2130903045;
+			public const int EventCommentRow = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int EventListRow = 2130903046;
+			public const int EventLayout = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int EventManager = 2130903047;
+			public const int EventListFragment = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int EventNotifList = 2130903048;
+			public const int EventListRow = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int EventNotifRow = 2130903049;
+			public const int EventManager = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int Group = 2130903050;
+			public const int EventNotifList = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int GroupManager = 2130903051;
+			public const int EventNotifRow = 2130903051;
 			
 			// aapt resource value: 0x7f03000c
-			public const int GroupMenu = 2130903052;
+			public const int Group = 2130903052;
 			
 			// aapt resource value: 0x7f03000d
-			public const int Login = 2130903053;
+			public const int GroupManager = 2130903053;
 			
 			// aapt resource value: 0x7f03000e
-			public const int Main = 2130903054;
+			public const int GroupMenu = 2130903054;
 			
 			// aapt resource value: 0x7f03000f
-			public const int Menu = 2130903055;
+			public const int Login = 2130903055;
 			
 			// aapt resource value: 0x7f030010
-			public const int Menu_add_option = 2130903056;
+			public const int Main = 2130903056;
 			
 			// aapt resource value: 0x7f030011
-			public const int messenger_button_send_blue_large = 2130903057;
+			public const int Menu = 2130903057;
 			
 			// aapt resource value: 0x7f030012
-			public const int messenger_button_send_blue_round = 2130903058;
+			public const int Menu_add_option = 2130903058;
 			
 			// aapt resource value: 0x7f030013
-			public const int messenger_button_send_blue_small = 2130903059;
+			public const int messenger_button_send_blue_large = 2130903059;
 			
 			// aapt resource value: 0x7f030014
-			public const int messenger_button_send_white_large = 2130903060;
+			public const int messenger_button_send_blue_round = 2130903060;
 			
 			// aapt resource value: 0x7f030015
-			public const int messenger_button_send_white_round = 2130903061;
+			public const int messenger_button_send_blue_small = 2130903061;
 			
 			// aapt resource value: 0x7f030016
-			public const int messenger_button_send_white_small = 2130903062;
+			public const int messenger_button_send_white_large = 2130903062;
 			
 			// aapt resource value: 0x7f030017
-			public const int Notifications = 2130903063;
+			public const int messenger_button_send_white_round = 2130903063;
 			
 			// aapt resource value: 0x7f030018
-			public const int Profile = 2130903064;
+			public const int messenger_button_send_white_small = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int RegisterAccount = 2130903065;
+			public const int Notifications = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int ResetPassword = 2130903066;
+			public const int Profile = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int Toolbar = 2130903067;
+			public const int RegisterAccount = 2130903067;
 			
 			// aapt resource value: 0x7f03001c
-			public const int UserGroupRequestList = 2130903068;
+			public const int ResetPassword = 2130903068;
 			
 			// aapt resource value: 0x7f03001d
-			public const int UserGroupRequestRow = 2130903069;
+			public const int Toolbar = 2130903069;
+			
+			// aapt resource value: 0x7f03001e
+			public const int UserGroupRequestList = 2130903070;
+			
+			// aapt resource value: 0x7f03001f
+			public const int UserGroupRequestRow = 2130903071;
 			
 			static Layout()
 			{
