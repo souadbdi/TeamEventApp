@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
+    <Compile Include="Activities\AddContactActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Fragments\EventDetailsFragment.cs" />
     <Compile Include="Fragments\EventMembersFragment.cs" />
     <Compile Include="Fragments\EventNotificationsFragment.cs" />
+    <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +145,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\GroupMenu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddContact.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Contacts.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

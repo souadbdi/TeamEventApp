@@ -52,7 +52,7 @@ namespace TeamEventApp.Droid
             groupSelect = items[e.Position];
 
             //apparition d'un ToastMessage avec le nom de l'item selectionné
-            Android.Widget.Toast.MakeText(this, groupSelect, Android.Widget.ToastLength.Short).Show();
+            Toast.MakeText(this, groupSelect, Android.Widget.ToastLength.Short).Show();
 
             //On lance l'activité GroupActivity en récupérant la valeur de groupSelect pour 
             //pouvoir la réutiliser dans GroupActivity
