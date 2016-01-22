@@ -584,11 +584,11 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080043
 			public const int event_notifWrite_text = 2131230787;
 			
-			// aapt resource value: 0x7f080046
-			public const int event_notif_content = 2131230790;
-			
 			// aapt resource value: 0x7f080045
-			public const int event_notif_date = 2131230789;
+			public const int event_notif_content = 2131230789;
+			
+			// aapt resource value: 0x7f080046
+			public const int event_notif_date = 2131230790;
 			
 			// aapt resource value: 0x7f080042
 			public const int event_notif_listView = 2131230786;
