@@ -78,11 +78,8 @@
     <Compile Include="Adapters\EventCommentAdapter.cs" />
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
-    <Compile Include="Fragments\EventComsFragment.cs" />
-    <Compile Include="Fragments\EventDetailsFragment.cs" />
-    <Compile Include="Fragments\EventMembersFragment.cs" />
+    <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
-    <Compile Include="Fragments\EventNotificationsFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

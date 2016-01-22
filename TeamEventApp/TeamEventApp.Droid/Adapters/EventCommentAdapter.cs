@@ -63,15 +63,15 @@ namespace TeamEventApp.Droid.Adapters
 
 
             // Name of the event
-            TextView textUserName = row.FindViewById<TextView>(Resource.Id.event_comment_user);
+            TextView textUserName = row.FindViewById<TextView>(Resource.Id.event_commentUser);
             textUserName.Text = commentList[position].userName();
 
             // Date start          
-            TextView textDate = row.FindViewById<TextView>(Resource.Id.event_comment_date);
+            TextView textDate = row.FindViewById<TextView>(Resource.Id.event_commentDate);
             textDate.Text = commentList[position].toStringDate();
 
             // Content of Event
-            TextView textContent = row.FindViewById<TextView>(Resource.Id.event_comment_content);
+            TextView textContent = row.FindViewById<TextView>(Resource.Id.event_commentContent);
             textContent.Text = commentList[position].message;
 
             return row;

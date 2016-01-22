@@ -817,8 +817,11 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f080058
 			public const int versConnexionButton = 2131230808;
-			
-			static Id()
+            internal static int event_comment_user;
+            internal static int event_comment_date;
+            internal static int event_comment_content;
+
+            static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}

@@ -2,6 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+<!-- Nom de l'utilisateur qui poste -->
+    <TextView
+        android:id="@+id/event_commentUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom" />
+<!-- Contenu de la notification-->
+    <TextView
+        android:id="@+id/event_commentContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contenu du commentaire posté, il faut à présent lire et réagir!!" />
+<!-- Date de la publication -->
+    <TextView
+        android:id="@+id/event_commentDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Date"
+        android:textSize="10sp" />
 </LinearLayout>

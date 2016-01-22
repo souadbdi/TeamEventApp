@@ -28,7 +28,7 @@ namespace TeamEventApp.Droid.Activities
             TextView notifsText = FindViewById<TextView>(Resource.Id.event_notifs);
             TextView commentsText = FindViewById<TextView>(Resource.Id.event_comments);            
 
-            // Show the dialog fragment
+            // Show the dialog fragments
 
             if (notifsText != null )
                 notifsText.Click += delegate
@@ -36,6 +36,14 @@ namespace TeamEventApp.Droid.Activities
                     FragmentTransaction tx = FragmentManager.BeginTransaction();
                     EventNotifDialogFragment notifsDialog = new EventNotifDialogFragment();
                     notifsDialog.Show(tx, "Notifications");
+                };
+
+            if (commentsText != null)
+                commentsText.Click += delegate
+                {
+                    FragmentTransaction tx = FragmentManager.BeginTransaction();
+                    EventCommentDialogFragment commentsDialog = new EventCommentDialogFragment();
+                    commentsDialog.Show(tx, "Commentaires");
                 };
 
         }

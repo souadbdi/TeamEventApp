@@ -75,4 +75,5 @@ namespace TeamEventApp.Droid.Fragments
             // Return
             return view;
         }
+     }
 }
