@@ -91,6 +91,10 @@
   <string name="event_maybe">Peut-être</string>
   <string name="event_invite_friends">Invite des amis</string>
   <string name="event_about">Description</string>
+  <string name="event_comment">Commentaires</string>
+  <string name="event_notif_views">vues</string>
+  <string name="event_notifs">Infos événement</string>
+  <string name="event_write_notif">Publiez une information...</string>
 
   <!-- GroupMenu Items Section -->
   <string name="action_addMember">Ajouter Membre</string>
