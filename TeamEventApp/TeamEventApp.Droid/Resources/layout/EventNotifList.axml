@@ -21,7 +21,7 @@
         android:layout_height="wrap_content">
     <!-- Champe d'édition -->
         <EditText
-            android:id="@+id/cnx_email_text"
+            android:id="@+id/event_notifWrite_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

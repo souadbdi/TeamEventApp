@@ -95,6 +95,7 @@
   <string name="event_notif_views">vues</string>
   <string name="event_notifs">Infos événement</string>
   <string name="event_write_notif">Publiez une information...</string>
+  <string name="event_write_comment">Publiez un commentaire...</string>
 
   <!-- GroupMenu Items Section -->
   <string name="action_addMember">Ajouter Membre</string>

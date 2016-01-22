@@ -2,6 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:padding="5dp">
+<!-- Liste des dernières nouvelles -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/event_comment_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<!-- Layout footer -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <!-- Champe d'édition -->
+        <EditText
+            android:id="@+id/event_notifComment_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/event_write_notif" />
+    <!-- Bouton de validation -->
+        <ImageButton
+            android:id="@+id/event_notifSend_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="top"
+            android:background="@null"
+            android:src="@drawable/Sent_42" />
+    </LinearLayout>
 </LinearLayout>
