@@ -15,17 +15,18 @@ namespace TeamEventApp.Droid
 	public class MainActivity : Activity
 	{
         bool connected = false;
+        //Appel de la db
+        public static DataBase database = new DataBase();
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             //Création d'un user avec 1 group pour tester l'appli
-            User user1 = new User("user", "one", "us1", "mail", "password");
+            /*User user1 = new User("user", "one", "us1", "mail", "password");
             user1.userId = users_db.Count + 1;
             users_db.Add(user1.userId, user1);
             
-
             Group grp = new Group("Grp1", user1);
             grp.groupId = groups_db.Count;
             user1.addGroup(grp);
@@ -35,9 +36,7 @@ namespace TeamEventApp.Droid
             user2.userId = users_db.Count + 1;
             users_db.Add(user2.userId, user2);
 
-            User user3 = new User("user3", "3", "us3", "mail3", "password3");
-            user3.userId = users_db.Count + 1;
-            users_db.Add(user3.userId, user3);
+            user1.contacts.Add(user2);*/
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);

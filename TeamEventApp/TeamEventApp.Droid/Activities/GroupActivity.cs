@@ -12,12 +12,15 @@ using Android.Widget;
 
 using static TeamEventApp.DataBase;
 using TeamEventApp.Droid.Adapters;
+using TeamEventApp.Droid.Fragments;
 
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "@string/label_group")]
     public class GroupActivity : Activity
     {
+        public Group group = new Group();
+        public string gs;
         //tableItems va contenir "membres","admins","events"
         List<GroupRow> tableItems = new List<GroupRow>();
         List<GroupRowItem> mb = new List<GroupRowItem>();
@@ -32,7 +35,7 @@ namespace TeamEventApp.Droid
             SetContentView(Resource.Layout.Group);
 
             //on récupère dans gs le nom du group selectionné dans AccueilActivity
-            string gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
+            gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
 
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
             gntv.Text = gs;
@@ -83,6 +86,7 @@ namespace TeamEventApp.Droid
                         RowItems = ev
                     });
                 }
+                group = grp;
             }
             ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
             elv.SetAdapter(adapter);
@@ -101,25 +105,29 @@ namespace TeamEventApp.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_addMember:
-                    //StartActivity(typeof(NotificationActivity));
+                    //Fragment add member
                     return true;
 
                 case Resource.Id.action_addAdmin:
-                    //StartActivity(typeof(ProfileActivity));
+                    //Fragment add admin
                     return true;
 
                 case Resource.Id.action_addEvent:
-                    //StartActivity(typeof(EventManagerActivity));
+                    //Fragment add event
                     return true;
 
                 case Resource.Id.action_changeName:
-                    //StartActivity(typeof(GroupManagerActivity));
+                    {
+                        FragmentTransaction tx = FragmentManager.BeginTransaction();
+                        GroupChangeNameFragment contactsDialog = new GroupChangeNameFragment();
+                        contactsDialog.Show(tx, "Nom du groupe");
+                    }
+                    
                     return true;
 
                 default:
                     return base.OnOptionsItemSelected(item);
             }
         }
-
     }
 }

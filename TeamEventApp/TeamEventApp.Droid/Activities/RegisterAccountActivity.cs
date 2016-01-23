@@ -1,21 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login.Widget;
-using Java.Lang;
 using Xamarin.Facebook.Login;
-using Org.Json;
-using Newtonsoft.Json;
 
 namespace TeamEventApp.Droid
 {
@@ -30,6 +23,7 @@ namespace TeamEventApp.Droid
         private EditText email;
         private EditText mdp;
         private EditText mdp2;
+        private EditText pseudo;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,6 +44,7 @@ namespace TeamEventApp.Droid
             email = FindViewById<EditText>(Resource.Id.reg_email_text);
             mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text);
             mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text);
+            pseudo = FindViewById<EditText>(Resource.Id.reg_pseudo_text);
 
 
             // Login if already have an account
@@ -71,16 +66,15 @@ namespace TeamEventApp.Droid
             // bouton enregistrement inscription
             Button registerButton = FindViewById<Button>(Resource.Id.register_btn);
             registerButton.Click += delegate
-            {
-
-                
-                
-                // verification 
+            {            
+                // verification des champs
                 bool error = false;
                 if (!error)
                     error = verifText("prenom", prenom);
                 if (!error)
                     error = verifText("nom", nom);
+                if (!error)
+                    error = verifText("pseudo", pseudo);
                 if (!error)
                     error = verifText("email", email);
                 if (!error)
@@ -88,18 +82,19 @@ namespace TeamEventApp.Droid
                 if (!error)
                     error = verifText("confirmation de mot de passe", mdp2);
                 
-                if (!error && mdp.Text.ToString() == mdp2.Text.ToString())
+                if (!error && mdp.Text.ToString() != mdp2.Text.ToString())
                 {
                     error = true;
                     mdp2.SetError("Les mots de passe ne correspondent pas", null);
                 }
 
-
                 // Vérification de la saisie !!!
-
                 if (!error)
-                    StartActivity(typeof(Notification));
-                error = false;
+                {
+                    User user = new User(prenom.Text, nom.Text, pseudo.Text, email.Text, mdp.Text);
+                    MainActivity.database.Inscription(user);
+                    StartActivity(typeof(NotificationActivity));
+                }
             };
         }
 
@@ -133,8 +128,7 @@ namespace TeamEventApp.Droid
                 edittext.SetError("Vous n'avez pas entré votre " + name, null);
                 return true;
              }
-             return false;
-             
+             return false;          
          }
 
         // Facebook Interface methods

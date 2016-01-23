@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using static TeamEventApp.DataBase;
+
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "Connexion")]
@@ -18,6 +20,9 @@ namespace TeamEventApp.Droid
         private Button loginButton;
         private TextView registerTextView;
         private TextView noPwdTextView;
+
+        private EditText emailET;
+        private EditText passwordET;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,11 +35,19 @@ namespace TeamEventApp.Droid
             registerTextView = FindViewById<TextView>(Resource.Id.cnx_register_text);
             noPwdTextView = FindViewById<TextView>(Resource.Id.cnx_fpwd_text);
 
+            emailET = FindViewById<EditText>(Resource.Id.cnx_email_text);
+            passwordET = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
 
             // Connecting actions
 
-            loginButton.Click += delegate {
-                StartActivity(typeof(NotificationActivity));
+            loginButton.Click += delegate 
+            {
+                //on vérifie que l'utilisateur quise connecte existe bien et on l'affecte a current_user
+                //par la fonction Connect()
+                if(MainActivity.database.Connect(emailET.Text,passwordET.Text))
+                    StartActivity(typeof(NotificationActivity));
+                else
+                    Toast.MakeText(this, "Vous n'êtes pas inscrit à TeamEvent. Veuillez vous enregistrer", ToastLength.Short).Show();
             };
 
             registerTextView.Click += delegate {

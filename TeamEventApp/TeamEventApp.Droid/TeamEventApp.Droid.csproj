@@ -82,6 +82,10 @@
     <Compile Include="Fragments\EventDetailsFragment.cs" />
     <Compile Include="Fragments\EventMembersFragment.cs" />
     <Compile Include="Fragments\EventNotificationsFragment.cs" />
+    <Compile Include="Fragments\GroupAddAdminFragment.cs" />
+    <Compile Include="Fragments\GroupAddEventFragment.cs" />
+    <Compile Include="Fragments\GroupAddMemberFragment.cs" />
+    <Compile Include="Fragments\GroupChangeNameFragment.cs" />
     <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -151,6 +155,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Contacts.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupMember.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupAdmin.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupEvent.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ChangeGroupName.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
