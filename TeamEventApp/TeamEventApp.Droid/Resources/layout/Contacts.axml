@@ -3,17 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  <!-- Ajout contact-->
-   <TextView
-       android:id="@+id/add_contact_text"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:drawableLeft="@drawable/Plus"
-       android:drawablePadding="10dp"
-       android:clickable="true" />
-  <ListView
-      android:id="@+id/contactList"
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:cacheColorHint="#FFDAFF7F" />
+<!-- Ajout contact-->
+    <TextView
+        android:id="@+id/add_contact_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/Plus"
+        android:drawablePadding="10dp"
+        android:clickable="true" />
+    <ListView
+        android:id="@+id/contactList"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#FFDAFF7F" />
 </LinearLayout>

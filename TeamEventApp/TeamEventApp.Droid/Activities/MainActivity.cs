@@ -45,14 +45,14 @@ namespace TeamEventApp.Droid
             VerifyConnection();
 
             // Get our button from the layout resource,
-            // and attach an event to it
+            /* and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.versConnexionButton);
 
             button.Click += delegate {
                 Intent intent = new Intent(this.ApplicationContext, typeof(LoginActivity));
                 intent.SetFlags(ActivityFlags.NewTask);
-                StartActivity(intent);
-            };
+                StartActivity(intent); 
+            };*/
         }
 
         protected override void OnStart()

@@ -2,4 +2,231 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+    <ScrollView
+        android:id="@+id/event_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+        <!-- Head infos-->
+            <TextView
+                android:id="@+id/event_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Sortie Bowling - Paint Ball"
+                android:textSize="22sp" />
+        <!-- Layout Organisateur -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/event_hostedBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_hostedBy"
+                    android:textSize="12sp" />
+            <!-- Group name -->
+                <TextView
+                    android:id="@+id/event_groupName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="INGESUP EXP 1" />
+            </LinearLayout>
+        <!-- Date of the event -->
+            <TextView
+                android:id="@+id/event_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:layout_marginTop="15dp"
+                android:drawableLeft="@drawable/Clock_34"
+                android:drawablePadding="10dp"
+                android:text="Lun, 4 Mar à 12h" />
+        <!-- Location of the event -->
+            <TextView
+                android:id="@+id/event_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:layout_marginTop="5dp"
+                android:drawableLeft="@drawable/Location"
+                android:drawablePadding="10dp"
+                android:text="22 rue Bressey, Paris - France" />
+        <!-- Tableau de Statistiques -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center">
+            <!-- 1st row : numbers -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/event_yes_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="20"
+                        android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/event_maybe_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="10"
+                        android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/event_guests_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="30"
+                        android:textSize="20dp" />
+                </TableRow>
+            <!-- 2nd row : Texts -->
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/event_maybe_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_gravity="center"
+                        android:text="@string/event_interested" />
+                    <TextView
+                        android:id="@+id/event_yes_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="@string/event_participants" />
+                    <TextView
+                        android:id="@+id/event_guests_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:layout_gravity="center"
+                        android:text="@string/event_guests" />
+                </TableRow>
+            </TableLayout>
+        <!-- User status -->
+            <TextView
+                android:id="@+id/event_status_req"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:gravity="center"
+                android:text="@string/event_status_req" />
+        <!-- Radio group 
+        <RadioGroup
+            android:id="@+id/event_status_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <RadionButton
+                android:id="@+id/event_yes_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="string/event_yes"
+                android:checked="true" />
+            <RadionButton
+                android:id="@+id/event_no_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="string/event_no" />
+            <RadionButton
+                android:id="@+id/event_maybe_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="string/event_maybe" />
+        </RadioGroup>-->
+        <!-- Invite friends -->
+            <TextView
+                android:id="@+id/event_invite_friends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:layout_marginTop="25dp"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/GroupMessage_34"
+                android:drawablePadding="10dp"
+                android:text="@string/event_invite_friends" />
+        <!-- About the event -->
+            <TextView
+                android:id="@+id/event_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/event_about" />
+            <TextView
+                android:id="@+id/event_about_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="A propos de l'événement ici... Plusieurs ligne quand mm." />
+        <!-- Action notification : Layout horizontal-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+                <TextView
+                    android:id="@+id/event_notifs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:drawableLeft="@drawable/Info_34"
+                    android:drawablePadding="10dp"
+                    android:text="@string/event_notifs"
+                    android:clickable="true" />
+                <TextView
+                    android:id="@+id/event_notifs_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="(12)"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        <!-- Actions commentaires : Layout horizontal-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp">
+                <TextView
+                    android:id="@+id/event_comments"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:drawableLeft="@drawable/Comments_34"
+                    android:drawablePadding="10dp"
+                    android:text="@string/event_comment"
+                    android:clickable="true" />
+                <TextView
+                    android:id="@+id/event_events_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="(96)"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
