@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:fillViewport="true">
+    android:fillViewport="false">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -54,7 +54,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
         <!-- Texte création de compte -->
             <TextView
                 android:id="@+id/cnx_register_text"
