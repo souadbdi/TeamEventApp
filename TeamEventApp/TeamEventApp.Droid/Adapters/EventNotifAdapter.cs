@@ -61,7 +61,7 @@ namespace TeamEventApp.Droid.Adapters
 
             // Name of the event
             TextView textUserName = row.FindViewById<TextView>(Resource.Id.event_notif_user);
-            textUserName.Text = notifList[position].userName;
+            textUserName.Text = notifList[position].userName();
 
             // Date start - end            
             TextView textDate = row.FindViewById<TextView>(Resource.Id.event_notif_date);

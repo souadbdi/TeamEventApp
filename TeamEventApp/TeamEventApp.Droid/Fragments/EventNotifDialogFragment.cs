@@ -33,43 +33,45 @@ namespace TeamEventApp.Droid.Fragments
 
             notifList.Add(new Notification
             {
-                userName = "Fabrice",
                 note = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
-                commentsNumber = 5
+                views = 5
             });
 
             notifList.Add(new Notification
             {
-                userName = "Souad",
                 note = "Je suis là, je vous attends",
                 date = new DateTime(),
-                commentsNumber = 1
+                views = 1
             });
 
             notifList.Add(new Notification
             {
-                userName = "Gaelle Matuidi",
                 note = "Un commentaire assez long parce que je suis une femme. Je vais"
                 + "de voir continuer sur cette ligne avec des erreurs, c'est pas grave",
                 date = new DateTime(),
-                commentsNumber = 5
+                views = 5
             });
 
             notifList.Add(new Notification
             {
-                userName = "Souad",
                 note = "Je suis là, je vous attends",
                 date = new DateTime(),
-                commentsNumber = 1
+                views = 1
             });
 
             notifList.Add(new Notification
             {
-                userName = "Gaby",
+                note = "Je suis là, je vous attends",
+                date = new DateTime(),
+                views = 1
+            });
+
+            notifList.Add(new Notification
+            {
                 note = "OK c'est noté!",
                 date = new DateTime(),
-                commentsNumber = 1
+                views = 1
             });
 
 

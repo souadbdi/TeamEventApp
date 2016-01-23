@@ -33,35 +33,30 @@ namespace TeamEventApp.Droid.Fragments
 
             commentList.Add(new Comment
             {
-                user = "Fabrice",
                 message = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
             });
 
             commentList.Add(new Comment
             {
-                user = "Fabrice",
                 message = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
             });
 
             commentList.Add(new Comment
             {
-                user = "Fabrice",
                 message = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
             });
 
             commentList.Add(new Comment
             {
-                user = "Fabrice",
                 message = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
             });
 
             commentList.Add(new Comment
             {
-                user = "Fabrice",
                 message = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
             });
