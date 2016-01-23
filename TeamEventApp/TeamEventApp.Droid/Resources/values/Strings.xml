@@ -76,6 +76,12 @@
   <string name="profile_requests">Demandes d\'ajouts</string>
   <string name="profile_logout">Se déconnecter</string>
 
+  <!-- Edit Profile Section -->
+  <string name="edit_legend_text">Modifier votre profil en renseignant les chanmps ci-dessous :</string>
+  <string name ="edit_btn">Enregistrer</string>
+  <string name ="editStatus_legend_text">Modifier ici votre status</string>
+  
+
   <!-- Event Manager Section -->
   <string name="evm_yes">OUI</string>
   <string name="evm_no">NON</string>
