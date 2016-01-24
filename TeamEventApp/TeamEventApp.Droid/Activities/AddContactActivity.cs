@@ -40,7 +40,7 @@ namespace TeamEventApp.Droid.Activities
                 }
                 if(test == true)
                 {
-                    users_db[1].contacts.Add(user);
+                    MainActivity.database.current_user.contacts.Add(user);
                     StartActivity(typeof(ProfileActivity));
                 }
                 else

@@ -19,8 +19,7 @@ namespace TeamEventApp.Droid
     [Activity(Label = "@string/label_group")]
     public class GroupActivity : Activity
     {
-        public Group group = new Group();
-        public string gs;
+        public static Group current_group;
         //tableItems va contenir "membres","admins","events"
         List<GroupRow> tableItems = new List<GroupRow>();
         List<GroupRowItem> mb = new List<GroupRowItem>();
@@ -34,60 +33,60 @@ namespace TeamEventApp.Droid
             // Set our view from the "group" layout resource
             SetContentView(Resource.Layout.Group);
 
-            //on récupère dans gs le nom du group selectionné dans AccueilActivity
-            gs = this.Intent.GetStringExtra(GroupManagerActivity.groupSelect);
-
-            TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
-            gntv.Text = gs;
-
             ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
+            TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
 
-            foreach (Group grp in users_db[1].groups)
+            //on récupère affiche le nom du grp selectionné dans GroupManagerActivity
+            foreach (Group grp in MainActivity.database.current_user.groups)
             {
-                if (grp.groupName == gs)
-                {
-                    //liste avec noms des membres
-                    foreach (User us in grp.members)
-                    {
-                        GroupRowItem gri = new GroupRowItem();
-                        gri.Name = us.firstName;
-                        mb.Add(gri);
-                    }
-                    tableItems.Add(new GroupRow() {
-                        Row = "Membres",
-                        RowItems = mb
-                        });
-
-                    //liste avec noms des admins
-                    foreach (User us in grp.admins)
-                    {
-                        GroupRowItem gri = new GroupRowItem();
-                        gri.Name = us.firstName;
-                        adm.Add(gri);
-                    }
-
-                    tableItems.Add(new GroupRow()
-                    {
-                        Row = "Admins",
-                        RowItems = adm
-                    });
-
-                    //liste avec noms des events
-                    foreach (Event e in grp.events)
-                    {
-                        GroupRowItem gri = new GroupRowItem();
-                        gri.Name = e.eventName;
-                        ev.Add(gri);
-                    }
-
-                    tableItems.Add(new GroupRow()
-                    {
-                        Row = "Evènements",
-                        RowItems = ev
-                    });
-                }
-                group = grp;
+                if (grp.groupName == GroupManagerActivity.current_group_selected.groupName)
+                    gntv.Text =grp.groupName;
             }
+
+            string group_name = GroupManagerActivity.current_group_selected.groupName;
+            //on affecte le groupe courant au groupe selectionné
+            foreach (Group grp in MainActivity.database.current_user.groups)
+            {
+                if (grp.groupName == group_name)
+                {
+                    current_group = grp;
+                }
+            }             
+            //liste avec noms des membres
+            foreach (User us in current_group.members)
+            {
+                GroupRowItem gri = new GroupRowItem();
+                gri.Name = us.pseudo;
+                mb.Add(gri);
+            }
+            tableItems.Add(new GroupRow() {
+               Row = "Membres",
+               RowItems = mb
+            });
+            //liste avec noms des admins
+            foreach (User us in current_group.admins)
+            {
+               GroupRowItem gri = new GroupRowItem();
+               gri.Name = us.pseudo;
+               adm.Add(gri);
+            }
+            tableItems.Add(new GroupRow()
+            {
+               Row = "Admins",
+               RowItems = adm
+            });
+            //liste avec noms des events
+            foreach (Event e in current_group.events)
+            {
+               GroupRowItem gri = new GroupRowItem();
+               gri.Name = e.eventName;
+               ev.Add(gri);
+             }
+             tableItems.Add(new GroupRow()
+               {
+                  Row = "Evènements",
+                  RowItems = ev
+               });
             ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
             elv.SetAdapter(adapter);
         }
@@ -105,11 +104,19 @@ namespace TeamEventApp.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_addMember:
-                    //Fragment add member
+                    {
+                        FragmentTransaction tx = FragmentManager.BeginTransaction();
+                        GroupAddMemberFragment contactsDialog = new GroupAddMemberFragment();
+                        contactsDialog.Show(tx, "Ajouter un membre");
+                    }
                     return true;
 
                 case Resource.Id.action_addAdmin:
-                    //Fragment add admin
+                    {
+                        FragmentTransaction tx = FragmentManager.BeginTransaction();
+                        GroupAddAdminFragment contactsDialog = new GroupAddAdminFragment();
+                        contactsDialog.Show(tx, "Ajouter un administrateur");
+                    }
                     return true;
 
                 case Resource.Id.action_addEvent:

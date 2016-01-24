@@ -13,27 +13,27 @@ namespace TeamEventApp.Droid.Fragments
 {
     class ProfilContactsFragment : DialogFragment
     {
-        List<string> contact = new List<string>();
-        ListView clistview;
+        List<string> contacts = new List<string>();
+        ListView contacts_listview;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
 
             var view = inflater.Inflate(Resource.Layout.Contacts, container, false);
 
-            clistview = view.FindViewById<ListView>(Resource.Id.contactList);
+            contacts_listview = view.FindViewById<ListView>(Resource.Id.contactList);
 
             //populate the list contact
-            foreach(User user in users_db[1].contacts)
+            foreach(User user in MainActivity.database.current_user.contacts)
             {
-                contact.Add(user.pseudo);
+                contacts.Add(user.pseudo);
             }
 
             // Create and set the adapter
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity, Android.Resource.Layout.SimpleListItem1, contact);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(Activity, Android.Resource.Layout.SimpleListItem1, contacts);
 
-            if (clistview != null)
-                clistview.Adapter = adapter;
+            if (contacts_listview != null)
+                contacts_listview.Adapter = adapter;
 
             // Actions pour l'ajout de contact
             TextView addContact = view.FindViewById<TextView>(Resource.Id.add_contact_text);

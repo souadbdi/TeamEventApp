@@ -39,8 +39,8 @@ namespace TeamEventApp.Droid
             SetContentView(Resource.Layout.RegisterAccount);
 
             // getting editText
-            nom = FindViewById<EditText>(Resource.Id.reg_fname_text);
-            prenom = FindViewById<EditText>(Resource.Id.reg_lname_text);
+            nom = FindViewById<EditText>(Resource.Id.reg_lname_text);
+            prenom = FindViewById<EditText>(Resource.Id.reg_fname_text);
             email = FindViewById<EditText>(Resource.Id.reg_email_text);
             mdp = FindViewById<EditText>(Resource.Id.reg_pwd_text);
             mdp2 = FindViewById<EditText>(Resource.Id.reg_confPwd_text);

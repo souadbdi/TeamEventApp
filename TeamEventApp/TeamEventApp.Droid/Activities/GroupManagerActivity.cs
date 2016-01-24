@@ -17,7 +17,7 @@ namespace TeamEventApp.Droid
     [Activity(Label = "@string/label_group_manager")]
     public class GroupManagerActivity : Activity
     {
-        public static string groupSelect;
+        public static Group current_group_selected;
         List<string> items = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -33,13 +33,13 @@ namespace TeamEventApp.Droid
             
             //On remplit la liste items avec les noms de groupes du user
 
-            foreach (Group grp in users_db[1].groups)
+            foreach (Group grp in MainActivity.database.current_user.groups)
             {
                 items.Add(grp.groupName);
             }
 
             //on remplit le ListView avec la liste items
-            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItemActivated1, items);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, items);
             lv.Adapter = adapter;
             
             lv.ItemClick += OnListItemClick;
@@ -48,17 +48,18 @@ namespace TeamEventApp.Droid
 
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-           // on affecte le nom de l'item selectionné à groupSelect
-            groupSelect = items[e.Position];
+           // on affecte le group courant avec l'item selectionné
+            foreach(Group grp in MainActivity.database.current_user.groups)
+            {
+                if(grp.groupName == items[e.Position])
+                {
+                    current_group_selected = grp;
+                }
+            }
 
-            //apparition d'un ToastMessage avec le nom de l'item selectionné
-            Toast.MakeText(this, groupSelect, Android.Widget.ToastLength.Short).Show();
-
-            //On lance l'activité GroupActivity en récupérant la valeur de groupSelect pour 
-            //pouvoir la réutiliser dans GroupActivity
-            Intent intent = new Intent(this.ApplicationContext, typeof(GroupActivity));
-            intent.PutExtra(groupSelect, items[e.Position]);
-            StartActivity(intent);
+            //apparition d'un ToastMessage avec le nom de l'item selectionné et lancement de GroupActivity
+            Toast.MakeText(this, current_group_selected.groupName, ToastLength.Short).Show();
+            StartActivity(typeof(GroupActivity));
         }
 
 

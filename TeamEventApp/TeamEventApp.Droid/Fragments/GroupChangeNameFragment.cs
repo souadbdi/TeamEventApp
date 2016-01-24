@@ -15,9 +15,6 @@ namespace TeamEventApp.Droid.Fragments
 {
     public class GroupChangeNameFragment : DialogFragment
     {
-        public Group group = new Group();
-        public static string _groupName;
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
@@ -27,18 +24,25 @@ namespace TeamEventApp.Droid.Fragments
             EditText name = view.FindViewById<EditText>(Resource.Id.newNameGrpEditText);
             Button modif = view.FindViewById<Button>(Resource.Id.validName);
 
-            modif.Click += (object sender, EventArgs e)=>
+            modif.Click += delegate
             {
-                // on affecte le nom du grp selectionné à _groupName
-                _groupName = name.Text;
-                
-                //On lance l'activité GroupActivity en récupérant la valeur de groupName
-                Intent intent = new Intent(this.Context, typeof(GroupActivity));
-                intent.PutExtra(_groupName, name.Text);
-                StartActivity(intent);
+                if (name.Text != "")
+                {
+                    // on affecte le nom du grp selectionné à _groupName
+                    foreach (Group grp in MainActivity.database.current_user.groups)
+                    {
+                        if (grp.groupName == GroupActivity.current_group.groupName)
+                        {
+                            GroupActivity.current_group.groupName = name.Text;
+                            grp.groupName = name.Text;
+                            //On lance l'activité GroupActivity
+                            Activity.StartActivity(typeof(GroupActivity));
+                        }
+                    }
+                }
+                else
+                    name.SetError("Ce champs ne peut être vide", null);            
             };
-
-
             return view;
         }
     }

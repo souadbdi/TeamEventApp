@@ -33,8 +33,8 @@ namespace TeamEventApp.Droid
 
             button.Click += delegate
             {
-                Group grp = new Group(nomGrp.Text, users_db[1]);
-                users_db[1].addGroup(grp);
+                Group grp = new Group(nomGrp.Text, MainActivity.database.current_user);
+                MainActivity.database.current_user.addGroup(grp);
 
                 StartActivity(typeof(GroupManagerActivity));
             };
