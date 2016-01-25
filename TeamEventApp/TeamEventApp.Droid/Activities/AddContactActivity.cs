@@ -1,16 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
-
-using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid.Activities
 {
@@ -26,26 +17,47 @@ namespace TeamEventApp.Droid.Activities
 
             Button add_button = FindViewById<Button>(Resource.Id.validContact);
 
+            //action ajouter contact
             add_button.Click += delegate
             {
-                var test = false;
+                //on ne peut pas s'ajouter sois même
+                var isMySelf = false;
+                if (editText.Text == DataBase.current_user.pseudo)
+                {
+                    Toast.MakeText(this,"Vous ne pouvez pas vous ajoutez vous même !!!", ToastLength.Short).Show();
+                    isMySelf = true;
+                }
+                //on vérifie si le user à ajouter fait partie des users de l'appli
+                var isAppUser = false;
                 User user = new User();
-                foreach(User us in users_db.Values)
+                foreach(User us in DataBase.users_db.Values)
                 {
                     if(editText.Text == us.pseudo)
                     {
-                        test = true;
+                        isAppUser = true;
                         user = us;
                     }
                 }
-                if(test == true)
+                if(isAppUser)
                 {
-                    MainActivity.database.current_user.contacts.Add(user);
-                    StartActivity(typeof(ProfileActivity));
+                    //on vérifie maintenant qu'il ne fait pas déjà partie des contacts du current_user
+                    var isUserContact = false;
+                    foreach(User contact in DataBase.current_user.contacts)
+                    {
+                        if (editText.Text == contact.pseudo)
+                            isUserContact = true;
+                    }
+                    if (!isUserContact && !isMySelf)
+                    {
+                        DataBase.current_user.contacts.Add(user);
+                        StartActivity(typeof(ProfileActivity));
+                    }
+                    else
+                        Toast.MakeText(this,"Cet utilisateur fait déjà partie de vos contacts", ToastLength.Short).Show();                   
                 }
                 else
                 {
-                    Toast.MakeText(this, "Utilisateur Introuvable", Android.Widget.ToastLength.Short).Show();
+                    Toast.MakeText(this, "Utilisateur Introuvable", ToastLength.Short).Show();
                 }
             };
             

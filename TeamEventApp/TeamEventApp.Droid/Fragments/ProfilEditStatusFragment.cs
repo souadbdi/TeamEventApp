@@ -1,13 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -30,7 +23,7 @@ namespace TeamEventApp.Droid.Fragments
             edit = view.FindViewById<Button>(Resource.Id.edit_status_btn);
             edit.Click += delegate
             {
-                MainActivity.database.current_user.status = status.Text;
+                DataBase.current_user.status = status.Text;
                 Activity.StartActivity(typeof(ProfileActivity));
             };
 

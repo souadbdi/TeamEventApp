@@ -7,7 +7,6 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
@@ -15,14 +14,20 @@ namespace TeamEventApp.Droid
 	public class MainActivity : Activity
 	{
         bool connected = false;
-        //Appel de la db
-        public static DataBase database = new DataBase();
+
+        //Ajout de 2 utilisateurs dans users_db pour tester la connexion
+        public static User user1 = new User("user", "one", "us1", "mail", "password");
+        public static User user2 = new User("user2", "2", "us2", "mail2", "password2");
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-          
 
+            user1.userId = DataBase.users_db.Count + 1;
+            DataBase.users_db.Add(user1.userId, user1);
+            user2.userId = DataBase.users_db.Count + 1;
+            DataBase.users_db.Add(user2.userId, user2);
+        
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 

@@ -285,5 +285,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Sent_42.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Themes.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

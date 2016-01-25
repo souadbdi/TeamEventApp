@@ -80,6 +80,12 @@ namespace TeamEventApp.Droid
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f050010
+			public const int accent_color = 2131034128;
+			
+			// aapt resource value: 0x7f05000d
+			public const int background_color = 2131034125;
+			
 			// aapt resource value: 0x7f050000
 			public const int com_facebook_blue = 2131034112;
 			
@@ -118,6 +124,12 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f05000c
 			public const int com_facebook_share_button_text_color = 2131034124;
+			
+			// aapt resource value: 0x7f05000e
+			public const int menu_bar_color = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int text_color = 2131034127;
 			
 			static Color()
 			{
@@ -1319,6 +1331,9 @@ namespace TeamEventApp.Droid
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f070017
+			public const int BlueTheme = 2131165207;
+			
 			// aapt resource value: 0x7f070000
 			public const int MessengerButton = 2131165184;
 			
@@ -1363,6 +1378,9 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f070015
 			public const int NoActionBar = 2131165205;
+			
+			// aapt resource value: 0x7f070016
+			public const int Widget_BlueTheme_Button = 2131165206;
 			
 			// aapt resource value: 0x7f07000e
 			public const int com_facebook_button = 2131165198;

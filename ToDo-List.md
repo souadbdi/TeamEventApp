@@ -6,7 +6,7 @@
 
 -	Édition du profil : tout est ok sauf localisation -> string EditText ou GéoLoc ?
 -	Contacts : affichage du profil quand on clique sur un contact
--	Nombre d’évènements de l’utilisateur
+-	Nombre d’évènements de l’utilisateur --> fixed !
 -	Appuyer sur le nombre de groupe et afficher l'activité GroupManager
 -	Appuyer sur le nombre d'events et afficher l'activité EventManager
 -	Demandes d’ajout groupes
@@ -35,7 +35,7 @@
 
 - Renommer Notif en Home Activity
 - Uniformisation des menus
-- Changement de thème: Donc thèmes à définir!
+- Changement de thème: Donc thèmes à définir! --> fond bleu pour le moment. A voir comment choisir parmi plusieurs thèmes
 
 
 

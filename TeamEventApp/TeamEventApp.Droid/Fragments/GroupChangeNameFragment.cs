@@ -24,12 +24,13 @@ namespace TeamEventApp.Droid.Fragments
             EditText name = view.FindViewById<EditText>(Resource.Id.newNameGrpEditText);
             Button modif = view.FindViewById<Button>(Resource.Id.validName);
 
+            //action modifier nom du groupe
             modif.Click += delegate
             {
                 if (name.Text != "")
                 {
-                    // on affecte le nom du grp selectionné à _groupName
-                    foreach (Group grp in MainActivity.database.current_user.groups)
+                    // on se place dans le groupe selectionné
+                    foreach (Group grp in DataBase.current_user.groups)
                     {
                         if (grp.groupName == GroupActivity.current_group.groupName)
                         {
