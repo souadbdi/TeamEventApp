@@ -34,7 +34,7 @@
 
 #### Autres
 
-- Renommer Notif en Home Activity
+- Renommer Notif en Home Activity --> OK
 - Uniformisation des menus
 - Changement de thème: Donc thèmes à définir! --> fond bleu pour le moment. A voir comment choisir parmi plusieurs thèmes
 
