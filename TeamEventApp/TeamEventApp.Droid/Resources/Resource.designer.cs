@@ -857,6 +857,18 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
 			
+			// aapt resource value: 0x7f08009e
+			public const int user_add_button = 2131230878;
+			
+			// aapt resource value: 0x7f08009f
+			public const int user_listView = 2131230879;
+			
+			// aapt resource value: 0x7f08009d
+			public const int user_name_text = 2131230877;
+			
+			// aapt resource value: 0x7f08009c
+			public const int user_pseudo_text = 2131230876;
+			
 			// aapt resource value: 0x7f080014
 			public const int validContact = 2131230740;
 			

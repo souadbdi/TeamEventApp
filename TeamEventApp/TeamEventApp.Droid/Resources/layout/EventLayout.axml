@@ -78,21 +78,24 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="20"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:clickable="true" />
                     <TextView
                         android:id="@+id/event_maybe_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="10"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:clickable="true" />
                     <TextView
                         android:id="@+id/event_guests_number"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="30"
-                        android:textSize="20dp" />
+                        android:textSize="20dp"
+                        android:clickable="true" />
                 </TableRow>
             <!-- 2nd row : Texts -->
                 <TableRow

@@ -80,6 +80,7 @@
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
+    <Compile Include="Adapters\UsersListAdapter.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="Fragments\ProfilEditProfileFragment.cs" />
     <Compile Include="Fragments\ProfilEditStatusFragment.cs" />
+    <Compile Include="Fragments\UsersDialogFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,6 +182,12 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EditProfileStatus.axml">
       <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserListRow.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserListView.axml">
+      <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

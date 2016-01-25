@@ -12,7 +12,61 @@ using Android.Widget;
 
 namespace TeamEventApp.Droid.Adapters
 {
-    class UsersListAdapter
+    class UsersListAdapter : BaseAdapter<User>
     {
+        public List<User> usersList;
+        public Context context;
+
+        // Constructor
+        public UsersListAdapter(Context ctx, List<User> elist)
+        {
+            this.usersList = elist;
+            this.context = ctx;
+        }
+
+        // 
+        public override int Count
+        {
+            get
+            {
+                return usersList.Count;
+            }
+        }
+
+        //
+        public override long GetItemId(int position)
+        {
+            return position;
+        }
+
+        //
+        public override User this[int position]
+        {
+            get
+            {
+                return usersList[position];
+            }
+        }
+
+        // 
+        public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            View row = convertView;
+
+            if (row == null)
+            {
+                row = LayoutInflater.From(context).Inflate(Resource.Layout.UserListRow, null, false);
+            }
+
+            // Pseudo of the user        
+            TextView textPseudo = row.FindViewById<TextView>(Resource.Id.user_pseudo_text);
+            textPseudo.Text = usersList[position].pseudo;
+
+            // Name of the user
+            TextView textName = row.FindViewById<TextView>(Resource.Id.user_name_text);
+            textName.Text = usersList[position].firstName + " " + usersList[position].lastName;
+
+            return row;
+        }
     }
 }
