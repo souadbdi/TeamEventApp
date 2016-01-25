@@ -1,0 +1,28 @@
+### Général
+
+* Appuyer sur précédent revient mm sur les formulaires
+
+
+### Profile
+
+* Peut rajouter plusieurs fois le même user comme contact
+* Peut se rajouter comme étant son propre contact
+* Le fragment de saisie du statut est trop petit
+* Affichage du nom et prénom de l'utilisateur au dessus du pseudo
+
+### Evénements
+
+* Actions non connectés en totalité
+
+
+### Groupes
+
+* L'ajout d'un membre dans le groupe l'ajoute 2 fois
+* Peut rajouter plusieurs fois le même membre dans le groupe
+
+### Fragments et Adapters
+
+
+### Connexion
+
+* Peut revenir sur la page de connexion sans se déconnecter (par appui sur précédent)! à ce moment là l'utilisateur n'est plus reconnu.
