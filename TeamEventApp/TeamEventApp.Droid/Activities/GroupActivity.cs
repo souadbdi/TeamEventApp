@@ -7,6 +7,7 @@ using Android.Widget;
 
 using TeamEventApp.Droid.Adapters;
 using TeamEventApp.Droid.Fragments;
+using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid
 {
@@ -85,7 +86,7 @@ namespace TeamEventApp.Droid
             elv.SetAdapter(adapter);
         }
 
-        // Adding the menu
+        // Adding the group menu
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {

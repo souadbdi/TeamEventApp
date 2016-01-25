@@ -41,10 +41,10 @@ namespace TeamEventApp.Droid
 
             loginButton.Click += delegate 
             {
-                //on vérifie que l'utilisateur quise connecte existe bien et on l'affecte a current_user
+                //on vérifie que l'utilisateur qui se connecte existe bien et on l'affecte a current_user
                 //par la fonction Connect()
                 if(DataBase.Connect(emailET.Text,passwordET.Text))
-                    StartActivity(typeof(NotificationActivity));
+                    StartActivity(typeof(ProfileActivity));
                 else
                     Toast.MakeText(this, "Vous n'êtes pas inscrit à TeamEvent. Veuillez vous enregistrer", ToastLength.Short).Show();
             };

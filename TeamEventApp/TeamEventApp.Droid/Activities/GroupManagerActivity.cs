@@ -69,7 +69,7 @@ namespace TeamEventApp.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_notifications:
-                    StartActivity(typeof(NotificationActivity));
+                    StartActivity(typeof(HomeActivity));
                     return true;
 
                 case Resource.Id.action_profile:

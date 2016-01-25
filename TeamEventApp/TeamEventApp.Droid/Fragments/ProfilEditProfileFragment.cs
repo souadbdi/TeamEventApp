@@ -10,6 +10,7 @@ namespace TeamEventApp.Droid.Fragments
         EditText prenom;
         EditText nom;
         EditText pseudo;
+        EditText adr;
         EditText mdp;
         EditText mdp2;
         Button edit;
@@ -24,6 +25,7 @@ namespace TeamEventApp.Droid.Fragments
             prenom = view.FindViewById<EditText>(Resource.Id.edit_fname_text);
             nom = view.FindViewById<EditText>(Resource.Id.edit_lname_text);
             pseudo = view.FindViewById<EditText>(Resource.Id.edit_pseudo_text);
+            adr = view.FindViewById<EditText>(Resource.Id.edit_adress_text);
             mdp = view.FindViewById<EditText>(Resource.Id.edit_pwd_text);
             mdp2 = view.FindViewById<EditText>(Resource.Id.edit_confPwd_text);
 
@@ -37,6 +39,8 @@ namespace TeamEventApp.Droid.Fragments
                     DataBase.current_user.lastName = nom.Text;
                 if (verifText(pseudo))
                     DataBase.current_user.pseudo = pseudo.Text;
+                if (verifText(adr))
+                    DataBase.current_user.localisation = adr.Text;
                 if (verifText(mdp) && verifText(mdp2))
                 {
                     if (mdp.Text != mdp2.Text)
