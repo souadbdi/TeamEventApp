@@ -4,31 +4,16 @@ namespace TeamEventApp
 {
     public class DataBase
     {
-        public static User current_user; //Utilisateur courrant
-        
-        public static List<User> current_user_contacts = new List<User>();
-        public static List<Group> current_user_groups = new List<Group>();
-        public static List<Event>current_user_events = new List<Event>();
+        public static User current_user; //Utilisateur courrant      
 
-        
-
-       
-
-        //A remplir à partir du web service / table User
+        //A remplir à partir du web service / table User pour savoir si le user qui se connecte est déjà enregistré
         public static Dictionary<long, User> users_db = new Dictionary<long, User>();
+
         public static Dictionary<long, Group> groups_db = new Dictionary<long, Group>();
-        public static Dictionary<long, Event> events_db = new Dictionary<long, Event>();
 
-       /* public DataBase()
-        {
-            user1.userId = users_db.Count + 1;
-            users_db.Add(user1.userId,user1);
-            user2.userId = users_db.Count + 1;
-            users_db.Add(user2.userId, user2);
-        }*/
-
+        public static List<Group> current_user_groups_requests;
         
-        //revoie true si le user est bien enregistré dans la BD
+        //renvoie true si le user est bien enregistré dans la BD
         public static bool Connect(string mail, string password)
         {
             foreach (User us in users_db.Values)
@@ -36,8 +21,6 @@ namespace TeamEventApp
                 if(us.email == mail && us.password == password)
                 {
                     current_user = us;
-                    current_user_contacts = us.contacts;
-                    current_user_groups = us.groups;
                     return true;
                 }
             }
@@ -49,8 +32,6 @@ namespace TeamEventApp
             user.userId = users_db.Count + 1;
             users_db.Add(user.userId, user); //ajout du nouvel utilisateur ds la db
             current_user = user;
-            current_user_contacts = user.contacts;
-            current_user_groups = user.groups;
         }
     }
 }

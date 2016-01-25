@@ -51,6 +51,12 @@
                android:layout_height="wrap_content"
                android:layout_marginTop="5dp"
                android:hint="@string/pseudo" />
+           <EditText
+               android:id="@+id/edit_adress_text"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:hint="Adresse ou Localisation" />
             <EditText
                 android:id="@+id/edit_pwd_text"
                 android:layout_width="match_parent"
