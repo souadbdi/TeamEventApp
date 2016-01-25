@@ -136,30 +136,35 @@
                 android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="@string/event_status_req" />
-        <!-- Radio group 
-        <RadioGroup
-            android:id="@+id/event_status_radioGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <RadionButton
-                android:id="@+id/event_yes_radio"
+        <!-- Radio group -->
+            <RadioGroup
+                android:id="@+id/event_status_radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="string/event_yes"
-                android:checked="true" />
-            <RadionButton
-                android:id="@+id/event_no_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="string/event_no" />
-            <RadionButton
-                android:id="@+id/event_maybe_radio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="string/event_maybe" />
-        </RadioGroup>-->
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+            <!-- YES -->
+                <RadioButton
+                    android:id="@+id/event_yes_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/event_yes" />
+            <!-- MAYBE -->
+                <RadioButton
+                    android:id="@+id/event_maybe_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/event_maybe" />
+            <!-- NO -->
+                <RadioButton
+                    android:id="@+id/event_no_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/event_no" />
+            </RadioGroup>
         <!-- Invite friends -->
             <TextView
                 android:id="@+id/event_invite_friends"

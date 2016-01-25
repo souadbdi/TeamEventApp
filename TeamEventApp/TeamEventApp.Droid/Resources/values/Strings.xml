@@ -92,7 +92,7 @@
   <string name="event_participants">participants</string>
   <string name="event_interested">intéressés</string>
   <string name="event_guests">invités</string>
-  <string name="event_status_req">Participerez vous?</string>
+  <string name="event_status_req">Participeras-tu?</string>
   <string name="event_yes">Oui</string>
   <string name="event_no">Non</string>
   <string name="event_maybe">Peut-être</string>
