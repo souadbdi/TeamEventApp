@@ -7,8 +7,10 @@
 -	Édition du profil : tout est ok sauf localisation -> string EditText ou GéoLoc ?
 -	Contacts : affichage du profil quand on clique sur un contact
 -	Nombre d’évènements de l’utilisateur
+-	Appuyer sur le nombre de groupe et afficher l'activité GroupManager
+-	Appuyer sur le nombre d'events et afficher l'activité EventManager
 -	Demandes d’ajout groupes
--	Paramètres  quels sont les paramètres modifiables à y ajouter ? 
+-	Paramètres -> quels sont les paramètres modifiables à y ajouter ? 
 -	Bouton Se déconnecter 
 
 #### Notifications [Home]
