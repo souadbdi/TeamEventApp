@@ -1002,6 +1002,12 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f030027
 			public const int UserGroupRequestRow = 2130903079;
 			
+			// aapt resource value: 0x7f030028
+			public const int UserListRow = 2130903080;
+			
+			// aapt resource value: 0x7f030029
+			public const int UserListView = 2130903081;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
