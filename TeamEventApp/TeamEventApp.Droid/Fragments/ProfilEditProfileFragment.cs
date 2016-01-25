@@ -1,13 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 
@@ -40,11 +32,11 @@ namespace TeamEventApp.Droid.Fragments
             edit.Click += delegate
             {
                 if (verifText(prenom))
-                    MainActivity.database.current_user.firstName = prenom.Text;
+                    DataBase.current_user.firstName = prenom.Text;
                 if (verifText(nom))
-                    MainActivity.database.current_user.lastName = nom.Text;
+                    DataBase.current_user.lastName = nom.Text;
                 if (verifText(pseudo))
-                    MainActivity.database.current_user.pseudo = pseudo.Text;
+                    DataBase.current_user.pseudo = pseudo.Text;
                 if (verifText(mdp) && verifText(mdp2))
                 {
                     if (mdp.Text != mdp2.Text)
@@ -52,7 +44,7 @@ namespace TeamEventApp.Droid.Fragments
                         mdp2.SetError("Les mots de passe ne correspondent pas", null);
                     }
                     else
-                        MainActivity.database.current_user.password = mdp.Text;
+                        DataBase.current_user.password = mdp.Text;
                 }
                 Activity.StartActivity(typeof(ProfileActivity));
             };

@@ -24,7 +24,7 @@ namespace TeamEventApp.Droid.Fragments
             contacts_listview = view.FindViewById<ListView>(Resource.Id.contactList);
 
             //populate the list contact
-            foreach(User user in MainActivity.database.current_user.contacts)
+            foreach(User user in DataBase.current_user.contacts)
             {
                 contacts.Add(user.pseudo);
             }

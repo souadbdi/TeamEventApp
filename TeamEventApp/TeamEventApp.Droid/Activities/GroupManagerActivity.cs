@@ -1,16 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-
-using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
@@ -33,7 +27,7 @@ namespace TeamEventApp.Droid
             
             //On remplit la liste items avec les noms de groupes du user
 
-            foreach (Group grp in MainActivity.database.current_user.groups)
+            foreach (Group grp in DataBase.current_user.groups)
             {
                 items.Add(grp.groupName);
             }
@@ -49,7 +43,7 @@ namespace TeamEventApp.Droid
         void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
            // on affecte le group courant avec l'item selectionné
-            foreach(Group grp in MainActivity.database.current_user.groups)
+            foreach(Group grp in DataBase.current_user.groups)
             {
                 if(grp.groupName == items[e.Position])
                 {

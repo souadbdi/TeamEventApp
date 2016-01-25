@@ -1,16 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
-
-using static TeamEventApp.DataBase;
 
 namespace TeamEventApp.Droid
 {
@@ -33,8 +24,8 @@ namespace TeamEventApp.Droid
 
             button.Click += delegate
             {
-                Group grp = new Group(nomGrp.Text, MainActivity.database.current_user);
-                MainActivity.database.current_user.addGroup(grp);
+                Group grp = new Group(nomGrp.Text, DataBase.current_user);
+                DataBase.current_user.addGroup(grp);
 
                 StartActivity(typeof(GroupManagerActivity));
             };

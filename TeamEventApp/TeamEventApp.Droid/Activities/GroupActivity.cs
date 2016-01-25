@@ -1,16 +1,10 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using static TeamEventApp.DataBase;
 using TeamEventApp.Droid.Adapters;
 using TeamEventApp.Droid.Fragments;
 
@@ -36,8 +30,8 @@ namespace TeamEventApp.Droid
             ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
 
-            //on récupère affiche le nom du grp selectionné dans GroupManagerActivity
-            foreach (Group grp in MainActivity.database.current_user.groups)
+            //on récupère le nom du grp selectionné dans GroupManagerActivity
+            foreach (Group grp in DataBase.current_user.groups)
             {
                 if (grp.groupName == GroupManagerActivity.current_group_selected.groupName)
                     gntv.Text =grp.groupName;
@@ -45,7 +39,7 @@ namespace TeamEventApp.Droid
 
             string group_name = GroupManagerActivity.current_group_selected.groupName;
             //on affecte le groupe courant au groupe selectionné
-            foreach (Group grp in MainActivity.database.current_user.groups)
+            foreach (Group grp in DataBase.current_user.groups)
             {
                 if (grp.groupName == group_name)
                 {

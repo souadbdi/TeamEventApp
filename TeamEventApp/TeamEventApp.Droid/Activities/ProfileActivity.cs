@@ -26,22 +26,29 @@ namespace TeamEventApp.Droid
 
             //initialisation du profil
             pseudo = FindViewById<TextView>(Resource.Id.profile_name);
-            pseudo.Text = MainActivity.database.current_user.pseudo;
+            pseudo.Text = DataBase.current_user.pseudo;
 
             email = FindViewById<TextView>(Resource.Id.profile_email);
-            email.Text = MainActivity.database.current_user.email;
+            email.Text = DataBase.current_user.email;
 
             adr = FindViewById<TextView>(Resource.Id.profile_location);
-            adr.Text = MainActivity.database.current_user.localisation;
+            adr.Text = DataBase.current_user.localisation;
 
+            //nombre d'évènements du user (on parcoure tous ses groupes)
             events_number = FindViewById<TextView>(Resource.Id.profile_events_number);
-            //nombre d'évènements du user (parcourir tous ses groupes)
+            int nb_events = 0;
+            foreach(Group grp in DataBase.current_user.groups)
+            {
+                nb_events += grp.events.Count;
+            }
+            events_number.Text = nb_events.ToString();
 
+            //nb de grp du current_user
             groups_number = FindViewById<TextView>(Resource.Id.profile_groups_number);
-            groups_number.Text = MainActivity.database.current_user.groups.Count.ToString();
+            groups_number.Text = DataBase.current_user.groups.Count.ToString();
 
             status = FindViewById<TextView>(Resource.Id.profile_status_text);
-            status.Text = MainActivity.database.current_user.status;
+            status.Text = DataBase.current_user.status;
 
             demandes_groupes = FindViewById<TextView>(Resource.Id.profile_req_number);
             //demandes d'ajout groupe
