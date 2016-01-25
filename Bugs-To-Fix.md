@@ -14,13 +14,14 @@
 
 * Actions non connectés en totalité
 
-
 ### Groupes
 
 * L'ajout d'un membre dans le groupe l'ajoute 2 fois
 * Peut rajouter plusieurs fois le même membre dans le groupe
 
 ### Fragments et Adapters
+
+* Adapter le format des fragments (afficher en fullView)
 
 
 ### Connexion
