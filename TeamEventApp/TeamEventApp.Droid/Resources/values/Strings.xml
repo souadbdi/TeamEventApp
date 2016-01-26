@@ -60,7 +60,7 @@
 
   <!-- Menu Items Section -->
 
-  <string name="action_notifications">Notifications</string>
+  <string name="action_home">Home</string>
   <string name="action_profile">Profil</string>
   <string name="action_event">Evénements</string>
   <string name="action_group">Groupes</string>

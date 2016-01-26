@@ -22,6 +22,7 @@ namespace TeamEventApp.Droid
         private TextView status;
         private TextView demandes_groupes;
         private TextView contacts;
+        private TextView contacts_number;
 
         private TextView profile_events;
         private TextView profile_groups;
@@ -112,6 +113,11 @@ namespace TeamEventApp.Droid
                 ProfilContactsFragment contactsDialog = new ProfilContactsFragment();
                 contactsDialog.Show(tx, "Contacts");
             };
+
+            //nb de contacts
+            contacts_number = FindViewById<TextView>(Resource.Id.profile_contacts_number);
+            int nb_c = DataBase.current_user.contacts.Count;
+            contacts_number.Text = nb_c.ToString();
         }
 
         // Adding the menu
@@ -126,7 +132,7 @@ namespace TeamEventApp.Droid
         {
             switch (item.ItemId)
             {
-                case Resource.Id.action_notifications:
+                case Resource.Id.action_home:
                     StartActivity(typeof(HomeActivity));
                     return true;
 

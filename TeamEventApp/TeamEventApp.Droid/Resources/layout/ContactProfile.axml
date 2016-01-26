@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+<!-- Layout Header section -->
+    <LinearLayout
+        android:id="@+id/profile_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+    <!-- Identity section -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:gravity="center">
+			<TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:stretchColumns="*">
+				<TableRow>
+		<!-- Prénom du contact -->
+				<TextView
+					android:id="@+id/profile_contact_firstName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="22dp" 
+					android:layout_span="1"
+					android:layout_gravity="center"/>
+		<!-- Nom du contact -->
+				<TextView
+					android:id="@+id/profile_contact_lastName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="22dp" 
+					android:layout_span="1"
+					android:layout_gravity="center"/>
+				</TableRow>
+            </TableLayout>
+		
+        <!-- Pseudo du contact -->
+            <TextView
+                android:id="@+id/profile_contact_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22dp" />
+        <!-- Email text -->
+            <TextView
+                android:id="@+id/profile_contact_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+        <!-- Location part -->
+            <TextView
+                android:id="@+id/profile_contact_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+        <!-- Stats section -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom">
+                <TextView
+                    android:id="@+id/profile_contact_events_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/profile_contact_events_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:text="@string/profile_events" />
+                <TextView
+                    android:id="@+id/profile_contact_groups_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:textSize="24dp" />
+                <TextView
+                    android:id="@+id/profile_groups_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_groups" />
+            </LinearLayout>
+          <!-- Affichage des contacts-->
+          <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|bottom">
+            <TextView
+              android:id="@+id/contacts_number"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="5dp"
+              android:textSize="20dp" />
+            <TextView
+              android:id="@+id/contacts_text"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Contacts"
+              android:clickable="true" />
+          </LinearLayout>
+        </LinearLayout>
+    <!-- Statut de l'utilisateur -->
+        <TextView
+            android:id="@+id/profile_contact_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/QuoteLeft"
+            android:drawablePadding="10dp" />       
+    </LinearLayout>
+</ScrollView>

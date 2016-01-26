@@ -49,7 +49,10 @@ namespace TeamEventApp.Droid.Activities
                     }
                     if (!isUserContact && !isMySelf)
                     {
-                        DataBase.current_user.contacts.Add(user);
+                        DataBase.current_user.addContact(user);
+                        //le contact ajouté a maintenant le current_user dans ses contacts
+                        user.addContact(DataBase.current_user);
+
                         StartActivity(typeof(ProfileActivity));
                     }
                     else

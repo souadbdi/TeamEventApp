@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
     <Compile Include="Activities\AddContactActivity.cs" />
+    <Compile Include="Activities\ContactProfileActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
@@ -114,7 +115,7 @@
     <AndroidResource Include="Resources\layout\Menu_add_option.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Notifications.axml">
+    <AndroidResource Include="Resources\layout\Home.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\RegisterAccount.axml">
@@ -179,6 +180,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\EditProfileStatus.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ContactProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -26,12 +26,6 @@
         android:gravity="center"
         android:text="@string/loading"
         android:textSize="8dp" />	
-		
-    <Button
-        android:id="@+id/versConnexionButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Vers Connexion" />
 
 </LinearLayout>
 
