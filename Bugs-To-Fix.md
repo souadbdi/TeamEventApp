@@ -9,6 +9,7 @@
 * Peut se rajouter comme étant son propre contact --> fixed !
 * Le fragment de saisie du statut est trop petit
 * Affichage du nom et prénom de l'utilisateur au dessus du pseudo --> fixed !
+* Lorsque l'on se connecte, le current_user est vide. Faut passer par l'enregistrement.
 
 ### Evénements
 
