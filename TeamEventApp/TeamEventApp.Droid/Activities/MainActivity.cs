@@ -22,14 +22,14 @@ namespace TeamEventApp.Droid
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+        
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Login);
 
             user1.userId = DataBase.users_db.Count + 1;
             DataBase.users_db.Add(user1.userId, user1);
             user2.userId = DataBase.users_db.Count + 1;
             DataBase.users_db.Add(user2.userId, user2);
-        
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
 
             // Vérification de la connexion
             VerifyConnection();
