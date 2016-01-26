@@ -84,7 +84,20 @@ namespace TeamEventApp.Droid
                });
             ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
             elv.SetAdapter(adapter);
+            elv.ChildClick += Elv_ChildClick;
+           
+
         }
+
+        private void Elv_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
+        {
+            var c = tableItems[e.GroupPosition].RowItems[e.ChildPosition];
+           // Toast.MakeText(this, c.Name, ToastLength.Short).Show();
+
+            var g = tableItems[e.ChildPosition];
+            Toast.MakeText(this, g.Row + " : " + c.Name, ToastLength.Short).Show();
+        }
+
 
         // Adding the group menu
 
