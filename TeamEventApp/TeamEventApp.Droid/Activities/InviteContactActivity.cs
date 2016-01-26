@@ -20,6 +20,7 @@ namespace TeamEventApp.Droid.Activities
 
         private List<User> usersList;
         private ListView listView;
+        private string[] nameItems = new string[] { "Hesron", "Tom", "Alexis", "Alex", "Hervet"};
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -70,11 +71,12 @@ namespace TeamEventApp.Droid.Activities
                 lastName = "Marc"
             });
 
-            // Create and set the adapter
+            // Create and set the adapters
             UserContactListAdapter adapter = new UserContactListAdapter(this, usersList);
+            ArrayAdapter<string> itemsAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, nameItems);
 
             if (pseudoAutoText != null)
-                //pseudoAutoText.Adapter = adapter;
+                pseudoAutoText.Adapter = itemsAdapter;
 
             if (listView != null)
                 listView.Adapter = adapter;
