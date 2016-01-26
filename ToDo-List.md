@@ -37,6 +37,8 @@
 - Renommer Notif en Home Activity --> OK
 - Uniformisation des menus
 - Changement de thème: Donc thèmes à définir! --> fond bleu pour le moment. A voir comment choisir parmi plusieurs thèmes
+- Changer l'icône notification en en icône Home
+- Chnager l'icône de l'appli
 
 
 
