@@ -69,6 +69,7 @@
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
+    <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\HomeActivity.cs" />
@@ -80,7 +81,9 @@
     <Compile Include="Adapters\EventCommentAdapter.cs" />
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
+    <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
+    <Compile Include="Adapters\UsersListAdapter.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
@@ -90,6 +93,7 @@
     <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="Fragments\ProfilEditProfileFragment.cs" />
     <Compile Include="Fragments\ProfilEditStatusFragment.cs" />
+    <Compile Include="Fragments\UsersDialogFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,6 +189,10 @@
     <AndroidResource Include="Resources\layout\ContactProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserContactListView.axml" />
+    <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
+    <AndroidResource Include="Resources\layout\UserListView.axml" />
+    <AndroidResource Include="Resources\layout\UserListRow.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -283,6 +291,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Themes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Delete_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

@@ -299,106 +299,109 @@ namespace TeamEventApp.Droid
 			public const int Comments_34 = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int Details = 2130837528;
+			public const int Delete_24 = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int Edit = 2130837529;
+			public const int Details = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int Event = 2130837530;
+			public const int Edit = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int eventImg = 2130837531;
+			public const int Event = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int fGroup = 2130837532;
+			public const int eventImg = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int fOk = 2130837533;
+			public const int fGroup = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int fProfile = 2130837534;
+			public const int fOk = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int fSettings = 2130837535;
+			public const int fProfile = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int Group = 2130837536;
+			public const int fSettings = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int GroupMessage_34 = 2130837537;
+			public const int Group = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int Icon = 2130837538;
+			public const int GroupMessage_34 = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int Important = 2130837539;
+			public const int Icon = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int Info_34 = 2130837540;
+			public const int Important = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int Location = 2130837541;
+			public const int Info_34 = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int Members = 2130837542;
+			public const int Location = 2130837542;
 			
 			// aapt resource value: 0x7f020027
-			public const int Members_Filled = 2130837543;
+			public const int Members = 2130837543;
 			
 			// aapt resource value: 0x7f020028
-			public const int messenger_bubble_large_blue = 2130837544;
+			public const int Members_Filled = 2130837544;
 			
 			// aapt resource value: 0x7f020029
-			public const int messenger_bubble_large_white = 2130837545;
+			public const int messenger_bubble_large_blue = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int messenger_bubble_small_blue = 2130837546;
+			public const int messenger_bubble_large_white = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int messenger_bubble_small_white = 2130837547;
+			public const int messenger_bubble_small_blue = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int messenger_button_blue_bg_round = 2130837548;
+			public const int messenger_bubble_small_white = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int messenger_button_blue_bg_selector = 2130837549;
+			public const int messenger_button_blue_bg_round = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int messenger_button_send_round_shadow = 2130837550;
+			public const int messenger_button_blue_bg_selector = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int messenger_button_white_bg_round = 2130837551;
+			public const int messenger_button_send_round_shadow = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int messenger_button_white_bg_selector = 2130837552;
+			public const int messenger_button_white_bg_round = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int Minus = 2130837553;
+			public const int messenger_button_white_bg_selector = 2130837553;
 			
 			// aapt resource value: 0x7f020032
-			public const int Ok = 2130837554;
+			public const int Minus = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int Plus = 2130837555;
+			public const int Ok = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int Profile = 2130837556;
+			public const int Plus = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int QuoteLeft = 2130837557;
+			public const int Profile = 2130837557;
 			
 			// aapt resource value: 0x7f020036
-			public const int Search = 2130837558;
+			public const int QuoteLeft = 2130837558;
 			
 			// aapt resource value: 0x7f020037
-			public const int Sent_42 = 2130837559;
+			public const int Search = 2130837559;
 			
 			// aapt resource value: 0x7f020038
-			public const int ToDo = 2130837560;
+			public const int Sent_42 = 2130837560;
 			
 			// aapt resource value: 0x7f020039
-			public const int TrueFalse = 2130837561;
+			public const int ToDo = 2130837561;
+			
+			// aapt resource value: 0x7f02003a
+			public const int TrueFalse = 2130837562;
 			
 			static Drawable()
 			{
@@ -830,8 +833,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08008b
 			public const int profile_name = 2131230859;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int profile_req_list = 2131230888;
+			// aapt resource value: 0x7f0800b0
+			public const int profile_req_list = 2131230896;
 			
 			// aapt resource value: 0x7f080096
 			public const int profile_req_number = 2131230870;
@@ -890,20 +893,20 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int rowReq_date = 2131230890;
+			// aapt resource value: 0x7f0800b2
+			public const int rowReq_date = 2131230898;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int rowReq_refuse_btn = 2131230893;
+			// aapt resource value: 0x7f0800b5
+			public const int rowReq_refuse_btn = 2131230901;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int rowReq_subtitle = 2131230891;
+			// aapt resource value: 0x7f0800b3
+			public const int rowReq_subtitle = 2131230899;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int rowReq_title = 2131230889;
+			// aapt resource value: 0x7f0800b1
+			public const int rowReq_title = 2131230897;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int rowReq_validate_btn = 2131230892;
+			// aapt resource value: 0x7f0800b4
+			public const int rowReq_validate_btn = 2131230900;
 			
 			// aapt resource value: 0x7f080011
 			public const int small = 2131230737;
@@ -925,6 +928,42 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
+			
+			// aapt resource value: 0x7f0800ab
+			public const int userContact_addUsers_text = 2131230891;
+			
+			// aapt resource value: 0x7f0800ad
+			public const int userContact_add_button = 2131230893;
+			
+			// aapt resource value: 0x7f0800ae
+			public const int userContact_listView = 2131230894;
+			
+			// aapt resource value: 0x7f0800a9
+			public const int userContact_name_text = 2131230889;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int userContact_pseudo_autoText = 2131230892;
+			
+			// aapt resource value: 0x7f0800a8
+			public const int userContact_pseudo_text = 2131230888;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int userContact_remove_button = 2131230890;
+			
+			// aapt resource value: 0x7f0800af
+			public const int userContact_valid_button = 2131230895;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int user_add_button = 2131230904;
+			
+			// aapt resource value: 0x7f0800b9
+			public const int user_listView = 2131230905;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int user_name_text = 2131230903;
+			
+			// aapt resource value: 0x7f0800b6
+			public const int user_pseudo_text = 2131230902;
 			
 			// aapt resource value: 0x7f080014
 			public const int validContact = 2131230740;
@@ -1066,10 +1105,22 @@ namespace TeamEventApp.Droid
 			public const int Toolbar = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int UserGroupRequestList = 2130903079;
+			public const int UserContactListRow = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int UserGroupRequestRow = 2130903080;
+			public const int UserContactListView = 2130903080;
+			
+			// aapt resource value: 0x7f030029
+			public const int UserGroupRequestList = 2130903081;
+			
+			// aapt resource value: 0x7f03002a
+			public const int UserGroupRequestRow = 2130903082;
+			
+			// aapt resource value: 0x7f03002b
+			public const int UserListRow = 2130903083;
+			
+			// aapt resource value: 0x7f03002c
+			public const int UserListView = 2130903084;
 			
 			static Layout()
 			{
