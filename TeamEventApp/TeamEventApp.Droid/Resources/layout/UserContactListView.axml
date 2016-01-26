@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!-- Legend text view -->
+    <TextView
+        android:id="@+id/userContact_addUsers_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Invitez vos amis à l'événement" />
+<!-- Layout horizontal -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+    <!-- Champ d'édition nom utilisateur-->
+        <AutoCompleteTextView
+            android:id="@+id/userContact_pseudo_autoText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/userContact_pseudo" />
+    <!-- Boutton d'ajout -->
+        <ImageButton
+            android:id="@+id/userContact_add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:src="@drawable/Plus" />
+    </LinearLayout>
+<!-- Liste des utilisateurs ajoutées -->
+    <ListView
+        android:id="@+id/userContact_listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+<!-- Bouton Valider -->
+    <Button
+        android:id="@+id/userContact_valid_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:text="@string/userContact_valid" />
+</LinearLayout>

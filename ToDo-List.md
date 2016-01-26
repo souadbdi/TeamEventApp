@@ -13,6 +13,7 @@
 -	Demandes d’ajout groupes
 -	Paramètres -> quels sont les paramètres modifiables à y ajouter ? 
 -	Bouton Se déconnecter 
+-	Pouvoir supprimer un contact
 
 #### Notifications [Home]
 
@@ -22,6 +23,11 @@
 
 - Ajouter un évènement
 - Ajouter et afficher des commentaires
+- ajouter admin si on est admin
+- ajouter mb si on est admin
+- supprimer mb si on est admin
+- supprimer le grp si on est admin
+- quitter le grp
 
 #### Evénements
 
