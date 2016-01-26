@@ -175,7 +175,8 @@
                 android:layout_gravity="center"
                 android:drawableLeft="@drawable/GroupMessage_34"
                 android:drawablePadding="10dp"
-                android:text="@string/event_invite_friends" />
+                android:text="@string/event_invite_friends"
+                android:clickable="true" />
         <!-- About the event -->
             <TextView
                 android:id="@+id/event_about"

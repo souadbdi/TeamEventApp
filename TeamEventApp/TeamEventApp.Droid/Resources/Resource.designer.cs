@@ -794,8 +794,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080080
 			public const int profile_name = 2131230848;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int profile_req_list = 2131230880;
+			// aapt resource value: 0x7f0800a4
+			public const int profile_req_list = 2131230884;
 			
 			// aapt resource value: 0x7f08008b
 			public const int profile_req_number = 2131230859;
@@ -854,20 +854,20 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int rowReq_date = 2131230882;
+			// aapt resource value: 0x7f0800a6
+			public const int rowReq_date = 2131230886;
+			
+			// aapt resource value: 0x7f0800a9
+			public const int rowReq_refuse_btn = 2131230889;
+			
+			// aapt resource value: 0x7f0800a7
+			public const int rowReq_subtitle = 2131230887;
 			
 			// aapt resource value: 0x7f0800a5
-			public const int rowReq_refuse_btn = 2131230885;
+			public const int rowReq_title = 2131230885;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int rowReq_subtitle = 2131230883;
-			
-			// aapt resource value: 0x7f0800a1
-			public const int rowReq_title = 2131230881;
-			
-			// aapt resource value: 0x7f0800a4
-			public const int rowReq_validate_btn = 2131230884;
+			// aapt resource value: 0x7f0800a8
+			public const int rowReq_validate_btn = 2131230888;
 			
 			// aapt resource value: 0x7f080011
 			public const int small = 2131230737;
@@ -891,25 +891,37 @@ namespace TeamEventApp.Droid
 			public const int unknown = 2131230722;
 			
 			// aapt resource value: 0x7f08009f
-			public const int userContact_add_text = 2131230879;
+			public const int userContact_addUsers_text = 2131230879;
+			
+			// aapt resource value: 0x7f0800a1
+			public const int userContact_add_button = 2131230881;
+			
+			// aapt resource value: 0x7f0800a2
+			public const int userContact_listView = 2131230882;
 			
 			// aapt resource value: 0x7f08009e
 			public const int userContact_name_text = 2131230878;
 			
+			// aapt resource value: 0x7f0800a0
+			public const int userContact_pseudo_autoText = 2131230880;
+			
 			// aapt resource value: 0x7f08009d
 			public const int userContact_pseudo_text = 2131230877;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int user_add_button = 2131230888;
+			// aapt resource value: 0x7f0800a3
+			public const int userContact_valid_button = 2131230883;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int user_listView = 2131230889;
+			// aapt resource value: 0x7f0800ac
+			public const int user_add_button = 2131230892;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int user_name_text = 2131230887;
+			// aapt resource value: 0x7f0800ad
+			public const int user_listView = 2131230893;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int user_pseudo_text = 2131230886;
+			// aapt resource value: 0x7f0800ab
+			public const int user_name_text = 2131230891;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int user_pseudo_text = 2131230890;
 			
 			// aapt resource value: 0x7f080014
 			public const int validContact = 2131230740;
@@ -1084,17 +1096,17 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f040036
 			public const int action_about = 2130968630;
 			
-			// aapt resource value: 0x7f040054
-			public const int action_addAdmin = 2130968660;
+			// aapt resource value: 0x7f040056
+			public const int action_addAdmin = 2130968662;
+			
+			// aapt resource value: 0x7f040057
+			public const int action_addEvent = 2130968663;
 			
 			// aapt resource value: 0x7f040055
-			public const int action_addEvent = 2130968661;
+			public const int action_addMember = 2130968661;
 			
-			// aapt resource value: 0x7f040053
-			public const int action_addMember = 2130968659;
-			
-			// aapt resource value: 0x7f040056
-			public const int action_changeName = 2130968662;
+			// aapt resource value: 0x7f040058
+			public const int action_changeName = 2130968664;
 			
 			// aapt resource value: 0x7f040033
 			public const int action_event = 2130968627;
@@ -1341,6 +1353,12 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f040025
 			public const int sign_in = 2130968613;
+			
+			// aapt resource value: 0x7f040053
+			public const int userContact_pseudo = 2130968659;
+			
+			// aapt resource value: 0x7f040054
+			public const int userContact_valid = 2130968660;
 			
 			static String()
 			{

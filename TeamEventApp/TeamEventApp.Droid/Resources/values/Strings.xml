@@ -105,7 +105,9 @@
   <string name="event_write_comment">Publiez un commentaire...</string>
   
   <!-- User contact section -->
-  <string name="userContact_pseudo">Nom d'utilisateur</string>
+  <string name="userContact_pseudo">Nom d\'utilisateur</string>
+  <string name="userContact_valid">Valider</string>
+  
 
   <!-- GroupMenu Items Section -->
   <string name="action_addMember">Ajouter Membre</string>

@@ -69,6 +69,7 @@
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
     <Compile Include="Activities\HomeActivity.cs" />
+    <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\ProfileActivity.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Adapters\EventCommentAdapter.cs" />
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
+    <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
@@ -187,6 +189,12 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserListView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserContactListRow.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserContactListView.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>

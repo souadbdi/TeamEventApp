@@ -27,9 +27,12 @@ namespace TeamEventApp.Droid.Activities
             // TextViews
             TextView notifsText = FindViewById<TextView>(Resource.Id.event_notifs);
             TextView commentsText = FindViewById<TextView>(Resource.Id.event_comments);
+
             TextView yesNumberText = FindViewById<TextView>(Resource.Id.event_yes_number);
             TextView maybeNumberText = FindViewById<TextView>(Resource.Id.event_maybe_number);
             TextView guestsNumberText = FindViewById<TextView>(Resource.Id.event_guests_number);
+
+            TextView inviteFriendsText = FindViewById<TextView>(Resource.Id.event_invite_friends);
 
             // Show the dialog fragments
 
@@ -79,6 +82,12 @@ namespace TeamEventApp.Droid.Activities
                     FragmentTransaction tx = FragmentManager.BeginTransaction();
                     UsersDialogFragment usersDialog = new UsersDialogFragment();
                     usersDialog.Show(tx, "Les participants");
+                };
+
+            if (inviteFriendsText != null)
+                inviteFriendsText.Click += delegate
+                {
+                    StartActivity(typeof(InviteContactActivity));
                 };
 
         }
