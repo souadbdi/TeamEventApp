@@ -3,13 +3,13 @@
 * Appuyer sur précédent revient mm sur les formulaires
 
 
-### Profile
+### Profil
 
 * Peut rajouter plusieurs fois le même user comme contact --> fixed !
 * Peut se rajouter comme étant son propre contact --> fixed !
 * Le fragment de saisie du statut est trop petit
 * Affichage du nom et prénom de l'utilisateur au dessus du pseudo --> fixed !
-* Lorsque l'on se connecte, le current_user est vide. Faut passer par l'enregistrement.
+* Lorsque l'on se connecte avec un utilisateur déjà présent dans la BDD, le current_user dans Profile est vide. Faut passer par l'enregistrement.
 
 ### Evénements
 
