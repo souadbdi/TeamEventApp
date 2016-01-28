@@ -14,7 +14,8 @@
             android:id="@+id/userContact_pseudo_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pseudo" />
+            android:text="Pseudo" 
+            android:clickable="true"/>
     <!-- Pseudo de l'utilisateur -->
         <TextView
             android:id="@+id/userContact_name_text"
