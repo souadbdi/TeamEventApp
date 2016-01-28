@@ -55,6 +55,22 @@ namespace TeamEventApp
             return false;
         }
 
+        // Get username by id
+        public string getUserNameById(long userID)
+        {
+            string username = "no-user";
+
+            foreach (User user in userList)
+            {
+                if (userID == user.userId)
+                {
+                    return user.pseudo;
+                }
+            }
+
+            return username;
+        }
+
 
         // Ajout d'un commentaire
 
@@ -62,6 +78,14 @@ namespace TeamEventApp
         {
             comments.Add(comment);
             return comments;
+        }
+
+        // Ajout d'une notification
+
+        public List<Notification> addNotification(Notification notif)
+        {
+            notifications.Add(notif);
+            return notifications;
         }
 
     }

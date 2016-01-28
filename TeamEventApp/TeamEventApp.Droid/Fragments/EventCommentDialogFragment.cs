@@ -27,8 +27,8 @@ namespace TeamEventApp.Droid.Fragments
 
 
 
-    // Service
-    UserService uService;
+        // Service
+        UserService uService;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -41,10 +41,10 @@ namespace TeamEventApp.Droid.Fragments
 
             // views
             // Comment content
-            comContentET = view.FindViewById<EditText>(Resource.Id.event_notifComment_text);
+            comContentET = view.FindViewById<EditText>(Resource.Id.event_comment_text);
 
             // valid button
-            comValidButton = view.FindViewById<ImageButton>(Resource.Id.event_notifSend_btn);
+            comValidButton = view.FindViewById<ImageButton>(Resource.Id.event_commentSend_btn);
             if (comValidButton != null)
                 comValidButton.Click += delegate
                 {

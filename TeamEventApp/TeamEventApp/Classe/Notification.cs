@@ -21,7 +21,8 @@ namespace TeamEventApp
         // Convert date to string
         public string toStringDate()
         {
-            return this.date.ToString();
+            string _dateFormat = "dd MMM yyyy, H:mm";
+            return this.date.ToString(_dateFormat);
         }
 
         // Convert views number to string
