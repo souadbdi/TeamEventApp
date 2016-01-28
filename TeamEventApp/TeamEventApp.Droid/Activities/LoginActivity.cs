@@ -37,16 +37,28 @@ namespace TeamEventApp.Droid
 
             // Connecting actions
 
-            loginButton.Click += delegate {
+            loginButton.Click += async delegate {
                 bool error = false;
                 if (!error)
                     error = verifText("email", email);
                 if (!error)
                     error = verifText("mot de passe", pwd);
 
+
+
                 if (!error)
-                    StartActivity(typeof(Notification));
-                error = false;
+                {
+                    User user = new User("", "", "", email.Text, pwd.Text);
+                    user = await UserController.login(user);
+                    if (user == null)
+                    {
+                        Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
+                    }
+                    else
+                        StartActivity(typeof(Notification));
+                }
+
+                pwd.Text = "";
             };
 
             registerTextView.Click += delegate {

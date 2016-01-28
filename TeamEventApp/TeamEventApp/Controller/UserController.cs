@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TeamEventApp
 {
-    class UserController
+    public class UserController
     {
         public static async Task<User> addUser(User user)
         {
