@@ -243,7 +243,8 @@ namespace TeamEventApp.Droid.Activities
                 // Listes de notifications et de commentaires et utilisateurs
                 notifications = new List<Notification>(),
                 comments = new List<Comment>(),
-                userList = new List<User>()
+                userList = new List<User>(),
+                userAdmin = DataBase.current_user
             };
 
             return evenement;

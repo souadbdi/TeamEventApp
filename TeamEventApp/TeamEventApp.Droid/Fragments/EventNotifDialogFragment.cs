@@ -42,6 +42,15 @@ namespace TeamEventApp.Droid.Fragments
             // ListView
             listView = view.FindViewById<ListView>(Resource.Id.event_notif_listView);
 
+            // Masquer l'éditeur de texte
+            if (DataBase.currentEvent.userAdmin != DataBase.current_user)
+            {
+                LinearLayout linearLayout = view.FindViewById<LinearLayout>(Resource.Id.evm_writeNotif_layout);
+
+                if (linearLayout != null)
+                    linearLayout.Visibility = ViewStates.Gone;
+            }
+
             // views
             // Comment content
             notifContentET = view.FindViewById<EditText>(Resource.Id.event_notifWrite_text);
