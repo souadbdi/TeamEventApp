@@ -22,7 +22,6 @@ namespace TeamEventApp
         public string toStringStartEndDate()
         {
             string _dateFormat = "dd MMM yyyy, H:mm";
-            //string _timeFormat = "H:mm";
 
             return this.startDate.ToString(_dateFormat) + " - " + this.endDate.ToString(_dateFormat);
         }
@@ -54,6 +53,15 @@ namespace TeamEventApp
             }
 
             return false;
+        }
+
+
+        // Ajout d'un commentaire
+
+        public List<Comment> addComment(Comment comment)
+        {
+            comments.Add(comment);
+            return comments;
         }
 
     }

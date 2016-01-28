@@ -35,5 +35,6 @@ namespace TeamEventApp
             users_db.Add(user.userId, user); //ajout du nouvel utilisateur ds la db
             current_user = user;
         }
+
     }
 }

@@ -57,11 +57,13 @@ namespace TeamEventApp.Droid.Activities
 
             SetContentView(Resource.Layout.EventLayout);
 
+
+            // Service
+            uService = new UserService(DataBase.current_user);
+
             initAndDisplayViews();
 
             // Show the dialog fragments
-
-
             // Notifications d'admin
 
             if (notifsText != null )
@@ -120,9 +122,6 @@ namespace TeamEventApp.Droid.Activities
 
         private void initAndDisplayViews()
         {
-            uService = new UserService(DataBase.current_user);
-
-
             // Nom 
             eventNameText = FindViewById< TextView > (Resource.Id.event_name);
             if (eventNameText != null)
