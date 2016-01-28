@@ -76,5 +76,16 @@ namespace TeamEventApp.Droid
                 StartActivity(typeof(ResetPasswordActivity));
             };
         }
+
+        // fonction de verification des informations
+        public bool verifText(string name, EditText edittext)
+        {
+            if (edittext.Text.ToString() == "")
+            {
+                edittext.SetError("Vous n'avez pas entré votre " + name, null);
+                return true;
+            }
+            return false;
+        }
     }
 }
