@@ -69,6 +69,7 @@
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
+    <Compile Include="Activities\GroupMemberActivity.cs" />
     <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
+    <Compile Include="Fragments\GroupAdminsFragment.cs" />
+    <Compile Include="Fragments\GroupMembersFragment.cs" />
     <Compile Include="VerifConnection.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
@@ -199,6 +202,18 @@
     <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListView.axml" />
+    <AndroidResource Include="Resources\layout\GroupMembers.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GroupAdmins.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GroupMember.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GroupAdmin.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

@@ -1,15 +1,10 @@
-using System;
 using System.Collections.Generic;
 
 using Android.App;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-
-using static TeamEventApp.DataBase;
 using TeamEventApp.Droid.Activities;
-using TeamEventApp.Droid.Adapters;
-using TeamEventApp.Droid.ListViewRows;
 
 namespace TeamEventApp.Droid.Fragments
 {
@@ -19,13 +14,11 @@ namespace TeamEventApp.Droid.Fragments
         ListView contacts_listview;
         public static User contact_selected;
 
-        View view;
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
 
-            view = inflater.Inflate(Resource.Layout.Contacts, container, false);
+            var view = inflater.Inflate(Resource.Layout.Contacts, container, false);
 
             contacts_listview = view.FindViewById<ListView>(Resource.Id.contactList);
 
