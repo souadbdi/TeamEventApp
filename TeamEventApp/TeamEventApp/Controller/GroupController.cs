@@ -13,7 +13,7 @@ namespace TeamEventApp.Controller
         public static async Task<Group> addGroup(Group group)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/group";
+            string queryString = Url.urlLink + "Groups";
             string content = JsonConvert.SerializeObject(group);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -25,7 +25,7 @@ namespace TeamEventApp.Controller
         public static async Task<Group> getGroup(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/group/" + id;
+            string queryString = Url.urlLink + "Groups/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -37,7 +37,7 @@ namespace TeamEventApp.Controller
         public static async Task<List<Group>> getAllGroup()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/group";
+            string queryString = Url.urlLink + "Groups";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -49,7 +49,7 @@ namespace TeamEventApp.Controller
         public static async void delGroup(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/group/" + id;
+            string queryString = Url.urlLink + "Groups/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -59,7 +59,7 @@ namespace TeamEventApp.Controller
         public static async Task<Group> modifGroup(Group group)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/group";
+            string queryString = Url.urlLink + "Groups";
             string content = JsonConvert.SerializeObject(group);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);

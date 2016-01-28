@@ -85,6 +85,7 @@
     <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
+    <Compile Include="VerifConnection.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
@@ -196,6 +197,8 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserContactListView.axml" />
     <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
+    <AndroidResource Include="Resources\layout\UserListRow.axml" />
+    <AndroidResource Include="Resources\layout\UserListView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -294,6 +297,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Themes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Delete_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

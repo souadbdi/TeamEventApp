@@ -51,8 +51,18 @@ namespace TeamEventApp.Droid
 
                 if (!error)
                 {
-                    User user = new User("", "", "", email.Text, pwd.Text);
-                    user = await UserController.login(user);
+                    User user = new User();
+                    if (VerifConnection.CheckInternetConnection())
+                    {
+                        user.password = pwd.Text;
+                        user.email = email.Text;
+                        user = await UserController.login(user);
+                    }
+                    else
+                    {
+                        user = DataBase.Connect(email.Text, pwd.Text);
+                    }
+                   
                     if (user == null)
                     {
                         Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();

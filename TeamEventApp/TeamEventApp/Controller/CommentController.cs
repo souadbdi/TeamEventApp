@@ -13,7 +13,7 @@ namespace TeamEventApp.Controller
         public static async Task<Comment> addComment(Comment comment)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/comment";
+            string queryString = Url.urlLink + "Comments";
             string content = JsonConvert.SerializeObject(comment);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -25,7 +25,7 @@ namespace TeamEventApp.Controller
         public static async Task<Comment> getComment(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/comment/" + id;
+            string queryString = Url.urlLink + "Comments/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -37,7 +37,7 @@ namespace TeamEventApp.Controller
         public static async Task<List<Comment>> getAllComment()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/comment";
+            string queryString = Url.urlLink + "Comments";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -49,7 +49,7 @@ namespace TeamEventApp.Controller
         public static async void delComment(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/comment/" + id;
+            string queryString = Url.urlLink + "Comments/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -59,7 +59,7 @@ namespace TeamEventApp.Controller
         public static async Task<Comment> modifComment(Comment comment)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/comment";
+            string queryString = Url.urlLink + "Comments";
             string content = JsonConvert.SerializeObject(comment);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);

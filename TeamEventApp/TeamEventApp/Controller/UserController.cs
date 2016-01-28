@@ -14,7 +14,7 @@ namespace TeamEventApp
         public static async Task<User> addUser(User user)
         {
             
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string queryString = Url.urlLink+ "Users";
             string content = JsonConvert.SerializeObject(user);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -26,7 +26,7 @@ namespace TeamEventApp
         public static async Task<User> getUser(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string queryString = Url.urlLink + "Users/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -38,7 +38,7 @@ namespace TeamEventApp
         public static async Task<List<User>> getAllUsers()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string queryString = Url.urlLink + "Users";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -50,7 +50,7 @@ namespace TeamEventApp
         public static async void delUser(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string queryString = Url.urlLink + "Users/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -60,7 +60,7 @@ namespace TeamEventApp
         public static async Task<User> modifUser(User user)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string queryString = Url.urlLink + "Users";
             string content = JsonConvert.SerializeObject(user);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -72,7 +72,7 @@ namespace TeamEventApp
         public static async Task<User> login(User user)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/userLogin";
+            string queryString = Url.urlLink + "UsersLogin";
             string content = JsonConvert.SerializeObject(user);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);

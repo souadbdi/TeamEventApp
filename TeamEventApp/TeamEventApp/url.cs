@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace TeamEventApp
 {
-    class ConnectivityService
+    class Url
     {
-        
-
-
+        public static String urlLink = "http://teamevent.azurewebsites.net/api/"; 
     }
 }
