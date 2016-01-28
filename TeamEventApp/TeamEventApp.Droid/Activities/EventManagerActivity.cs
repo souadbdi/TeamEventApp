@@ -38,10 +38,32 @@ namespace TeamEventApp.Droid
             // Get the events List
             eventList = userService.GetUserAllEvents();
 
-            // Create the adapter
+
+            // Create the adapter and Click action
             EventAdapter adapter = new EventAdapter(this, eventList);
             listView.Adapter = adapter;
+
+            listView.ItemClick += OnListEventItemClick;
         }
+
+
+
+        // List Event Item click handler
+
+        void OnListEventItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            // Récupération de l'événement sélectionné --> DataBase CurrentEvent
+
+            DataBase.currentEvent = eventList[e.Position];
+
+            // ToastMessage avec nom de l'événement
+
+            Toast.MakeText(this, DataBase.currentEvent.eventName, ToastLength.Short).Show();
+            StartActivity(typeof(EventActivity));
+        }
+
+
+
 
         // Setting the Menu
         public override bool OnCreateOptionsMenu(IMenu menu)
