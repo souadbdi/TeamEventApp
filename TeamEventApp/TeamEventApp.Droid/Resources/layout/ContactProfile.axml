@@ -118,6 +118,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/QuoteLeft"
-            android:drawablePadding="10dp" />       
+            android:drawablePadding="10dp" />
+
+      <!-- Supprimer le contact -->
+      <TextView
+          android:id="@+id/delete_contact_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawableLeft="@drawable/Cancel"
+          android:layout_marginTop="20dp"
+          android:drawablePadding="10dp"
+          android:text="Supprimer ce contact"
+          android:clickable="true"/>
     </LinearLayout>
+ 
 </ScrollView>

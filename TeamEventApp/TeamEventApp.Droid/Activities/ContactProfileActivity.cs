@@ -66,6 +66,15 @@ namespace TeamEventApp.Droid.Activities
             TextView statut = FindViewById<TextView>(Resource.Id.profile_contact_status);
             statut.Text = contact.status;
 
+            //suppression du contact
+            TextView delete = FindViewById<TextView>(Resource.Id.delete_contact_text);
+            delete.Click += delegate 
+            {
+                DataBase.current_user.removeContact(contact);
+                contact.removeContact(DataBase.current_user);
+                StartActivity(typeof(ProfileActivity));
+            };
+
 
         }
     }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dip">
+    <TextView
+        android:id="@+id/contact_pseudo_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:clickable="true"/>
+    <TextView
+        android:id="@+id/contact_name_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:textSize="15sp" />
+  </LinearLayout>
+    <ImageButton
+            android:id="@+id/delete_contact_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/Cancel"
+            android:background="@null" 
+            android:layout_alignParentRight="true"/>
+
+  </RelativeLayout>

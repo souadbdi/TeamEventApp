@@ -6,9 +6,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamEventApp
+namespace TeamEventApp.Controller
 {
-    public class UserController
+    public class GroupController
     {
         public static async Task<User> addUser(User user)
         {
@@ -25,7 +25,7 @@ namespace TeamEventApp
         public static async Task<User> getUser(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -49,7 +49,7 @@ namespace TeamEventApp
         public static async void delUser(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/"+id;
+            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -67,18 +67,5 @@ namespace TeamEventApp
             return JsonConvert.DeserializeObject<User>(results);
 
         }
-
-        public static async Task<User> login(User user)
-        {
-
-            string queryString = "http://teamevent.azurewebsites.net/api/userLogin";
-            string content = JsonConvert.SerializeObject(user);
-            HttpMethod method = HttpMethod.Post;
-            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
-
-            return JsonConvert.DeserializeObject<User>(results);
-
-        }
-
     }
 }

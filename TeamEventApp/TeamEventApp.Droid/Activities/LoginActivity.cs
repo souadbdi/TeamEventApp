@@ -20,8 +20,8 @@ namespace TeamEventApp.Droid
         private TextView registerTextView;
         private TextView noPwdTextView;
 
-        private EditText emailET;
-        private EditText passwordET;
+        private EditText email;
+        private EditText pwd;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,28 +34,58 @@ namespace TeamEventApp.Droid
             registerTextView = FindViewById<TextView>(Resource.Id.cnx_register_text);
             noPwdTextView = FindViewById<TextView>(Resource.Id.cnx_fpwd_text);
 
-            emailET = FindViewById<EditText>(Resource.Id.cnx_email_text);
-            passwordET = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
+            email = FindViewById<EditText>(Resource.Id.cnx_email_text);
+            pwd = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
 
             // Connecting actions
 
-            loginButton.Click += delegate 
+            loginButton.Click += async delegate
             {
-                //on vérifie que l'utilisateur qui se connecte existe bien et on l'affecte a current_user
-                //par la fonction Connect()
-                if(DataBase.Connect(emailET.Text,passwordET.Text))
-                    StartActivity(typeof(ProfileActivity));
-                else
-                    Toast.MakeText(this, "Vous n'êtes pas inscrit à TeamEvent. Veuillez vous enregistrer", ToastLength.Short).Show();
+                bool error = false;
+                if (!error)
+                    error = verifText("email", email);
+                if (!error)
+                    error = verifText("mot de passe", pwd);
+
+
+
+                if (!error)
+                {
+                    User user = new User("", "", "", email.Text, pwd.Text);
+                    user = await UserController.login(user);
+                    if (user == null)
+                    {
+                        Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
+                    }
+                    else
+                        StartActivity(typeof(Notification));
+                }
+
+                pwd.Text = "";
+                //if(DataBase.Connect(emailET.Text,passwordET.Text))
+                //    StartActivity(typeof(ProfileActivity));
             };
 
-            registerTextView.Click += delegate {
+            registerTextView.Click += delegate
+            {
                 StartActivity(typeof(RegisterAccountActivity));
             };
 
-            noPwdTextView.Click += delegate {
+            noPwdTextView.Click += delegate
+            {
                 StartActivity(typeof(ResetPasswordActivity));
-            };         
+            };
+        }
+
+        // fonction de verification des informations
+        public bool verifText(string name, EditText edittext)
+        {
+            if (edittext.Text.ToString() == "")
+            {
+                edittext.SetError("Vous n'avez pas entré votre " + name, null);
+                return true;
+            }
+            return false;
         }
     }
 }

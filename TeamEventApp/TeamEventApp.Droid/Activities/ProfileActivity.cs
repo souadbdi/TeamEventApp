@@ -105,6 +105,11 @@ namespace TeamEventApp.Droid
                 StartActivity(typeof(UserGroupRequestActivity));
             };
 
+            //nb de contacts
+            contacts_number = FindViewById<TextView>(Resource.Id.profile_contacts_number);
+            int nb_c = DataBase.current_user.contacts.Count;
+            contacts_number.Text = nb_c.ToString();
+
             //Actions pour l'affichage des contacts
             contacts = FindViewById<TextView>(Resource.Id.profile_contacts_text);
             contacts.Click += delegate
@@ -114,10 +119,6 @@ namespace TeamEventApp.Droid
                 contactsDialog.Show(tx, "Contacts");
             };
 
-            //nb de contacts
-            contacts_number = FindViewById<TextView>(Resource.Id.profile_contacts_number);
-            int nb_c = DataBase.current_user.contacts.Count;
-            contacts_number.Text = nb_c.ToString();
         }
 
         // Adding the menu
