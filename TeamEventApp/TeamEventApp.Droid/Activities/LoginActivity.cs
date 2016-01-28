@@ -34,8 +34,8 @@ namespace TeamEventApp.Droid
             registerTextView = FindViewById<TextView>(Resource.Id.cnx_register_text);
             noPwdTextView = FindViewById<TextView>(Resource.Id.cnx_fpwd_text);
 
-            emailET = FindViewById<EditText>(Resource.Id.cnx_email_text);
-            passwordET = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
+            email = FindViewById<EditText>(Resource.Id.cnx_email_text);
+            pwd = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
 
             // Connecting actions
 
@@ -53,8 +53,6 @@ namespace TeamEventApp.Droid
                 {
                     User user = new User("", "", "", email.Text, pwd.Text);
                     user = await UserController.login(user);
-                    //if (DataBase.Connect(emailET.Text, passwordET.Text))
-                    //    StartActivity(typeof(ProfileActivity));
                     if (user == null)
                     {
                         Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
@@ -64,15 +62,19 @@ namespace TeamEventApp.Droid
                 }
 
                 pwd.Text = "";
+                //if(DataBase.Connect(emailET.Text,passwordET.Text))
+                //    StartActivity(typeof(ProfileActivity));
             };
 
-            registerTextView.Click += delegate {
+            registerTextView.Click += delegate
+            {
                 StartActivity(typeof(RegisterAccountActivity));
             };
 
-            noPwdTextView.Click += delegate {
+            noPwdTextView.Click += delegate
+            {
                 StartActivity(typeof(ResetPasswordActivity));
-            };         
+            };
         }
     }
 }

@@ -842,8 +842,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08008c
 			public const int profile_name = 2131230860;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int profile_req_list = 2131230897;
+			// aapt resource value: 0x7f0800b4
+			public const int profile_req_list = 2131230900;
 			
 			// aapt resource value: 0x7f080097
 			public const int profile_req_number = 2131230871;
@@ -902,20 +902,20 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int rowReq_date = 2131230899;
-			
 			// aapt resource value: 0x7f0800b6
-			public const int rowReq_refuse_btn = 2131230902;
+			public const int rowReq_date = 2131230902;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int rowReq_subtitle = 2131230900;
+			// aapt resource value: 0x7f0800b9
+			public const int rowReq_refuse_btn = 2131230905;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int rowReq_title = 2131230898;
+			// aapt resource value: 0x7f0800b7
+			public const int rowReq_subtitle = 2131230903;
 			
 			// aapt resource value: 0x7f0800b5
-			public const int rowReq_validate_btn = 2131230901;
+			public const int rowReq_title = 2131230901;
+			
+			// aapt resource value: 0x7f0800b8
+			public const int rowReq_validate_btn = 2131230904;
 			
 			// aapt resource value: 0x7f080011
 			public const int small = 2131230737;
@@ -938,20 +938,29 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int userContact_addUsers_text = 2131230892;
-			
-			// aapt resource value: 0x7f0800ae
-			public const int userContact_add_button = 2131230894;
-			
 			// aapt resource value: 0x7f0800af
-			public const int userContact_listView = 2131230895;
+			public const int userContact_addUsers_text = 2131230895;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int userContact_add_button = 2131230897;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int userContact_listView = 2131230898;
 			
 			// aapt resource value: 0x7f0800ad
-			public const int userContact_pseudo_autoText = 2131230893;
+			public const int userContact_name_text = 2131230893;
 			
 			// aapt resource value: 0x7f0800b0
-			public const int userContact_valid_button = 2131230896;
+			public const int userContact_pseudo_autoText = 2131230896;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int userContact_pseudo_text = 2131230892;
+			
+			// aapt resource value: 0x7f0800ae
+			public const int userContact_remove_button = 2131230894;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int userContact_valid_button = 2131230899;
 			
 			// aapt resource value: 0x7f080014
 			public const int validContact = 2131230740;
@@ -1096,13 +1105,16 @@ namespace TeamEventApp.Droid
 			public const int Toolbar = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int UserContactListView = 2130903080;
+			public const int UserContactListRow = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int UserGroupRequestList = 2130903081;
+			public const int UserContactListView = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int UserGroupRequestRow = 2130903082;
+			public const int UserGroupRequestList = 2130903082;
+			
+			// aapt resource value: 0x7f03002b
+			public const int UserGroupRequestRow = 2130903083;
 			
 			static Layout()
 			{
