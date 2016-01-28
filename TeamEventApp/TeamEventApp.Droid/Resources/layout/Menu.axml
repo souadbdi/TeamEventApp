@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <item
-        android:id="@+id/action_notifications"
+        android:id="@+id/action_home"
         android:icon="@drawable/Alerts"
-        android:title="@string/action_notifications"
+        android:title="@string/action_home"
         android:showAsAction="always" />
     <item
         android:id="@+id/action_profile"

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="background_color">#00032D</color>
+  <color name="menu_bar_color">#5C0515</color>
+  <color name="text_color">#E1E6FA</color>
+  <color name="accent_color">#FFDA8C</color>
+  
+  <style name="Widget.BlueTheme.Button" parent="@android:style/Widget.Material.Button">
+    <item name="android:textColor">#E1E6FA</item>
+  </style>
+
+  <style name="BlueTheme" parent="@android:Theme.Material">
+    <item name="android:windowBackground">@color/background_color</item>
+    <item name="android:colorPrimary">@color/menu_bar_color</item>
+    <item name="android:textColor">@color/text_color</item>
+    <item name="android:colorAccent">@color/text_color</item>
+  
+    <item name="android:buttonStyle">@style/Widget.BlueTheme.Button</item>
+  </style>
+</resources>

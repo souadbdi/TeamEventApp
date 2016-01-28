@@ -26,11 +26,36 @@
                 android:layout_gravity="right"
                 android:background="@null"
                 android:src="@drawable/Edit" />
+			<TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:stretchColumns="*">
+				<TableRow>
+		<!-- Prénom de l'utilisateur -->
+				<TextView
+					android:id="@+id/profile_firstName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="22dp" 
+					android:layout_span="1"
+					android:layout_gravity="center"/>
+		<!-- Nom de l'utilisateur -->
+				<TextView
+					android:id="@+id/profile_lastName"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="22dp" 
+					android:layout_span="1"
+					android:layout_gravity="center"/>
+				</TableRow>
+            </TableLayout>
+		
+        <!-- Pseudo de l'utilisateur -->
             <TextView
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Louange Bizib"
                 android:textSize="22dp" />
         <!-- Email text -->
             <TextView
@@ -44,8 +69,7 @@
                 android:id="@+id/profile_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:text="Paris France" />
+                android:layout_marginBottom="20dp"/>
         <!-- Stats section -->
             <LinearLayout
                 android:orientation="horizontal"
@@ -57,27 +81,46 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="20"
                     android:textSize="20dp" />
                 <TextView
                     android:id="@+id/profile_events_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
-                    android:text="@string/profile_events" />
+                    android:text="@string/profile_events" 
+					android:clickable="true"/>
                 <TextView
                     android:id="@+id/profile_groups_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="9"
-                    android:textSize="24dp" />
+                    android:textSize="20dp" />
                 <TextView
                     android:id="@+id/profile_groups_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_groups" />
+                    android:text="@string/profile_groups" 
+					android:clickable="true"/>
             </LinearLayout>
+				<!-- Affichage des contacts-->	
+			<LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|bottom">
+				<TextView
+					android:id="@+id/profile_contacts_number"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginRight="5dp"
+					android:textSize="20dp" />
+				<TextView
+					android:id="@+id/profile_contacts_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Contacts"
+					android:clickable="true" />
+			</LinearLayout>
         </LinearLayout>
     <!-- Statut de l'utilisateur -->
         <TextView
@@ -87,7 +130,6 @@
             android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/QuoteLeft"
             android:drawablePadding="10dp"
-            android:text="Votre statut ici, je suis toujours là quand il faut et comme il faut... Ne me juge pas, apprends à me connaître d'abord!"
             android:clickable="true" />
     <!-- Bouton d'édition -->
         <ImageButton
@@ -97,15 +139,6 @@
             android:layout_gravity="right"
             android:background="@null"
             android:src="@drawable/Edit" />
-	<!-- Affichage des contacts-->	
-			<TextView
-				 android:id="@+id/contact_tv"
-				 android:layout_width="fill_parent"
-				 android:layout_height="wrap_content"
-				 android:layout_marginTop="5dp"
-				 android:cacheColorHint="#FFDAFF7F"
-				 android:text="Contacts"
-				 android:clickable="true" />
     <!-- Demandes d'ajouts -->
         <LinearLayout
             android:orientation="vertical"
@@ -130,7 +163,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="(12)"
                     android:textSize="12sp" />
             </LinearLayout>
         <!-- Settings -->

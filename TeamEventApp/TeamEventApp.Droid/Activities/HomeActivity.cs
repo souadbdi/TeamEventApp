@@ -1,26 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using TeamEventApp.Droid.Activities;
-using TeamEventApp.Droid.Fragments;
 
 namespace TeamEventApp.Droid
 {
     [Activity(Label ="")]
-    public class NotificationActivity : Activity
+    public class HomeActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Notifications);
+            SetContentView(Resource.Layout.Home);
 
         }
 
@@ -36,8 +28,8 @@ namespace TeamEventApp.Droid
         {
             switch (item.ItemId)
             {
-                case Resource.Id.action_notifications:
-                    StartActivity(typeof(NotificationActivity));
+                case Resource.Id.action_home:
+                    StartActivity(typeof(HomeActivity));
                     return true;
 
                 case Resource.Id.action_profile:

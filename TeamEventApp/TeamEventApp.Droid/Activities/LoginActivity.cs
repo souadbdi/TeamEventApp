@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+
 namespace TeamEventApp.Droid
 {
     [Activity(Label = "Connexion")]
@@ -19,25 +20,27 @@ namespace TeamEventApp.Droid
         private TextView registerTextView;
         private TextView noPwdTextView;
 
+        private EditText emailET;
+        private EditText passwordET;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Login);
 
-            // recuperation des champs
-            EditText email = FindViewById<EditText>(Resource.Id.cnx_email_text);
-            EditText pwd = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
-
             // Connexion du bouton
             loginButton = FindViewById<Button>(Resource.Id.cnx_connection_btn);
             registerTextView = FindViewById<TextView>(Resource.Id.cnx_register_text);
             noPwdTextView = FindViewById<TextView>(Resource.Id.cnx_fpwd_text);
 
+            emailET = FindViewById<EditText>(Resource.Id.cnx_email_text);
+            passwordET = FindViewById<EditText>(Resource.Id.cnx_pwd_text);
 
             // Connecting actions
 
-            loginButton.Click += async delegate {
+            loginButton.Click += async delegate
+            {
                 bool error = false;
                 if (!error)
                     error = verifText("email", email);
@@ -50,6 +53,8 @@ namespace TeamEventApp.Droid
                 {
                     User user = new User("", "", "", email.Text, pwd.Text);
                     user = await UserController.login(user);
+                    //if (DataBase.Connect(emailET.Text, passwordET.Text))
+                    //    StartActivity(typeof(ProfileActivity));
                     if (user == null)
                     {
                         Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
@@ -68,16 +73,6 @@ namespace TeamEventApp.Droid
             noPwdTextView.Click += delegate {
                 StartActivity(typeof(ResetPasswordActivity));
             };         
-        }
-        public bool verifText(string name, EditText edittext)
-        {
-            if (edittext.Text.ToString() == "")
-            {
-                edittext.SetError("Vous n'avez pas entré votre " + name, null);
-                return true;
-            }
-            return false;
-
         }
     }
 }

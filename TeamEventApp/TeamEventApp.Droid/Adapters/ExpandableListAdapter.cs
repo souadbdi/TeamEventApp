@@ -17,7 +17,7 @@ namespace TeamEventApp.Droid.Adapters
         // Context, usually set to the activity:
         private readonly Context _context;
 
-        // List of produce objects ("vegetables", "fruits", "herbs"):
+        // List of produce objects 
         private readonly List<GroupRow> _grouprow;
 
         public ExpandableListAdapter(Context context, List<GroupRow> grouprow)
@@ -43,7 +43,7 @@ namespace TeamEventApp.Droid.Adapters
 
         public override int GroupCount
         {
-            // Return the number of produce ("vegetables", "fruits", "herbs") objects:
+            // Return the number of produce  objects:
             get { return _grouprow.Count; }
         }
 
@@ -59,10 +59,10 @@ namespace TeamEventApp.Droid.Adapters
                 view = inflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem1, null);
             }
 
-            // Grab the produce object ("vegetables", "fruits", etc.) at the group position:
+            // Grab the produce object at the group position:
             var grouprow = _grouprow[groupPosition];
 
-            // Get the built-in first text view and insert the group name ("Vegetables", "Fruits", etc.):
+            // Get the built-in first text view and insert the group name 
             TextView textView = view.FindViewById<TextView>(Android.Resource.Id.Text1);
             textView.Text = grouprow.Row;
 
@@ -102,13 +102,13 @@ namespace TeamEventApp.Droid.Adapters
                 view = inflater.Inflate(Android.Resource.Layout.SimpleExpandableListItem2, null);
             }
 
-            // Grab the produce object ("vegetables", "fruits", etc.) at the group position:
+            // Grab the produce object at the group position:
             var grouprow = _grouprow[groupPosition];
 
-            // Extract the produce item object ("bananas", "apricots", etc.) at the child position:
+            // Extract the produce item object at the child position:
             var rowItem = grouprow.RowItems[childPosition];
 
-            // Get the built-in first text view and insert the child name ("Bananas", "Apricots", etc.):
+            // Get the built-in first text view and insert the child name
             TextView textView = view.FindViewById<TextView>(Android.Resource.Id.Text1);
             textView.Text = rowItem.Name;
 
@@ -124,6 +124,7 @@ namespace TeamEventApp.Droid.Adapters
         {
             return true;
         }
+
 
 
     }

@@ -63,26 +63,39 @@
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
     <Compile Include="Activities\AddContactActivity.cs" />
+    <Compile Include="Activities\ContactProfileActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
+    <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Activities\NotificationActivity.cs" />
+    <Compile Include="Activities\HomeActivity.cs" />
     <Compile Include="Activities\ProfileActivity.cs" />
     <Compile Include="Activities\RegisterAccountActivity.cs" />
     <Compile Include="Activities\ResetPasswordActivity.cs" />
     <Compile Include="Activities\UserGroupRequestActivity.cs" />
     <Compile Include="Adapters\EventAdapter.cs" />
+    <Compile Include="Adapters\EventCommentAdapter.cs" />
+    <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
+    <Compile Include="Adapters\ProfileContactAdapter.cs" />
+    <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
-    <Compile Include="Fragments\EventComsFragment.cs" />
-    <Compile Include="Fragments\EventDetailsFragment.cs" />
-    <Compile Include="Fragments\EventMembersFragment.cs" />
-    <Compile Include="Fragments\EventNotificationsFragment.cs" />
+    <Compile Include="Adapters\UsersListAdapter.cs" />
+    <Compile Include="Fragments\EventCommentDialogFragment.cs" />
+    <Compile Include="Fragments\EventNotifDialogFragment.cs" />
+    <Compile Include="Fragments\GroupAddAdminFragment.cs" />
+    <Compile Include="Fragments\GroupAddEventFragment.cs" />
+    <Compile Include="Fragments\GroupAddMemberFragment.cs" />
+    <Compile Include="Fragments\GroupChangeNameFragment.cs" />
     <Compile Include="Fragments\ProfilContactsFragment.cs" />
+    <Compile Include="Fragments\ProfilEditProfileFragment.cs" />
+    <Compile Include="Fragments\ProfilEditStatusFragment.cs" />
+    <Compile Include="Fragments\UsersDialogFragment.cs" />
+    <Compile Include="ListViewRows\UserList.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,7 +121,7 @@
     <AndroidResource Include="Resources\layout\Menu_add_option.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Notifications.axml">
+    <AndroidResource Include="Resources\layout\Home.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\RegisterAccount.axml">
@@ -153,6 +166,36 @@
     <AndroidResource Include="Resources\layout\Contacts.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupMember.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupAdmin.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AddGroupEvent.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ChangeGroupName.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\EventCommentList.axml" />
+    <AndroidResource Include="Resources\layout\EventCommentRow.axml" />
+    <AndroidResource Include="Resources\layout\EventNotifList.axml" />
+    <AndroidResource Include="Resources\layout\EventNotifRow.axml" />
+    <AndroidResource Include="Resources\layout\EditProfil.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\EditProfileStatus.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ContactProfile.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ProfileContactRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserContactListView.axml" />
+    <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -189,9 +232,6 @@
     <AndroidResource Include="Resources\drawable-hdpi\Profile.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\Comments.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Details.png" />
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +239,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Members.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\Comments_Filled.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Members_Filled.png" />
@@ -236,6 +273,27 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Clock_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\GroupMessage_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Info_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Comments_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Sent_42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Themes.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

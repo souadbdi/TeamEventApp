@@ -44,6 +44,7 @@
 
   <string name="first_name">Prénom</string>
   <string name="last_name">Nom</string>
+  <string name ="pseudo">Pseudo</string>
   <string name="confirm_password">Confirmation mot de passe</string>
   <string name="register">Créer un compte</string>
   <string name="reg_or_text">OU</string>
@@ -59,7 +60,7 @@
 
   <!-- Menu Items Section -->
 
-  <string name="action_notifications">Notifications</string>
+  <string name="action_home">Home</string>
   <string name="action_profile">Profil</string>
   <string name="action_event">Evénements</string>
   <string name="action_group">Groupes</string>
@@ -75,10 +76,38 @@
   <string name="profile_requests">Demandes d\'ajouts</string>
   <string name="profile_logout">Se déconnecter</string>
 
+  <!-- Edit Profile Section -->
+  <string name="edit_legend_text">Modifier votre profil en renseignant les chanmps ci-dessous :</string>
+  <string name ="edit_btn">Enregistrer</string>
+  <string name ="editStatus_legend_text">Modifier ici votre status</string>
+  
+
   <!-- Event Manager Section -->
   <string name="evm_yes">OUI</string>
   <string name="evm_no">NON</string>
   <string name="evm_maybe">PEUT-ETRE</string>
+  
+  <!-- Event Section -->
+  <string name="event_hostedBy">Tenu par</string>
+  <string name="event_participants">participants</string>
+  <string name="event_interested">intéressés</string>
+  <string name="event_guests">invités</string>
+  <string name="event_status_req">Participeras-tu?</string>
+  <string name="event_yes">Oui</string>
+  <string name="event_no">Non</string>
+  <string name="event_maybe">Peut-être</string>
+  <string name="event_invite_friends">Invite des amis</string>
+  <string name="event_about">Description</string>
+  <string name="event_comment">Commentaires</string>
+  <string name="event_notif_views">vues</string>
+  <string name="event_notifs">Infos événement</string>
+  <string name="event_write_notif">Publiez une information...</string>
+  <string name="event_write_comment">Publiez un commentaire...</string>
+  
+  <!-- User contact section -->
+  <string name="userContact_pseudo">Nom d\'utilisateur</string>
+  <string name="userContact_valid">Valider</string>
+  
 
   <!-- GroupMenu Items Section -->
   <string name="action_addMember">Ajouter Membre</string>

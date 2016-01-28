@@ -19,6 +19,8 @@ namespace TeamEventApp
             this.groupName = name;
             this.admins.Add(user);
             this.members.Add(user);
+            this.groupId = DataBase.groups_db.Count + 1;
+            DataBase.groups_db.Add(this.groupId, this);
         }
 
         public List<User> addMember(User user)
