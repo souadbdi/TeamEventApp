@@ -85,7 +85,7 @@ namespace TeamEventApp.Droid
                 if (!error && mdp.Text.ToString() != mdp2.Text.ToString())
                 {
                     error = true;
-                    mdp2.SetError("Les mots de passe ne correspondent pas", null);
+                    Toast.MakeText(this, "Les mots de passe ne correspondent pas", ToastLength.Long).Show();
                 }
 
                 // Vérification de la saisie !!!
@@ -125,7 +125,7 @@ namespace TeamEventApp.Droid
          {
              if(edittext.Text.ToString() == "")
             {
-                edittext.SetError("Vous n'avez pas entré votre " + name, null);
+                Toast.MakeText(this, "Vous n'avez pas entré votre " + name, ToastLength.Long).Show();
                 return true;
              }
              return false;          
