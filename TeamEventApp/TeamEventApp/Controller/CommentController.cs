@@ -10,61 +10,61 @@ namespace TeamEventApp.Controller
 {
     public class CommentController
     {
-        public static async Task<Comment> addComment(Comment user)
+        public static async Task<Comment> addComment(Comment comment)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
-            string content = JsonConvert.SerializeObject(user);
+            string queryString = "http://teamevent.azurewebsites.net/api/comment";
+            string content = JsonConvert.SerializeObject(comment);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Comment>(results);
 
         }
 
-        public static async Task<User> getUser(int id)
+        public static async Task<Comment> getComment(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
+            string queryString = "http://teamevent.azurewebsites.net/api/comment/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Comment>(results);
 
         }
 
-        public static async Task<List<User>> getAllUsers()
+        public static async Task<List<Comment>> getAllComment()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string queryString = "http://teamevent.azurewebsites.net/api/comment";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<User>>(results);
+            return JsonConvert.DeserializeObject<List<Comment>>(results);
 
         }
 
-        public static async void delUser(int id)
+        public static async void delComment(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
+            string queryString = "http://teamevent.azurewebsites.net/api/comment/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
         }
 
-        public static async Task<User> modifUser(User user)
+        public static async Task<Comment> modifComment(Comment comment)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
-            string content = JsonConvert.SerializeObject(user);
+            string queryString = "http://teamevent.azurewebsites.net/api/comment";
+            string content = JsonConvert.SerializeObject(comment);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Comment>(results);
 
         }
     }

@@ -10,9 +10,10 @@ namespace TeamEventApp
 {
     public class UserController
     {
+
         public static async Task<User> addUser(User user)
         {
-
+            
             string queryString = "http://teamevent.azurewebsites.net/api/users";
             string content = JsonConvert.SerializeObject(user);
             HttpMethod method = HttpMethod.Post;
