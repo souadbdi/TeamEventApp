@@ -41,6 +41,7 @@ namespace TeamEventApp.Droid
 
             loginButton.Click += async delegate
             {
+
                 bool error = false;
                 if (!error)
                     error = verifText("email", email);
@@ -58,12 +59,14 @@ namespace TeamEventApp.Droid
                         Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
                     }
                     else
-                        StartActivity(typeof(Notification));
+                        StartActivity(typeof(HomeActivity)); 
                 }
 
-                pwd.Text = "";
-                //if(DataBase.Connect(emailET.Text,passwordET.Text))
-                //    StartActivity(typeof(ProfileActivity));
+                pwd.Text = ""; 
+                
+                /*
+                if (DataBase.Connect(email.Text,password.Text))
+                    StartActivity(typeof(ProfileActivity));*/
             };
 
             registerTextView.Click += delegate

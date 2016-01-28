@@ -59,9 +59,11 @@ namespace TeamEventApp.Droid
 
             //action nb events -> EventManager
             profile_events = FindViewById<TextView>(Resource.Id.profile_events_text);
-            profile_events.Click += delegate {
-                StartActivity(typeof(EventManagerActivity));
-            };
+
+            if (profile_events != null)
+                profile_events.Click += delegate {
+                    StartActivity(typeof(EventManagerActivity));
+                };
 
             //nb de grp du current_user
             groups_number = FindViewById<TextView>(Resource.Id.profile_groups_number);
@@ -71,10 +73,12 @@ namespace TeamEventApp.Droid
             status.Text = DataBase.current_user.status;
 
             profile_groups = FindViewById<TextView>(Resource.Id.profile_groups_text);
-            profile_groups.Click += delegate
-            {
-                StartActivity(typeof(GroupManagerActivity));
-            };
+
+            if (profile_groups != null)
+                profile_groups.Click += delegate
+                {
+                    StartActivity(typeof(GroupManagerActivity));
+                };
 
             //demandes d'ajout groupe
             demandes_groupes = FindViewById<TextView>(Resource.Id.profile_req_number);

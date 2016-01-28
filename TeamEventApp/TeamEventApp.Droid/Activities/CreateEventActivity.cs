@@ -19,14 +19,24 @@ namespace TeamEventApp.Droid.Activities
         private DateTime _time;
         private DateTime startDateTime;
         private DateTime endDateTime;
+
+        private EditText eventName;
+        
         private TextView startDate;
         private TextView startHour;
         private TextView endDate;
         private TextView endHour;
 
+        private AutoCompleteTextView eventLocation;
+        private EditText eventDescription;
+
+        private Spinner groupSpinner;
+        private Button createButton;
+
         // Listes
         private List<string> groupList;
 
+        // Constantes
         private const int DATE_DIALOG_ID = 0;
         private const int TIME_DIALOG_ID = 1;
 
@@ -37,27 +47,23 @@ namespace TeamEventApp.Droid.Activities
         private string _dateFormat = "dd MMM yyyy";
         private string _timeFormat = "H:mm";
 
+        // Service
+        private UserService userService;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.EventCreationForm);
 
+            // Services
+            userService = new UserService(DataBase.current_user);
+
             // Set views
-            startDate = FindViewById<TextView>(Resource.Id.event_startDate_text);
-            startHour = FindViewById<TextView>(Resource.Id.event_startHour_text);
-            endDate = FindViewById<TextView>(Resource.Id.event_endDate_text);
-            endHour = FindViewById<TextView>(Resource.Id.event_endHour_text);
-
-
-            Spinner groupSpinner = FindViewById<Spinner>(Resource.Id.event_group_spinner);
+            initViews();
 
             // Groupe liste
             groupList = new List<string>();
-            groupList.Add("Friends");
-            groupList.Add("School classmates");
-            groupList.Add("Family");
-            groupList.Add("Les potos du 78");
 
             // Set the adapter
             ArrayAdapter<string> spinnerAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, groupList);
@@ -96,6 +102,18 @@ namespace TeamEventApp.Droid.Activities
                     ShowDialog(TIME_DIALOG_ID);
                 };
 
+            // Création de l'événement
+            if (createButton != null)
+                createButton.Click += delegate
+                {
+                    Event newEvent = createEvent();
+
+                    // adding event on users event
+                    userService.addUserEvent(newEvent.groupId, newEvent);
+
+                    StartActivity(typeof(EventManagerActivity));
+                };
+
             // Setting today's date and time
             _date = DateTime.Today;
             _time = DateTime.Today;
@@ -106,6 +124,27 @@ namespace TeamEventApp.Droid.Activities
 
             startDate.Text = _date.ToString(_dateFormat);
             startHour.Text = _time.ToString(_timeFormat);
+
+        }
+
+        // Initialisation des objets axml
+
+        private void initViews()
+        {
+
+            eventName = FindViewById<EditText>(Resource.Id.event_name_textEdit);
+
+            startDate = FindViewById<TextView>(Resource.Id.event_startDate_text);
+            startHour = FindViewById<TextView>(Resource.Id.event_startHour_text);
+            endDate = FindViewById<TextView>(Resource.Id.event_endDate_text);
+            endHour = FindViewById<TextView>(Resource.Id.event_endHour_text);
+
+            eventLocation = FindViewById<AutoCompleteTextView>(Resource.Id.event_location_textEdit);
+            eventDescription = FindViewById<EditText>(Resource.Id.event_desc_text);
+
+            groupSpinner = FindViewById<Spinner>(Resource.Id.event_group_spinner);
+
+            createButton = FindViewById<Button>(Resource.Id.event_name_button);
 
         }
 
@@ -187,6 +226,24 @@ namespace TeamEventApp.Droid.Activities
                 textView.Text = this.endDateTime.ToString(_timeFormat);
             }
 
+        }
+
+        // Ajout d'un événement
+
+        private Event createEvent()
+        {
+            Event newEvent = new Event
+            {
+                eventName = this.eventName.Text,
+                startDate = this.startDateTime,
+                endDate = this.endDateTime,
+                address = this.eventLocation.Text,
+                description = this.eventDescription.Text,
+                groupId = this.userService.GetUserGroupIdByName(this.groupSpinner.SelectedItem.ToString())
+            };
+
+            return newEvent;
+;
         }
 
     }

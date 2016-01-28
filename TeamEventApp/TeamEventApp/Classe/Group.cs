@@ -47,5 +47,13 @@ namespace TeamEventApp
             return admins;
         }
 
+
+        // Ajout d'un événement
+        public List<Event> AddEvent(Event ev)
+        {
+            events.Add(ev);
+            return events;
+        }
+
     }
 }

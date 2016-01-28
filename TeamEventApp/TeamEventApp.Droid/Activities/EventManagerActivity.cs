@@ -20,53 +20,26 @@ namespace TeamEventApp.Droid
         private List<Event> eventList;
         private ListView listView;
 
+        // Services
+        private UserService userService;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.EventManager);
 
-            // ListView
-
+            // Setting services
+            userService = new UserService(DataBase.current_user);
+            
+            // Get views from Layout
             listView = FindViewById<ListView>(Resource.Id.evm_list_view);
-            eventList = new List<Event> { };
 
-            // Create events
-            eventList.Add(new Event {
-                eventName = "Répétition ICJ 2016",
-                startDate = new DateTime(2016, 11, 1),
-                endDate = new DateTime(2016, 11, 2),
-                address = "19 rue Fustel de Coulanges, Paris",               
-            });
-
-            eventList.Add(new Event
-            {
-                eventName = "Réunion Responsables",
-                startDate = new DateTime(2016, 3, 10),
-                endDate = new DateTime(2016, 3, 10),
-                address = "Boissy, France"
-            });
-
-            eventList.Add(new Event
-            {
-                eventName = "Restaurant",
-                startDate = new DateTime(2016, 2, 14),
-                endDate = new DateTime(2016, 2, 14),
-                address = "Paris, France"
-            });
-
-            eventList.Add(new Event
-            {
-                eventName = "Mariage Bribrik",
-                startDate = new DateTime(2016, 12, 14),
-                endDate = new DateTime(2016, 12, 14),
-                address = "Paris, France"
-            });
+            // Get the events List
+            eventList = userService.GetUserAllEvents();
 
             // Create the adapter
             EventAdapter adapter = new EventAdapter(this, eventList);
-
-            // set the adapter
             listView.Adapter = adapter;
         }
 
@@ -120,4 +93,5 @@ namespace TeamEventApp.Droid
         }
 
         }
+
 }

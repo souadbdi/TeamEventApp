@@ -13,6 +13,7 @@ namespace TeamEventApp
 
         public static List<Group> current_user_groups_requests;
         
+        
         //renvoie true si le user est bien enregistré dans la BD
         public static bool Connect(string mail, string password)
         {
