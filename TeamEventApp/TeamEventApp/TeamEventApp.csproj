@@ -31,8 +31,13 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Url.cs" />
     <Compile Include="Classe\Comment.cs" />
     <Compile Include="Classe\User.cs" />
+    <Compile Include="Controller\CommentController.cs" />
+    <Compile Include="Controller\EventController.cs" />
+    <Compile Include="Controller\GroupController.cs" />
+    <Compile Include="Controller\NotificationController.cs" />
     <Compile Include="DataBase.cs" />
     <Compile Include="DataService.cs" />
     <Compile Include="Classe\Event.cs" />

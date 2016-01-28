@@ -85,6 +85,7 @@
     <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
+    <Compile Include="VerifConnection.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
@@ -195,9 +196,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserContactListView.axml" />
-    <AndroidResource Include="Resources\layout\UserContactListRow.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListView.axml" />
   </ItemGroup>

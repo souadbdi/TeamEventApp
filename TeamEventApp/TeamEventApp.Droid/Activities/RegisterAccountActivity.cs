@@ -111,7 +111,7 @@ namespace TeamEventApp.Droid
 
                 nom.Text = e.mProfile.FirstName;
                 prenom.Text = e.mProfile.LastName;
-
+                pseudo.Text = e.mProfile.Name;
             }
 
             else

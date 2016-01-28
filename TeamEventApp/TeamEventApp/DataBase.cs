@@ -14,17 +14,17 @@ namespace TeamEventApp
         public static List<Group> current_user_groups_requests;
         
         //renvoie true si le user est bien enregistré dans la BD
-        public static bool Connect(string mail, string password)
+        public static User Connect(string mail, string password)
         {
             foreach (User us in users_db.Values)
             {
                 if(us.email == mail && us.password == password)
                 {
                     current_user = us;
-                    return true;
+                    return us;
                 }
             }
-            return false;
+            return null;
         }
 
         public static void Inscription(User user)
