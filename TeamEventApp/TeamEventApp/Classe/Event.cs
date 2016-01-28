@@ -21,8 +21,35 @@ namespace TeamEventApp
         // Return start-end date to string format
         public string toStringStartEndDate()
         {
-            return this.startDate.ToString() + " à " + this.endDate.ToString();
-    }
+            string _dateFormat = "dd MMM yyyy, H:mm";
+            //string _timeFormat = "H:mm";
+
+            return this.startDate.ToString(_dateFormat) + " - " + this.endDate.ToString(_dateFormat);
+        }
+
+        // Ajouter utilisateur
+
+        public List<User> addUser(User user)
+        {
+            userList.Add(user);
+            return userList;
+        }
+
+        // Enlever un utilisateur
+
+        // Vérification si un utilisateur à répondu à propos l'événement
+
+        public bool hasAnsweredUser(User user)
+        {
+            foreach(User eventUser in userList)
+            {
+                if (user.userId == eventUser.userId)
+                    return true;
+            }
+
+            return false;
+        }
+
     }
 
     

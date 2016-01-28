@@ -53,6 +53,7 @@
     </TableLayout>
 <!-- Layout pour les boutons de validation -->
     <LinearLayout
+        android:id="@+id/evm_answer_layout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

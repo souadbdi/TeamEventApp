@@ -73,7 +73,24 @@ namespace TeamEventApp.Droid.Adapters
 
             // Group of Event
             TextView textGroup = row.FindViewById<TextView>(Resource.Id.evm_group_text);
-            textGroup.Text = "Du groupe ";//+ eventList[position].group;
+
+            // Get group Id and name
+            long groupID = eventList[position].groupId;
+            UserService uService = new UserService(DataBase.current_user);
+
+            string groupName = uService.GetUserGroupById(groupID).groupName;
+
+            textGroup.Text = "Du groupe " + groupName;
+
+            // Vérification si l'utilisateur a répondu
+
+            if (eventList[position].hasAnsweredUser(DataBase.current_user))
+            {
+                LinearLayout linearLayout = row.FindViewById<LinearLayout>(Resource.Id.evm_answer_layout);
+
+                if (linearLayout != null)
+                    linearLayout.Visibility = ViewStates.Gone;
+            }
 
             return row;
         }

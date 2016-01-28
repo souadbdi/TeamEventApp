@@ -62,10 +62,8 @@ namespace TeamEventApp.Droid.Activities
             // Set views
             initViews();
 
-            // Groupe liste
-            groupList = new List<string>();
-
-            // Set the adapter
+            // Liste des groupes de l'utilisateur
+            groupList = GetUserGroupNames(userService.GetUserAllGroups());
             ArrayAdapter<string> spinnerAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, groupList);
 
             if (groupSpinner != null)
@@ -108,7 +106,8 @@ namespace TeamEventApp.Droid.Activities
                 {
                     Event newEvent = createEvent();
 
-                    // adding event on users event
+                    // adding event into user eventlist and vice versa
+                    newEvent.addUser(DataBase.current_user);
                     userService.addUserEvent(newEvent.groupId, newEvent);
 
                     StartActivity(typeof(EventManagerActivity));
@@ -140,7 +139,7 @@ namespace TeamEventApp.Droid.Activities
             endHour = FindViewById<TextView>(Resource.Id.event_endHour_text);
 
             eventLocation = FindViewById<AutoCompleteTextView>(Resource.Id.event_location_textEdit);
-            eventDescription = FindViewById<EditText>(Resource.Id.event_desc_text);
+            eventDescription = FindViewById<EditText>(Resource.Id.event_description_textEdit);
 
             groupSpinner = FindViewById<Spinner>(Resource.Id.event_group_spinner);
 
@@ -232,18 +231,35 @@ namespace TeamEventApp.Droid.Activities
 
         private Event createEvent()
         {
-            Event newEvent = new Event
+            Event evenement = new Event
             {
                 eventName = this.eventName.Text,
                 startDate = this.startDateTime,
                 endDate = this.endDateTime,
                 address = this.eventLocation.Text,
                 description = this.eventDescription.Text,
-                groupId = this.userService.GetUserGroupIdByName(this.groupSpinner.SelectedItem.ToString())
+                groupId = this.userService.GetUserGroupIdByName(this.groupSpinner.SelectedItem.ToString()),
+
+                // Listes de notifications et de commentaires et utilisateurs
+                notifications = new List<Notification>(),
+                comments = new List<Comment>(),
+                userList = new List<User>()
             };
 
-            return newEvent;
-;
+            return evenement;
+        }
+
+        // Liste des noms des utilisateurs
+        private List<string> GetUserGroupNames(List<Group> userGroups)
+        {
+            List<string> groupNames = new List<string>();
+
+            foreach (Group userGroup in userGroups)
+            {
+                groupNames.Add(userGroup.groupName);
+            }
+
+            return groupNames;
         }
 
     }

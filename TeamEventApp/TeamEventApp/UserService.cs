@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamEventApp.Classe
+namespace TeamEventApp
 {
-    class UserService
+    public class UserService
     {
         private User currentUser;
 
