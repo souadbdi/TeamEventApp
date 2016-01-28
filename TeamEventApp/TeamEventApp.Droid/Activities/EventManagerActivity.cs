@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using TeamEventApp.Droid.Adapters;
-
+using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid
 {
@@ -76,6 +76,48 @@ namespace TeamEventApp.Droid
             MenuInflater.Inflate(Resource.Layout.Menu_add_option, menu);
             return base.OnCreateOptionsMenu(menu);
         }
-        
-    }
+        // Setting menu actions
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_home:
+                    StartActivity(typeof(HomeActivity));
+                    return true;
+
+                case Resource.Id.action_profile:
+                    StartActivity(typeof(ProfileActivity));
+                    return true;
+
+                case Resource.Id.action_event_manager:
+                    StartActivity(typeof(EventManagerActivity));
+                    return true;
+
+                case Resource.Id.action_group_manager:
+                    StartActivity(typeof(GroupManagerActivity));
+                    return true;
+
+                case Resource.Id.action_about:
+                    StartActivity(typeof(AboutActivity));
+                    return true;
+
+                case Resource.Id.action_settings:
+                    StartActivity(typeof(SettingsActivity));
+                    return true;
+
+                case Resource.Id.action_search:
+                    // afficher la barre de recherche
+                    return true;
+
+                case Resource.Id.action_add:
+                    StartActivity(typeof(CreateEventActivity));
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
+        }
 }

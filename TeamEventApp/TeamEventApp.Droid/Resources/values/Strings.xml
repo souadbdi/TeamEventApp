@@ -103,7 +103,20 @@
   <string name="event_notifs">Infos événement</string>
   <string name="event_write_notif">Publiez une information...</string>
   <string name="event_write_comment">Publiez un commentaire...</string>
-  
+
+  <string name="event_nameEvent_text">Nom de l\'événement...</string>
+  <string name="event_location_text">Lieu de l\'événement...</string>
+  <string name="event_description_text">Description de l\'événement...</string>
+  <string name="event_create_button">Créer l\'évenement</string>
+  <string name="event_startDate_text">Date du début</string>
+  <string name="event_startTime_text">Heure du début</string>
+  <string name="event_endDate_text">Date de fin</string>
+  <string name="event_endTime_text">Heure de fin</string>
+
+  <string name="event_desc_text">Description</string>
+  <string name="event_group_text">Groupe</string>
+
+
   <!-- User contact section -->
   <string name="userContact_pseudo">Nom d\'utilisateur</string>
   <string name="userContact_valid">Valider</string>

@@ -64,6 +64,9 @@ namespace TeamEventApp.Droid
             return base.OnCreateOptionsMenu(menu);
         }
 
+
+        // Setting menu actions
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)

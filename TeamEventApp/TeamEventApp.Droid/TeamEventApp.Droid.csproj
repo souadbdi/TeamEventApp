@@ -64,6 +64,7 @@
     <Compile Include="Activities\AboutActivity.cs" />
     <Compile Include="Activities\AddContactActivity.cs" />
     <Compile Include="Activities\ContactProfileActivity.cs" />
+    <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
@@ -193,6 +194,9 @@
     <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListView.axml" />
     <AndroidResource Include="Resources\layout\UserListRow.axml" />
+    <AndroidResource Include="Resources\layout\EventCreationForm.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
