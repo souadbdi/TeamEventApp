@@ -18,53 +18,53 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Notification>(results);
 
         }
 
-        public static async Task<User> getUser(int id)
+        public static async Task<Notification> getNotification(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
+            string queryString = "http://teamevent.azurewebsites.net/api/notification/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Notification>(results);
 
         }
 
-        public static async Task<List<User>> getAllUsers()
+        public static async Task<List<Notification>> getAllNotification()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
+            string queryString = "http://teamevent.azurewebsites.net/api/notification";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<User>>(results);
+            return JsonConvert.DeserializeObject<List<Notification>>(results);
 
         }
 
-        public static async void delUser(int id)
+        public static async void delNotification(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users/" + id;
+            string queryString = "http://teamevent.azurewebsites.net/api/notification/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
         }
 
-        public static async Task<User> modifUser(User user)
+        public static async Task<Notification> modifNotification(Notification notification)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/users";
-            string content = JsonConvert.SerializeObject(user);
+            string queryString = "http://teamevent.azurewebsites.net/api/notification";
+            string content = JsonConvert.SerializeObject(notification);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<User>(results);
+            return JsonConvert.DeserializeObject<Notification>(results);
 
         }
     }

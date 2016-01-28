@@ -20,8 +20,8 @@ namespace TeamEventApp.Droid
         private TextView registerTextView;
         private TextView noPwdTextView;
 
-        private EditText emailET;
-        private EditText passwordET;
+        private EditText email;
+        private EditText pwd;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
