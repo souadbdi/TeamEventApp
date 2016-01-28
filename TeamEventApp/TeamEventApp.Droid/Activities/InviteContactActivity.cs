@@ -81,8 +81,6 @@ namespace TeamEventApp.Droid.Activities
             if (listView != null)
                 listView.Adapter = adapter;
 
-
-            // Create your application here
         }
     }
 }

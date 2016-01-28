@@ -195,7 +195,11 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\UserContactListView.axml" />
-    <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
+    <AndroidResource Include="Resources\layout\UserContactListRow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\UserListRow.axml" />
+    <AndroidResource Include="Resources\layout\UserListView.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -294,6 +298,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Themes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable-hdpi\Delete_24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>
