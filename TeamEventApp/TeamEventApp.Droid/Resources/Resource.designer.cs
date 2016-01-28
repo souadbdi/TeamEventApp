@@ -596,6 +596,9 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080067
 			public const int event_comments = 2131230823;
 			
+			// aapt resource value: 0x7f080068
+			public const int event_comments_number = 2131230824;
+			
 			// aapt resource value: 0x7f080055
 			public const int event_date = 2131230805;
 			
@@ -610,9 +613,6 @@ namespace TeamEventApp.Droid
 			
 			// aapt resource value: 0x7f08004a
 			public const int event_endHour_text = 2131230794;
-			
-			// aapt resource value: 0x7f080068
-			public const int event_events_number = 2131230824;
 			
 			// aapt resource value: 0x7f080054
 			public const int event_groupName = 2131230804;

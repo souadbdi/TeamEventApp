@@ -37,6 +37,12 @@ namespace TeamEventApp
 
         // Enlever un utilisateur
 
+            public List<User> deleteUser(User user)
+        {
+            userList.Remove(user);
+            return userList;
+        }
+
         // Vérification si un utilisateur à répondu à propos l'événement
 
         public bool hasAnsweredUser(User user)
