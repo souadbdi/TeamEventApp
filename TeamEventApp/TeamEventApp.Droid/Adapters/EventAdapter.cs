@@ -84,13 +84,43 @@ namespace TeamEventApp.Droid.Adapters
 
             // Vérification si l'utilisateur a répondu
 
-            if (eventList[position].hasAnsweredUser(DataBase.current_user))
-            {
-                LinearLayout linearLayout = row.FindViewById<LinearLayout>(Resource.Id.evm_answer_layout);
-
-                if (linearLayout != null)
+            LinearLayout linearLayout = row.FindViewById<LinearLayout>(Resource.Id.evm_answer_layout);
+            if (linearLayout != null)
+            { 
+                //if (eventList[position].hasAnsweredUser(DataBase.current_user) != 0)
                     linearLayout.Visibility = ViewStates.Gone;
+                
+                /* S'il n'a pas répondu
+                else
+                {
+                    Button yesButton = row.FindViewById<Button>(Resource.Id.evm_yes_btn);
+                    if (yesButton != null)
+                        yesButton.Click += delegate
+                        {
+                            DataBase.currentEvent.addYesUser(DataBase.current_user);
+                            //context.StartActivity(typeof(EventManagerActivity));
+                        };
+
+                    Button maybeButton = row.FindViewById<Button>(Resource.Id.evm_maybe_btn);
+                    if (maybeButton != null)
+                        maybeButton.Click += delegate
+                        {
+                            DataBase.currentEvent.addMaybeUser(DataBase.current_user);
+                            context.StartActivity(typeof(EventManagerActivity));
+                        };
+
+                    Button noButton = row.FindViewById<Button>(Resource.Id.evm_no_btn);
+                    if (noButton != null)
+                        noButton.Click += delegate
+                        {
+                            DataBase.currentEvent.addNoUser(DataBase.current_user);
+                            context.StartActivity(typeof(EventManagerActivity));
+                        };
+
+                }*/
             }
+
+ 
 
             return row;
         }

@@ -57,5 +57,35 @@ namespace TeamEventApp
             return events;
         }
 
+        // Ajout des commentaires
+        public List<Comment> AddComment(Comment com)
+        {
+            comments.Add(com);
+            return comments;
+        }
+
+        // Récupérer tous les commentaires d'un groupe
+        public List<Comment> GetAllComments()
+        {
+            return comments;
+        }
+
+
+        // Récup le nom de l'utilisateur
+        public string getUserNameById(long userID)
+        {
+            string username = "no-user";
+
+            foreach (User user in members)
+            {
+                if (userID == user.userId)
+                {
+                    return user.pseudo;
+                }
+            }
+
+            return username;
+        }
+
     }
 }

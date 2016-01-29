@@ -1,38 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-  <TextView
-		   android:text=""
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-		   android:id="@+id/groupNameTextView"/>
-    <TextView
-		   android:text="Membres"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-		   android:id="@+id/groupMembersTextView"
-       android:clickable="true"
-       android:textSize="22dp"
-       android:layout_gravity="center"/>
-    <TextView
-       android:text="Admins"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/groupAdminsTextView"
-       android:clickable="true"
-       android:textSize="22dp"
-       android:layout_gravity="center"/>
-    <TextView
-       android:text="Evènements"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:id="@+id/groupEventsTextView"
-       android:clickable="true"
-       android:textSize="22dp"
-       android:layout_gravity="center"/>
-
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="90">
+    <!-- Membres -->
+        <TextView
+            android:text="Membres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:id="@+id/groupMembersTextView"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:gravity="center" />
+        <TextView
+            android:text="Admins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:id="@+id/groupAdminsTextView"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:gravity="center" />
+        <TextView
+            android:text="Evènements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="30"
+            android:id="@+id/groupEventsTextView"
+            android:clickable="true"
+            android:textSize="20dp"
+            android:gravity="center" />
+    </LinearLayout>
+<!-- LISTE ET EDIT TEXT-->
+<!-- Liste des dernières nouvelles -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/group_comment_listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+<!-- Layout footer -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <!-- Champe d'édition -->
+        <EditText
+            android:id="@+id/group_comment_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/event_write_comment" />
+    <!-- Bouton de validation -->
+        <ImageButton
+            android:id="@+id/group_commentSend_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="top"
+            android:background="@null"
+            android:src="@drawable/Sent_42" />
+    </LinearLayout>
 </LinearLayout>

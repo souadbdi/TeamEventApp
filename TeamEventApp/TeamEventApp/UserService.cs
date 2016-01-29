@@ -54,6 +54,28 @@ namespace TeamEventApp
             return events;
         }
 
+        // Récupération des événements d'un groupe
+        public List<Event> GetEventsByGroup(Group groupSelected)
+        {
+            List<Event> events = new List<Event>();
+
+            foreach (Group group in this.currentUser.groups)
+            {
+                if (groupSelected == group)
+                {
+                    foreach (Event groupEvent in group.events)
+                    {
+
+                        events.Add(groupEvent);
+                    }
+
+                    break;
+                }
+            }
+
+            return events;
+        }
+
 
         // Récupération de la liste des contacts de l'utilisateur
         public List<User> GetAllUserContacts()

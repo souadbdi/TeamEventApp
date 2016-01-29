@@ -172,7 +172,7 @@ namespace TeamEventApp.Droid.Activities
 
             if (yesNumberText != null)
             {
-                yesNumberText.Text = "" + DataBase.currentEvent.userList.Count();
+                yesNumberText.Text = "" + DataBase.currentEvent.userYesList.Count();
             }
 
             // Maybe number
@@ -180,7 +180,7 @@ namespace TeamEventApp.Droid.Activities
 
             if (maybeNumberText != null)
             {
-                maybeNumberText.Text = "" + DataBase.currentEvent.userList.Count();
+                maybeNumberText.Text = "" + DataBase.currentEvent.userMaybeList.Count();
             }
 
             // Guests number
@@ -202,30 +202,47 @@ namespace TeamEventApp.Droid.Activities
 
             if (yesRadio != null && noRadio != null && maybeRadio != null)
             {
-                // Si a répondu oui
-                if (DataBase.currentEvent.hasAnsweredUser(DataBase.current_user))
-                    yesRadio.Checked = true;
+                // Si on check sa réponse
 
-                // Sinon il a répondu non
-                else
-                    noRadio.Checked = false;
+                switch (DataBase.currentEvent.hasAnsweredUser(DataBase.current_user))
+                {
+                    case 1:
+                        yesRadio.Checked = true;
+                        break;
+                    case 2:
+                        noRadio.Checked = true;
+                        break;
 
-                // Actions : si on clique sur oui, on ajoute dans la liste
-                // Si on clique sur non, on enlève de la liste
+                    case 3:
+                        maybeRadio.Checked = true;
+                        break;
+
+                    default:
+                        yesRadio.Checked = false;
+                        noRadio.Checked = false;
+                        maybeRadio.Checked = false;
+                        break;
+                }
+                    
+
+                // Actions : YES, NO, MAYBE
 
                 yesRadio.CheckedChange += delegate
                 {
-                    DataBase.currentEvent.addUser(DataBase.current_user);
+                    DataBase.currentEvent.addYesUser(DataBase.current_user);
+                    StartActivity(typeof(EventActivity));
                 };
 
                 maybeRadio.CheckedChange += delegate
                 {
-                    DataBase.currentEvent.addUser(DataBase.current_user);
+                    DataBase.currentEvent.addMaybeUser(DataBase.current_user);
+                    StartActivity(typeof(EventActivity));
                 };
 
                 noRadio.CheckedChange += delegate
                 {
-                    DataBase.currentEvent.deleteUser(DataBase.current_user);
+                    DataBase.currentEvent.addNoUser(DataBase.current_user);
+                    StartActivity(typeof(EventActivity));
                 };
             }
         }
