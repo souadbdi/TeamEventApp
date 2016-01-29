@@ -67,6 +67,7 @@
     <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupAdminActivity.cs" />
+    <Compile Include="Activities\GroupEventsActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />

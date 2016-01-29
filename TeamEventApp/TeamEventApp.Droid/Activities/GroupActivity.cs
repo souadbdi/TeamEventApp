@@ -70,7 +70,8 @@ namespace TeamEventApp.Droid
             TextView ev = FindViewById<TextView>(Resource.Id.groupEventsTextView);
             ev.Click += delegate 
             {
-                //affichage de la liste des events du grp
+                UserService uService = new UserService(DataBase.current_user);
+                StartActivity(typeof(GroupEventsActivity));
             };
 
 

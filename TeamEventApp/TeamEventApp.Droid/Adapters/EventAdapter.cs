@@ -87,10 +87,10 @@ namespace TeamEventApp.Droid.Adapters
             LinearLayout linearLayout = row.FindViewById<LinearLayout>(Resource.Id.evm_answer_layout);
             if (linearLayout != null)
             { 
-                if (eventList[position].hasAnsweredUser(DataBase.current_user) != 0)
+                //if (eventList[position].hasAnsweredUser(DataBase.current_user) != 0)
                     linearLayout.Visibility = ViewStates.Gone;
                 
-                // S'il n'a pas répondu
+                /* S'il n'a pas répondu
                 else
                 {
                     Button yesButton = row.FindViewById<Button>(Resource.Id.evm_yes_btn);
@@ -117,7 +117,7 @@ namespace TeamEventApp.Droid.Adapters
                             context.StartActivity(typeof(EventManagerActivity));
                         };
 
-                }
+                }*/
             }
 
  

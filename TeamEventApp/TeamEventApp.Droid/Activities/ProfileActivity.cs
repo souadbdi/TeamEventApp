@@ -13,7 +13,6 @@ namespace TeamEventApp.Droid
     public class ProfileActivity : Activity
     {
         private TextView prenom;
-        private TextView nom;
         private TextView pseudo;
         private TextView email;
         private TextView adr;
@@ -100,7 +99,7 @@ namespace TeamEventApp.Droid
                 contactsDialog.Show(tx, "Modifier votre statut");
             };
 
-            // Actions pour la liste des demandes à des événements
+            // Actions pour la liste des demandes à des grps
             TextView textReqList = FindViewById<TextView>(Resource.Id.profile_req_text);
             textReqList.Click += delegate
             {
