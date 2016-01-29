@@ -11,9 +11,6 @@
         android:icon="@drawable/Plus"
         android:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_home"
-        android:title="@string/action_home" />
-    <item
         android:id="@+id/action_profile"
         android:title="@string/action_profile" />
     <item

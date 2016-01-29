@@ -72,10 +72,6 @@ namespace TeamEventApp.Droid.Activities
         {
             switch (item.ItemId)
             {
-                case Resource.Id.action_home:
-                    StartActivity(typeof(HomeActivity));
-                    return true;
-
                 case Resource.Id.action_profile:
                     StartActivity(typeof(ProfileActivity));
                     return true;

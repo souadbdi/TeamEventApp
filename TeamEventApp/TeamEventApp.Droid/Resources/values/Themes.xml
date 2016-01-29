@@ -5,7 +5,7 @@
   <color name="text_color">#E1E6FA</color>
   <color name="accent_color">#FFDA8C</color>
   
-  <style name="Widget.BlueTheme.Button" parent="@android:style/Widget.Material.Button">
+  <style name="Widget.BlueTheme.Button" parent="@android:style/Widget.Holo.Light">
     <item name="android:textColor">#E1E6FA</item>
   </style>
 

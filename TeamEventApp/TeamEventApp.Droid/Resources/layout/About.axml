@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp">
+    <TextView
+        android:id="@+id/about_text1"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dp"
+        android:text="Bienvenue sur Team Event !"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/about_text2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Cette application à été créée par : Louange Bizi-Bandoki, Anthony Lemmens, Michel Lemmens, Souad Belmehdi."
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/about_text3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="Vous êtes nouveau sur Team Event ? Invitez vos amis à télécharger l'application et ajoutez les à vos contacts. Créer ensuite des groupes pour y planifier vos prochains évènements !"
+        android:gravity="center" />
+</LinearLayout>
