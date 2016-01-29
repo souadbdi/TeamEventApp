@@ -56,6 +56,24 @@ namespace TeamEventApp
 
         }
 
+        public static async Task<List<User>> getUsersContact()
+        {
+
+            string queryString = Url.urlLink + "UserContact/"+DataBase.current_user.userId;
+            string content = "";
+            HttpMethod method = HttpMethod.Get;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            List<UserEntity> ListUserE = JsonConvert.DeserializeObject<List<UserEntity>>(results);
+            List<User> listUser = new List<User>();
+            for (var i = 0; i < ListUserE.Count; i++)
+            {
+                listUser.Add(UserConvertor.DBToUser(ListUserE[i]));
+            }
+            return listUser;
+
+        }
+
         public static async void delUser(int id)
         {
 

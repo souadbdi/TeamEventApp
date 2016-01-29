@@ -22,7 +22,7 @@ namespace TeamEventApp.Droid.Activities
         private ListView listView;
         private string[] nameItems = new string[] { "Hesron", "Tom", "Alexis", "Alex", "Hervet"};
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
@@ -35,41 +35,41 @@ namespace TeamEventApp.Droid.Activities
 
             // Notifications list
             usersList = new List<User> { };
+            usersList = await UserController.getAllUsers();
+            //usersList.Add(new User
+            //{
+            //    pseudo = "hesrondev",
+            //    firstName = "Louange",
+            //    lastName = "Bizib"
+            //});
 
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
+            //usersList.Add(new User
+            //{
+            //    pseudo = "hesrondev",
+            //    firstName = "Paris",
+            //    lastName = "Ville"
+            //});
 
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Paris",
-                lastName = "Ville"
-            });
+            //usersList.Add(new User
+            //{
+            //    pseudo = "Louange",
+            //    firstName = "Louange",
+            //    lastName = "Bizib"
+            //});
 
-            usersList.Add(new User
-            {
-                pseudo = "Louange",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
+            //usersList.Add(new User
+            //{
+            //    pseudo = "Makoma",
+            //    firstName = "KIOp",
+            //    lastName = "BEBE"
+            //});
 
-            usersList.Add(new User
-            {
-                pseudo = "Makoma",
-                firstName = "KIOp",
-                lastName = "BEBE"
-            });
-
-            usersList.Add(new User
-            {
-                pseudo = "Marc25",
-                firstName = "Fredine",
-                lastName = "Marc"
-            });
+            //usersList.Add(new User
+            //{
+            //    pseudo = "Marc25",
+            //    firstName = "Fredine",
+            //    lastName = "Marc"
+            //});
 
             // Create and set the adapters
             UserContactListAdapter adapter = new UserContactListAdapter(this, usersList);

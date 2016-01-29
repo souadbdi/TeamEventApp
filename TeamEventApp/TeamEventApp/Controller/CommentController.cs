@@ -56,6 +56,24 @@ namespace TeamEventApp.Controller
 
         }
 
+        public static async Task<List<Comment>> getCommentEvent(int id)
+        {
+
+            string queryString = Url.urlLink + "EvenementComment/"+id;
+            string content = "";
+            HttpMethod method = HttpMethod.Get;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            List<CommentEntity> ListCommentE = JsonConvert.DeserializeObject<List<CommentEntity>>(results);
+            List<Comment> listComment = new List<Comment>();
+            for (var i = 0; i < ListCommentE.Count; i++)
+            {
+                listComment.Add(CommentConvertor.DBToComment(ListCommentE[i]));
+            }
+            return listComment;
+
+        }
+
         public static async void delComment(int id)
         {
 

@@ -10,20 +10,16 @@ namespace TeamEventApp.Droid.Activities
     public class ContactProfileActivity : Activity
     {
         private User contact;
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.ContactProfile);
 
             //on affecte le contact selectionné dans la liste de contacts du current_user au user "contact"
-            foreach(User user in DataBase.current_user.contacts)
-            {
-                if(user.pseudo == ProfilContactsFragment.contact_selected.pseudo)
-                {
-                    contact = user;
-                }                   
-            }
+            User user = new User();
+            user = await UserController.getUser(ProfilContactsFragment.contact_selected.userId);
+            contact = user;
 
             //instanciation des champs
             TextView prenom = FindViewById<TextView>(Resource.Id.profile_contact_firstName);
@@ -43,7 +39,7 @@ namespace TeamEventApp.Droid.Activities
 
             TextView nb_events = FindViewById<TextView>(Resource.Id.profile_contact_events_number);
             int nb_e = 0;
-            foreach(Group grp in contact.groups)
+            foreach (Group grp in contact.groups)
             {
                 nb_e += grp.events.Count;
             }
@@ -61,10 +57,9 @@ namespace TeamEventApp.Droid.Activities
 
             //suppression du contact
             TextView delete = FindViewById<TextView>(Resource.Id.delete_contact_text);
-            delete.Click += delegate 
+            delete.Click += delegate
             {
-                DataBase.current_user.removeContact(contact);
-                contact.removeContact(DataBase.current_user);
+                UserController.delUser(contact.userId);
                 StartActivity(typeof(ProfileActivity));
             };
 

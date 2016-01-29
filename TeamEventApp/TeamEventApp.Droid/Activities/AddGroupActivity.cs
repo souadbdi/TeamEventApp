@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using TeamEventApp.Controller;
 
 namespace TeamEventApp.Droid
 {
@@ -25,7 +26,7 @@ namespace TeamEventApp.Droid
             button.Click += delegate
             {
                 Group grp = new Group(nomGrp.Text, DataBase.current_user);
-                DataBase.current_user.addGroup(grp);
+                GroupController.addGroup(grp);
 
                 StartActivity(typeof(GroupManagerActivity));
             };

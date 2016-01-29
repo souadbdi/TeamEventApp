@@ -56,6 +56,24 @@ namespace TeamEventApp.Controller
 
         }
 
+        public static async Task<List<Group>> getGroupUSer()
+        {
+
+            string queryString = Url.urlLink + "UsersGroupe/"+DataBase.current_user.userId;
+            string content = "";
+            HttpMethod method = HttpMethod.Get;
+            dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
+
+            List<GroupEntity> listGroupE = JsonConvert.DeserializeObject<List<GroupEntity>>(results);
+            List<Group> listGroup = new List<Group>();
+            for (var i = 0; i < listGroupE.Count; i++)
+            {
+                listGroup.Add(GroupConvertor.DBToGroup(listGroupE[i]));
+            }
+            return listGroup;
+
+        }
+
         public static async void delGroup(int id)
         {
 

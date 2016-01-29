@@ -6,6 +6,8 @@ using Android.Views;
 using TeamEventApp.Droid.Activities;
 
 using TeamEventApp.Droid.Fragments;
+using TeamEventApp.Controller;
+using System.Collections.Generic;
 
 namespace TeamEventApp.Droid
 {
@@ -27,7 +29,7 @@ namespace TeamEventApp.Droid
         private TextView profile_events;
         private TextView profile_groups;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Profile);
@@ -50,12 +52,9 @@ namespace TeamEventApp.Droid
 
             //nombre d'évènements du user (on parcoure tous ses groupes)
             events_number = FindViewById<TextView>(Resource.Id.profile_events_number);
-            int nb_events = 0;
-            foreach(Group grp in DataBase.current_user.groups)
-            {
-                nb_events += grp.events.Count;
-            }
-            events_number.Text = nb_events.ToString();
+            List<Event> eventListe = new List<Event>();
+            eventListe = await EventController.getEventUser();
+            events_number.Text = eventListe.Count.ToString();
 
             //action nb events -> EventManager
             profile_events = FindViewById<TextView>(Resource.Id.profile_events_text);
@@ -65,7 +64,9 @@ namespace TeamEventApp.Droid
 
             //nb de grp du current_user
             groups_number = FindViewById<TextView>(Resource.Id.profile_groups_number);
-            groups_number.Text = DataBase.current_user.groups.Count.ToString();
+            List<Group> groupListe = new List<Group>();
+            groupListe = await GroupController.getGroupUSer();
+            groups_number.Text = groupListe.Count.ToString();
 
             status = FindViewById<TextView>(Resource.Id.profile_status_text);
             status.Text = DataBase.current_user.status;
@@ -107,8 +108,9 @@ namespace TeamEventApp.Droid
 
             //nb de contacts
             contacts_number = FindViewById<TextView>(Resource.Id.profile_contacts_number);
-            int nb_c = DataBase.current_user.contacts.Count;
-            contacts_number.Text = nb_c.ToString();
+            List<User> contactListe = new List<User>();
+            contactListe = await UserController.getUsersContact();
+            contacts_number.Text = contactListe.Count.ToString();
 
             //Actions pour l'affichage des contacts
             contacts = FindViewById<TextView>(Resource.Id.profile_contacts_text);

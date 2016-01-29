@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Widget;
+using System.Collections.Generic;
 
 namespace TeamEventApp.Droid.Activities
 {
@@ -18,7 +19,7 @@ namespace TeamEventApp.Droid.Activities
             Button add_button = FindViewById<Button>(Resource.Id.validContact);
 
             //action ajouter contact
-            add_button.Click += delegate
+            add_button.Click += async delegate
             {
                 //on ne peut pas s'ajouter sois même
                 var isMySelf = false;
@@ -30,7 +31,9 @@ namespace TeamEventApp.Droid.Activities
                 //on vérifie si le user à ajouter fait partie des users de l'appli
                 var isAppUser = false;
                 User user = new User();
-                foreach(User us in DataBase.users_db.Values)
+                List<User> userListe = new List<User>();
+                userListe = await UserController.getAllUsers();
+                foreach (User us in userListe)
                 {
                     if(editText.Text == us.pseudo)
                     {
@@ -42,13 +45,16 @@ namespace TeamEventApp.Droid.Activities
                 {
                     //on vérifie maintenant qu'il ne fait pas déjà partie des contacts du current_user
                     var isUserContact = false;
-                    foreach(User contact in DataBase.current_user.contacts)
+                    List<User> contactListe = new List<User>();
+                    contactListe = await UserController.getUsersContact();
+                    foreach (User contact in contactListe)
                     {
                         if (editText.Text == contact.pseudo)
                             isUserContact = true;
                     }
                     if (!isUserContact && !isMySelf)
                     {
+                        // manque la methode ajout contact vers le WS
                         DataBase.current_user.addContact(user);
                         //le contact ajouté a maintenant le current_user dans ses contacts
                         user.addContact(DataBase.current_user);
