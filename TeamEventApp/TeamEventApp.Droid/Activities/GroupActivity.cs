@@ -8,6 +8,7 @@ using Android.Widget;
 using TeamEventApp.Droid.Adapters;
 using TeamEventApp.Droid.Fragments;
 using TeamEventApp.Droid.Activities;
+using System;
 
 namespace TeamEventApp.Droid
 {
@@ -15,11 +16,22 @@ namespace TeamEventApp.Droid
     public class GroupActivity : Activity
     {
         public static Group current_group;
-        //tableItems va contenir "membres","admins","events"
-        /*List<GroupRow> tableItems = new List<GroupRow>();
-        List<GroupRowItem> mb = new List<GroupRowItem>();
-        List<GroupRowItem> adm = new List<GroupRowItem>();
-        List<GroupRowItem> ev = new List<GroupRowItem>();*/
+
+
+        // Attributes
+        private List<Comment> commentList;
+        private ListView listView;
+
+
+        // Views
+
+        EditText comContentET;
+        ImageButton comValidButton;
+
+
+        // Service
+        UserService uService;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,16 +40,6 @@ namespace TeamEventApp.Droid
             // Set our view from the "group" layout resource
             SetContentView(Resource.Layout.Group);
 
-            //ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
-            TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
-
-            //on récupère le nom du grp selectionné dans GroupManagerActivity
-            foreach (Group grp in DataBase.current_user.groups)
-            {
-                if (grp.groupName == GroupManagerActivity.current_group_selected.groupName)
-                    gntv.Text =grp.groupName;
-            }
-
             string group_name = GroupManagerActivity.current_group_selected.groupName;
             //on affecte le groupe courant au groupe selectionné
             foreach (Group grp in DataBase.current_user.groups)
@@ -45,6 +47,9 @@ namespace TeamEventApp.Droid
                 if (grp.groupName == group_name)
                 {
                     current_group = grp;
+
+                    if (grp != null)
+                    Title = current_group.groupName;
                 }
             }
 
@@ -75,58 +80,76 @@ namespace TeamEventApp.Droid
             };
 
 
-            /*
-            //liste avec noms des membres
-            foreach (User us in current_group.members)
-            {
-                GroupRowItem gri = new GroupRowItem();
-                gri.Name = us.pseudo;
-                mb.Add(gri);
-            }
-            tableItems.Add(new GroupRow() {
-               Row = "Membres",
-               RowItems = mb
-            });
-            //liste avec noms des admins
-            foreach (User us in current_group.admins)
-            {
-               GroupRowItem gri = new GroupRowItem();
-               gri.Name = us.pseudo;
-               adm.Add(gri);
-            }
-            tableItems.Add(new GroupRow()
-            {
-               Row = "Admins",
-               RowItems = adm
-            });
-            //liste avec noms des events
-            foreach (Event e in current_group.events)
-            {
-               GroupRowItem gri = new GroupRowItem();
-               gri.Name = e.eventName;
-               ev.Add(gri);
-             }
-             tableItems.Add(new GroupRow()
-               {
-                  Row = "Evènements",
-                  RowItems = ev
-               });
-            ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
-            elv.SetAdapter(adapter);
-            elv.ChildClick += Elv_ChildClick;
-            */
-           
+            // 
+
+
+            // Service
+            uService = new UserService(DataBase.current_user);
+
+            // views
+            // Comment content
+            comContentET =FindViewById<EditText>(Resource.Id.group_comment_text);
+
+            // valid button
+            comValidButton = FindViewById<ImageButton>(Resource.Id.group_commentSend_btn);
+
+            if (comValidButton != null)
+                comValidButton.Click += delegate
+                {
+                    if (comContentET != null)
+                    { 
+                        Comment comment = publishComment();
+
+                    // Ajout du commentaire dans l'événement
+
+                    if (current_group != null)
+                        commentList = current_group.AddComment(comment);
+
+                    // Refresh the list
+                    EventCommentAdapter newAdapter = new EventCommentAdapter(this, commentList);
+                    listView.Adapter = newAdapter;
+                    }
+                };
+
+            // ListView
+            listView = FindViewById<ListView>(Resource.Id.group_comment_listView);
+
+            // Notifications list : liste de commentaires des événements
+            commentList = current_group.GetAllComments();
+
+            // Create and set the adapter
+            EventCommentAdapter adapter = new EventCommentAdapter(this, commentList);
+
+            if (listView != null)
+                listView.Adapter = adapter;
+
 
         }
 
-        /*private void Elv_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
-        {
-            var c = tableItems[e.GroupPosition].RowItems[e.ChildPosition];
-           // Toast.MakeText(this, c.Name, ToastLength.Short).Show();
 
-            var g = tableItems[e.ChildPosition];
-            Toast.MakeText(this, g.Row + " : " + c.Name, ToastLength.Short).Show();
-        }*/
+        // Publication d'un commentaire
+        private Comment publishComment()
+        {
+            string content = "";
+
+           
+                content = comContentET.Text;
+                comContentET.Text = "";         // flush the field
+
+
+            // Object
+            Comment comment = new Comment
+            {
+                message = content,
+                date = DateTime.Now,
+                userID = DataBase.current_user.userId,
+                groupID = current_group.groupId
+            };
+
+
+            return comment;
+
+        }
 
 
         // Adding the group menu
@@ -155,10 +178,6 @@ namespace TeamEventApp.Droid
                         GroupAddAdminFragment contactsDialog = new GroupAddAdminFragment();
                         contactsDialog.Show(tx, "Ajouter un administrateur");
                     }
-                    return true;
-
-                case Resource.Id.action_addEvent:
-                    //Fragment add event
                     return true;
 
                 case Resource.Id.action_changeName:
