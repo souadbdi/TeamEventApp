@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TeamEvent;
+using TeamEventApp.Convertisseur;
 
 namespace TeamEventApp.Controller
 {
@@ -14,11 +16,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Events";
-            string content = JsonConvert.SerializeObject(events);
+            string content = JsonConvert.SerializeObject(EventConvertor.EventToDB(events));
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Event>(results);
+            EventEntity eventE = JsonConvert.DeserializeObject<EventEntity>(results);
+            return EventConvertor.DBToEvent(eventE);
 
         }
 
@@ -30,7 +33,8 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Event>(results);
+            EventEntity eventE = JsonConvert.DeserializeObject<EventEntity>(results);
+            return EventConvertor.DBToEvent(eventE);
 
         }
 
@@ -42,7 +46,13 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<Event>>(results);
+            List<EventEntity> ListEventE = JsonConvert.DeserializeObject<List<EventEntity>>(results);
+            List<Event> listEvent = new List<Event>();
+            for (var i = 0; i < ListEventE.Count; i++)
+            {
+                listEvent.Add(EventConvertor.DBToEvent(ListEventE[i]));
+            }
+            return listEvent;
 
         }
 
@@ -60,11 +70,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Events";
-            string content = JsonConvert.SerializeObject(events);
+            string content = JsonConvert.SerializeObject(EventConvertor.EventToDB(events));
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Event>(results);
+            EventEntity eventE = JsonConvert.DeserializeObject<EventEntity>(results);
+            return EventConvertor.DBToEvent(eventE);
 
         }
     }

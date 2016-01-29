@@ -4,12 +4,12 @@ namespace TeamEventApp
 {
     public class Comment
     {
-        public long commentId {get; set; }
+        public int commentId {get; set; }
         public string message {get; set; }
-        public long userID {get; set; }
+        public int userID {get; set; }
         public DateTime date;
-        public long eventId { get; set; }
-        public long groupID { get; set; }
+        public int eventId { get; set; }
+        public int groupID { get; set; }
 
 
         // Take the userName

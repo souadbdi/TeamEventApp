@@ -31,6 +31,19 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Convertisseur\CommentConvertor.cs" />
+    <Compile Include="Convertisseur\EventConvertor.cs" />
+    <Compile Include="Convertisseur\GroupConvertor.cs" />
+    <Compile Include="Convertisseur\NotificationConvertor.cs" />
+    <Compile Include="Convertisseur\UserConvertor.cs" />
+    <Compile Include="EntityClasse\AppartienEntity.cs" />
+    <Compile Include="EntityClasse\CommentEntity.cs" />
+    <Compile Include="EntityClasse\ContactEntity.cs" />
+    <Compile Include="EntityClasse\EventEntity.cs" />
+    <Compile Include="EntityClasse\EventUserStateEntity.cs" />
+    <Compile Include="EntityClasse\GroupEntity.cs" />
+    <Compile Include="EntityClasse\NotificationEntity.cs" />
+    <Compile Include="EntityClasse\UserEntity.cs" />
     <Compile Include="Url.cs" />
     <Compile Include="Classe\Comment.cs" />
     <Compile Include="Classe\User.cs" />
@@ -56,5 +69,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

@@ -92,7 +92,7 @@ namespace TeamEventApp.Droid
                 if (!error)
                 {
                     User user = new User(prenom.Text, nom.Text, pseudo.Text, email.Text, mdp.Text);
-                    DataBase.Inscription(user);
+                    UserController.addUser(user);
                     StartActivity(typeof(ProfileActivity));
                 }
             };

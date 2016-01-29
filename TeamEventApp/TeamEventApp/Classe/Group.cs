@@ -4,7 +4,7 @@ namespace TeamEventApp
 {
     public class Group
     {
-        public long groupId { get; set; }
+        public int groupId { get; set; }
         public string groupName { get; set; }
         public List<User> members { get; set; } = new List<User>();
         public List<User> admins { get; set; } = new List<User>();

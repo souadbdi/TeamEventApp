@@ -8,7 +8,7 @@ namespace TeamEventApp
 
     public class User
     {
-        public long userId { get; set; }
+        public int userId { get; set; }
         public string lastName { get; set; }
         public string firstName { get; set; }
         public string pseudo { get; set; }
@@ -36,7 +36,7 @@ namespace TeamEventApp
 
         public void addUser(User user)
         {
-            user.userId = (long)users_db.Count + 1;
+            user.userId = (int)users_db.Count + 1;
             users_db.Add(user.userId, user);
         }
 

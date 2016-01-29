@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TeamEvent;
+using TeamEventApp.Convertisseur;
 
 namespace TeamEventApp.Controller
 {
@@ -14,11 +16,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Notifications";
-            string content = JsonConvert.SerializeObject(notification);
+            string content = JsonConvert.SerializeObject(NotificationConvertor.NotificationToDB(notification));
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Notification>(results);
+            NotificationEntity notificationE = JsonConvert.DeserializeObject<NotificationEntity>(results);
+            return NotificationConvertor.DBToNotification(notificationE);
 
         }
 
@@ -30,7 +33,8 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Notification>(results);
+            NotificationEntity notificationE = JsonConvert.DeserializeObject<NotificationEntity>(results);
+            return NotificationConvertor.DBToNotification(notificationE);
 
         }
 
@@ -42,7 +46,13 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<Notification>>(results);
+            List<NotificationEntity> listNotificationE = JsonConvert.DeserializeObject<List<NotificationEntity>>(results);
+            List<Notification> listNotification = new List<Notification>();
+            for (var i = 0; i < listNotificationE.Count; i++)
+            {
+                listNotification.Add(NotificationConvertor.DBToNotification(listNotificationE[i]));
+            }
+            return listNotification;
 
         }
 
@@ -60,11 +70,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Notifications";
-            string content = JsonConvert.SerializeObject(notification);
+            string content = JsonConvert.SerializeObject(NotificationConvertor.NotificationToDB(notification));
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Notification>(results);
+            NotificationEntity notificationE = JsonConvert.DeserializeObject<NotificationEntity>(results);
+            return NotificationConvertor.DBToNotification(notificationE);
 
         }
     }

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TeamEvent.Models;
+using TeamEventApp.Convertisseur;
 
 namespace TeamEventApp.Controller
 {
@@ -14,11 +16,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Comments";
-            string content = JsonConvert.SerializeObject(comment);
+            string content = JsonConvert.SerializeObject(CommentConvertor.CommentToDB(comment));
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Comment>(results);
+            CommentEntity commentE = JsonConvert.DeserializeObject<CommentEntity>(results);
+            return CommentConvertor.DBToComment(commentE);
 
         }
 
@@ -30,7 +33,8 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Comment>(results);
+            CommentEntity commentE = JsonConvert.DeserializeObject<CommentEntity>(results);
+            return CommentConvertor.DBToComment(commentE);
 
         }
 
@@ -42,7 +46,13 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<Comment>>(results);
+            List<CommentEntity> ListCommentE = JsonConvert.DeserializeObject<List<CommentEntity>>(results);
+            List<Comment> listComment = new List<Comment>();
+            for (var i = 0; i < ListCommentE.Count; i++)
+            {
+                listComment.Add(CommentConvertor.DBToComment(ListCommentE[i]));
+            }
+            return listComment;
 
         }
 
@@ -60,11 +70,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Comments";
-            string content = JsonConvert.SerializeObject(comment);
+            string content = JsonConvert.SerializeObject(CommentConvertor.CommentToDB(comment));
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Comment>(results);
+            CommentEntity commentE = JsonConvert.DeserializeObject<CommentEntity>(results);
+            return CommentConvertor.DBToComment(commentE);
 
         }
     }

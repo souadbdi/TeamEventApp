@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TeamEvent.Models;
+using TeamEventApp.Convertisseur;
 
 namespace TeamEventApp.Controller
 {
@@ -14,11 +16,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Groups";
-            string content = JsonConvert.SerializeObject(group);
+            string content = JsonConvert.SerializeObject(GroupConvertor.GroupToDB(group));
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Group>(results);
+            GroupEntity groupE = JsonConvert.DeserializeObject<GroupEntity>(results);
+            return GroupConvertor.DBToGroup(groupE);
 
         }
 
@@ -30,7 +33,8 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Group>(results);
+            GroupEntity groupE = JsonConvert.DeserializeObject<GroupEntity>(results);
+            return GroupConvertor.DBToGroup(groupE);
 
         }
 
@@ -42,7 +46,13 @@ namespace TeamEventApp.Controller
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<List<Group>>(results);
+            List<GroupEntity> listGroupE = JsonConvert.DeserializeObject<List<GroupEntity>>(results);
+            List<Group> listGroup = new List<Group>();
+            for (var i = 0; i < listGroupE.Count; i++)
+            {
+                listGroup.Add(GroupConvertor.DBToGroup(listGroupE[i]));
+            }
+            return listGroup;
 
         }
 
@@ -60,11 +70,12 @@ namespace TeamEventApp.Controller
         {
 
             string queryString = Url.urlLink + "Groups";
-            string content = JsonConvert.SerializeObject(group);
+            string content = JsonConvert.SerializeObject(GroupConvertor.GroupToDB(group));
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
 
-            return JsonConvert.DeserializeObject<Group>(results);
+            GroupEntity groupE = JsonConvert.DeserializeObject<GroupEntity>(results);
+            return GroupConvertor.DBToGroup(groupE);
 
         }
     }

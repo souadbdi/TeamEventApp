@@ -35,14 +35,14 @@ namespace TeamEventApp.Droid.Fragments
             {
                 note = "Hey, RDV dans 5 minutes les mecs",
                 date = new DateTime(),
-                views = 5
+                views = "5"
             });
 
             notifList.Add(new Notification
             {
                 note = "Je suis là, je vous attends",
                 date = new DateTime(),
-                views = 1
+                views = "1"
             });
 
             notifList.Add(new Notification
@@ -50,28 +50,28 @@ namespace TeamEventApp.Droid.Fragments
                 note = "Un commentaire assez long parce que je suis une femme. Je vais"
                 + "de voir continuer sur cette ligne avec des erreurs, c'est pas grave",
                 date = new DateTime(),
-                views = 5
+                views = "5"
             });
 
             notifList.Add(new Notification
             {
                 note = "Je suis là, je vous attends",
                 date = new DateTime(),
-                views = 1
+                views = "1"
             });
 
             notifList.Add(new Notification
             {
                 note = "Je suis là, je vous attends",
                 date = new DateTime(),
-                views = 1
+                views = "1"
             });
 
             notifList.Add(new Notification
             {
                 note = "OK c'est noté!",
                 date = new DateTime(),
-                views = 1
+                views = "1"
             });
 
 
