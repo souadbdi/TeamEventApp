@@ -8,6 +8,7 @@ namespace TeamEventApp
 {
     class Url
     {
-        public static String urlLink = "http://teamevent.azurewebsites.net/api/"; 
+        public static String urlLink = "http://teamevent.azurewebsites.net/api/";
+        public static String urlLink2 = "http://teamevent.azurewebsites.net/";
     }
 }

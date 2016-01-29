@@ -59,7 +59,7 @@ namespace TeamEventApp
         public static async Task<List<User>> getUsersContact()
         {
 
-            string queryString = Url.urlLink + "UserContact/"+DataBase.current_user.userId;
+            string queryString = Url.urlLink2 + "UserContact/"+DataBase.current_user.userId;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -100,7 +100,7 @@ namespace TeamEventApp
         public static async Task<User> login(User user)
         {
 
-            string queryString = Url.urlLink + "UsersLogin";
+            string queryString = Url.urlLink2 + "UsersLogin";
             string content = JsonConvert.SerializeObject(UserConvertor.UserToDB(user));
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
