@@ -15,24 +15,24 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
 		   android:id="@+id/groupMembersTextView"
-       android:clickable="true"/>
+       android:clickable="true"
+       android:textSize="22dp"
+       android:layout_gravity="center"/>
     <TextView
        android:text="Admins"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:id="@+id/groupAdminsTextView"
-       android:clickable="true"/>
+       android:clickable="true"
+       android:textSize="22dp"
+       android:layout_gravity="center"/>
     <TextView
        android:text="Evènements"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:id="@+id/groupEventsTextView"
-       android:clickable="true"/>
-  <ExpandableListView
-     android:id="@+id/ExLV"
-     android:layout_width="fill_parent"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="5dp"
-     android:cacheColorHint="#FFDAFF7F"/>
+       android:clickable="true"
+       android:textSize="22dp"
+       android:layout_gravity="center"/>
 
 </LinearLayout>

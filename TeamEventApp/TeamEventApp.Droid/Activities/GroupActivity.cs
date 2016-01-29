@@ -16,10 +16,10 @@ namespace TeamEventApp.Droid
     {
         public static Group current_group;
         //tableItems va contenir "membres","admins","events"
-        List<GroupRow> tableItems = new List<GroupRow>();
+        /*List<GroupRow> tableItems = new List<GroupRow>();
         List<GroupRowItem> mb = new List<GroupRowItem>();
         List<GroupRowItem> adm = new List<GroupRowItem>();
-        List<GroupRowItem> ev = new List<GroupRowItem>();
+        List<GroupRowItem> ev = new List<GroupRowItem>();*/
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,7 +28,7 @@ namespace TeamEventApp.Droid
             // Set our view from the "group" layout resource
             SetContentView(Resource.Layout.Group);
 
-            ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
+            //ExpandableListView elv = FindViewById<ExpandableListView>(Resource.Id.ExLV);
             TextView gntv = FindViewById<TextView>(Resource.Id.groupNameTextView);
 
             //on récupère le nom du grp selectionné dans GroupManagerActivity
@@ -46,7 +46,35 @@ namespace TeamEventApp.Droid
                 {
                     current_group = grp;
                 }
-            }             
+            }
+
+            //click sur Membres
+            TextView membres = FindViewById<TextView>(Resource.Id.groupMembersTextView);
+            membres.Click += delegate 
+            {
+                FragmentTransaction tx = FragmentManager.BeginTransaction();
+                GroupMembersFragment contactsDialog = new GroupMembersFragment();
+                contactsDialog.Show(tx, "Membres");
+            };
+
+            //click sur Admins
+            TextView admins = FindViewById<TextView>(Resource.Id.groupAdminsTextView);
+            admins.Click += delegate
+            {
+                FragmentTransaction tx = FragmentManager.BeginTransaction();
+                GroupAdminsFragment contactsDialog = new GroupAdminsFragment();
+                contactsDialog.Show(tx, "Admins");
+            };
+
+            //click sur évènements
+            TextView ev = FindViewById<TextView>(Resource.Id.groupEventsTextView);
+            ev.Click += delegate 
+            {
+                //affichage de la liste des events du grp
+            };
+
+
+            /*
             //liste avec noms des membres
             foreach (User us in current_group.members)
             {
@@ -85,18 +113,19 @@ namespace TeamEventApp.Droid
             ExpandableListAdapter adapter = new ExpandableListAdapter(this, tableItems);
             elv.SetAdapter(adapter);
             elv.ChildClick += Elv_ChildClick;
+            */
            
 
         }
 
-        private void Elv_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
+        /*private void Elv_ChildClick(object sender, ExpandableListView.ChildClickEventArgs e)
         {
             var c = tableItems[e.GroupPosition].RowItems[e.ChildPosition];
            // Toast.MakeText(this, c.Name, ToastLength.Short).Show();
 
             var g = tableItems[e.ChildPosition];
             Toast.MakeText(this, g.Row + " : " + c.Name, ToastLength.Short).Show();
-        }
+        }*/
 
 
         // Adding the group menu

@@ -65,6 +65,7 @@
     <Compile Include="Activities\AddContactActivity.cs" />
     <Compile Include="Activities\ContactProfileActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
+    <Compile Include="Activities\GroupAdminActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
