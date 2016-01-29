@@ -244,6 +244,9 @@ namespace TeamEventApp.Droid.Activities
                 notifications = new List<Notification>(),
                 comments = new List<Comment>(),
                 userList = new List<User>(),
+                userMaybeList = new List<User>(),
+                userYesList = new List<User>(),
+                userNoList = new List<User>(),
                 userAdmin = DataBase.current_user
             };
 

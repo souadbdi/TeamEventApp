@@ -87,6 +87,7 @@ namespace TeamEventApp.Droid
                 endDate = DateTime.Now,
                 address = "Paris, France"
                 };
+            
             DataBase.CreateEvent(ev1);
 
             Event ev2 = new Event {

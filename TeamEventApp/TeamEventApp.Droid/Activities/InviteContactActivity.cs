@@ -89,9 +89,6 @@ namespace TeamEventApp.Droid.Activities
 
 
 
-           
-
-
             // Create and set the adapters of
             UserContactListAdapter adapter = new UserContactListAdapter(this, usersList);
 
@@ -123,16 +120,36 @@ namespace TeamEventApp.Droid.Activities
             return usersList;
         }
 
-        // Setting of the namesList
+        // Setting of the namesList des amis du même groupe
         private string[] getUserNamesTab(List<User> userList)
         {
             string[] namesTab = new string[userList.Count];
             int i = 0;
 
+            // Dans la liste d'amis de l'utilisateur
+            // Si un ami fait parti du groupe de l'événement, le proposer
+
             foreach(User user in userList)
             {
-                namesTab[i] = user.pseudo;
-                i++;
+                Group eventGroup = uService.GetUserGroupById(DataBase.currentEvent.groupId);
+                bool isMember = false;
+
+                if (eventGroup != null)
+                    foreach (User us in eventGroup.members)
+                    {
+                        if (us == user)
+                        {
+                            isMember = true;
+                            break;
+                        }
+                    }
+
+                // S'il est concerné
+                if (isMember)
+                {
+                    namesTab[i] = user.pseudo;
+                    i++;
+                }
             }
 
             return namesTab;
@@ -144,7 +161,12 @@ namespace TeamEventApp.Droid.Activities
         private void inviteAddedContact(List<User> userList)
         {
             foreach (User user in userList)
+            {
+                // On ajoute l'utilisateur dans la liste des invités
                 DataBase.currentEvent.addUser(user);
+
+                // On ajout l'événement dans la liste des
+            }
         }
 
 
