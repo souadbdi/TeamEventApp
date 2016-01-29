@@ -71,6 +71,7 @@
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
+    <Compile Include="Activities\GroupMemberActivity.cs" />
     <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Adapters\EventCommentAdapter.cs" />
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
+    <Compile Include="Adapters\ProfileContactAdapter.cs" />
     <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
@@ -91,12 +93,15 @@
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
     <Compile Include="Fragments\GroupAddEventFragment.cs" />
     <Compile Include="Fragments\GroupAddMemberFragment.cs" />
+    <Compile Include="Fragments\GroupAdminsFragment.cs" />
     <Compile Include="Fragments\GroupChangeNameFragment.cs" />
+    <Compile Include="Fragments\GroupMembersFragment.cs" />
     <Compile Include="Fragments\ProfilContactsFragment.cs" />
     <Compile Include="Fragments\ProfilEditProfileFragment.cs" />
     <Compile Include="Fragments\ProfilEditStatusFragment.cs" />
     <Compile Include="Fragments\UsersDialogFragment.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
+    <Compile Include="ListViewRows\UserList.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
@@ -198,6 +203,11 @@
     <AndroidResource Include="Resources\layout\EventCreationForm.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\GroupAdmin.axml" />
+    <AndroidResource Include="Resources\layout\GroupAdmins.axml" />
+    <AndroidResource Include="Resources\layout\GroupMember.axml" />
+    <AndroidResource Include="Resources\layout\GroupMembers.axml" />
+    <AndroidResource Include="Resources\layout\ProfileContactRow.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />

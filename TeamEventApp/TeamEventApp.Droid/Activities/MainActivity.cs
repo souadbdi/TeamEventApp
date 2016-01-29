@@ -47,7 +47,7 @@ namespace TeamEventApp.Droid
             User user3 = new User("Louange", "Bzb", "hesrondev", "mail@yahoo.fr", "pass");
             DataBase.Inscription(user3);
 
-            User user4 = new User("Souad", "Bdi", "souad78", "wanda@yahoo.fr", "pass");
+            User user4 = new User("Souad", "Bdi", "souad78", "souad@yahoo.fr", "pass");
             DataBase.Inscription(user4);
 
             User user5 = new User("Anthony", "Lammens", "anto88", "anto@yahoo.fr", "pass");
@@ -59,22 +59,29 @@ namespace TeamEventApp.Droid
             // Groups
 
             Group group1 = new Group("FRIENDS", user1);
-            DataBase.CreateGroup(group1);
+            user1.addGroup(group1);
             group1.addMember(user2);
+            user2.addGroup(group1);
             group1.addMember(user3);
+            user3.addGroup(group1);
             group1.addMember(user4);
+            user4.addGroup(group1);
 
             Group group2 = new Group("School Classmates", user1);
-            DataBase.CreateGroup(group2);
+            user1.addGroup(group2);
             group2.addMember(user6);
+            user2.addGroup(group2);
             group2.addMember(user3);
+            user3.addGroup(group2);
             group2.addMember(user4);
+            user4.addGroup(group2);
 
             Group group3 = new Group("School Classmates", user3);
-            DataBase.CreateGroup(group3);
+            user3.addGroup(group3);
             group3.addMember(user6);
-            group3.addMember(user3);
+            user6.addGroup(group3);
             group3.addMember(user4);
+            user4.addGroup(group3);
 
             // Events
 
