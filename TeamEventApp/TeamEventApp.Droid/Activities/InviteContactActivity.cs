@@ -146,5 +146,19 @@ namespace TeamEventApp.Droid.Activities
             foreach (User user in userList)
                 DataBase.currentEvent.addUser(user);
         }
+
+
+        // Supprimer un contact
+
+        public void deleteUser(User user)
+        {
+            usersList.Remove(user);
+
+            // Mettre à jour la liste
+            UserContactListAdapter updatedAdapter = new UserContactListAdapter(this, usersList);
+
+            if (listView != null)
+                listView.Adapter = updatedAdapter;
+        }
     }
 }
