@@ -68,5 +68,6 @@ namespace TeamEventApp
         {
             this.contacts.Remove(user);
         }
+
     }
 }

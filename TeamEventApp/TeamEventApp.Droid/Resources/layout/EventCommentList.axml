@@ -21,14 +21,14 @@
         android:layout_height="wrap_content">
     <!-- Champe d'édition -->
         <EditText
-            android:id="@+id/event_notifComment_text"
+            android:id="@+id/event_comment_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/event_write_comment" />
     <!-- Bouton de validation -->
         <ImageButton
-            android:id="@+id/event_notifSend_btn"
+            android:id="@+id/event_commentSend_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

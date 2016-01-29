@@ -11,17 +11,11 @@ namespace TeamEventApp
         public long eventId { get; set; }
         public long groupID { get; set; }
 
-
-        // Take the userName
-        public string userName()
-        {
-            return "User Name";
-        }
-
         //Convert the date to string
         public string toStringDate()
         {
-            return this.date.ToString();
+            string _dateFormat = "dd MMM yyyy, H:mm";
+            return this.date.ToString(_dateFormat);
         }
     }
 }

@@ -15,14 +15,80 @@ namespace TeamEventApp
         public List<Notification> notifications { get; set; }
         public List<Comment> comments { get; set; }
         public List<User> userList { get; set; }
+        public User userAdmin { get; set;  }
 
 
 
         // Return start-end date to string format
         public string toStringStartEndDate()
         {
-            return this.startDate.ToString() + " à " + this.endDate.ToString();
-    }
+            string _dateFormat = "dd MMM yyyy, H:mm";
+
+            return this.startDate.ToString(_dateFormat) + " - " + this.endDate.ToString(_dateFormat);
+        }
+
+        // Ajouter utilisateur
+
+        public List<User> addUser(User user)
+        {
+            userList.Add(user);
+            return userList;
+        }
+
+        // Enlever un utilisateur
+
+            public List<User> deleteUser(User user)
+        {
+            userList.Remove(user);
+            return userList;
+        }
+
+        // Vérification si un utilisateur à répondu à propos l'événement
+
+        public bool hasAnsweredUser(User user)
+        {
+            foreach(User eventUser in userList)
+            {
+                if (user.userId == eventUser.userId)
+                    return true;
+            }
+
+            return false;
+        }
+
+        // Get username by id
+        public string getUserNameById(long userID)
+        {
+            string username = "no-user";
+
+            foreach (User user in userList)
+            {
+                if (userID == user.userId)
+                {
+                    return user.pseudo;
+                }
+            }
+
+            return username;
+        }
+
+
+        // Ajout d'un commentaire
+
+        public List<Comment> addComment(Comment comment)
+        {
+            comments.Add(comment);
+            return comments;
+        }
+
+        // Ajout d'une notification
+
+        public List<Notification> addNotification(Notification notif)
+        {
+            notifications.Add(notif);
+            return notifications;
+        }
+
     }
 
     

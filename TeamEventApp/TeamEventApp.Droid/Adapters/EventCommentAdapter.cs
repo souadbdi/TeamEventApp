@@ -64,7 +64,7 @@ namespace TeamEventApp.Droid.Adapters
 
             // Name of the event
             TextView textUserName = row.FindViewById<TextView>(Resource.Id.event_commentUser);
-            textUserName.Text = commentList[position].userName();
+            textUserName.Text = DataBase.currentEvent.getUserNameById(commentList[position].userID);
 
             // Date start          
             TextView textDate = row.FindViewById<TextView>(Resource.Id.event_commentDate);
@@ -76,5 +76,6 @@ namespace TeamEventApp.Droid.Adapters
 
             return row;
         }
+
     }
 }

@@ -64,13 +64,13 @@
     <Compile Include="Activities\AboutActivity.cs" />
     <Compile Include="Activities\AddContactActivity.cs" />
     <Compile Include="Activities\ContactProfileActivity.cs" />
+    <Compile Include="Activities\CreateEventActivity.cs" />
     <Compile Include="Activities\EventActivity.cs" />
     <Compile Include="Activities\GroupAdminActivity.cs" />
     <Compile Include="Activities\GroupManagerActivity.cs" />
     <Compile Include="Activities\AddGroupActivity.cs" />
     <Compile Include="Activities\EventManagerActivity.cs" />
     <Compile Include="Activities\GroupActivity.cs" />
-    <Compile Include="Activities\GroupMemberActivity.cs" />
     <Compile Include="Activities\InviteContactActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -83,13 +83,9 @@
     <Compile Include="Adapters\EventCommentAdapter.cs" />
     <Compile Include="Adapters\EventNotifAdapter.cs" />
     <Compile Include="Adapters\ExpandableListAdapter.cs" />
-    <Compile Include="Adapters\ProfileContactAdapter.cs" />
     <Compile Include="Adapters\UserContactListAdapter.cs" />
     <Compile Include="Adapters\UserGroupRequestAdapter.cs" />
     <Compile Include="Adapters\UsersListAdapter.cs" />
-    <Compile Include="Fragments\GroupAdminsFragment.cs" />
-    <Compile Include="Fragments\GroupMembersFragment.cs" />
-    <Compile Include="VerifConnection.cs" />
     <Compile Include="Fragments\EventCommentDialogFragment.cs" />
     <Compile Include="Fragments\EventNotifDialogFragment.cs" />
     <Compile Include="Fragments\GroupAddAdminFragment.cs" />
@@ -100,7 +96,6 @@
     <Compile Include="Fragments\ProfilEditProfileFragment.cs" />
     <Compile Include="Fragments\ProfilEditStatusFragment.cs" />
     <Compile Include="Fragments\UsersDialogFragment.cs" />
-    <Compile Include="ListViewRows\UserList.cs" />
     <Compile Include="ListViewRows\UserGroupRequest.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,24 +191,12 @@
     <AndroidResource Include="Resources\layout\ContactProfile.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\ProfileContactRow.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\UserContactListView.axml" />
     <AndroidResource Include="Resources\layout\UserContactListRow.axml" />
-    <AndroidResource Include="Resources\layout\UserListRow.axml" />
     <AndroidResource Include="Resources\layout\UserListView.axml" />
-    <AndroidResource Include="Resources\layout\GroupMembers.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\GroupAdmins.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\GroupMember.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\GroupAdmin.axml">
-      <SubType>Designer</SubType>
+    <AndroidResource Include="Resources\layout\UserListRow.axml" />
+    <AndroidResource Include="Resources\layout\EventCreationForm.axml">
+      <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
@@ -316,6 +299,10 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Delete_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\drawable-hdpi\Buzzfeed.png" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

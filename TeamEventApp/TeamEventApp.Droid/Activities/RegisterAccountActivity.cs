@@ -93,6 +93,8 @@ namespace TeamEventApp.Droid
                 {
                     User user = new User(prenom.Text, nom.Text, pseudo.Text, email.Text, mdp.Text);
                     DataBase.Inscription(user);
+                    DataBase.connected = true;
+
                     StartActivity(typeof(ProfileActivity));
                 }
             };

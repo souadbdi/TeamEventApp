@@ -15,7 +15,18 @@ namespace TeamEventApp.Droid.Fragments
 {
     class EventNotifDialogFragment : DialogFragment
     {
+
         // Attributes
+
+
+        EditText notifContentET;
+        ImageButton notifValidButton;
+
+
+        // Service
+        UserService uService;
+
+        // Listes
         private List<Notification> notifList;
         private ListView listView;
 
@@ -25,55 +36,42 @@ namespace TeamEventApp.Droid.Fragments
 
             var view = inflater.Inflate(Resource.Layout.EventNotifList, container, false);
 
+            // Service
+            uService = new UserService(DataBase.current_user);
+
             // ListView
             listView = view.FindViewById<ListView>(Resource.Id.event_notif_listView);
 
-            // Notifications list
-            notifList = new List<Notification> { };
-
-            notifList.Add(new Notification
+            // Masquer l'éditeur de texte
+            if (DataBase.currentEvent.userAdmin != DataBase.current_user)
             {
-                note = "Hey, RDV dans 5 minutes les mecs",
-                date = new DateTime(),
-                views = 5
-            });
+                LinearLayout linearLayout = view.FindViewById<LinearLayout>(Resource.Id.evm_writeNotif_layout);
 
-            notifList.Add(new Notification
-            {
-                note = "Je suis là, je vous attends",
-                date = new DateTime(),
-                views = 1
-            });
+                if (linearLayout != null)
+                    linearLayout.Visibility = ViewStates.Gone;
+            }
 
-            notifList.Add(new Notification
-            {
-                note = "Un commentaire assez long parce que je suis une femme. Je vais"
-                + "de voir continuer sur cette ligne avec des erreurs, c'est pas grave",
-                date = new DateTime(),
-                views = 5
-            });
+            // views
+            // Comment content
+            notifContentET = view.FindViewById<EditText>(Resource.Id.event_notifWrite_text);
 
-            notifList.Add(new Notification
-            {
-                note = "Je suis là, je vous attends",
-                date = new DateTime(),
-                views = 1
-            });
+            // valid button
+            notifValidButton = view.FindViewById<ImageButton>(Resource.Id.event_notifSend_btn);
+            if (notifValidButton != null)
+                notifValidButton.Click += delegate
+                {
+                    Notification notif = publishNotification();
 
-            notifList.Add(new Notification
-            {
-                note = "Je suis là, je vous attends",
-                date = new DateTime(),
-                views = 1
-            });
+                    // Ajout du commentaire dans l'événement
+                    notifList = DataBase.currentEvent.addNotification(notif);
 
-            notifList.Add(new Notification
-            {
-                note = "OK c'est noté!",
-                date = new DateTime(),
-                views = 1
-            });
+                    // Refresh the list
+                    EventNotifAdapter newAdapter = new EventNotifAdapter(Activity, notifList);
+                    listView.Adapter = newAdapter;
+                };
 
+            // Notifications list : liste des notifications de l'événement courant
+            notifList = DataBase.currentEvent.notifications;
 
             // Create and set the adapter
             EventNotifAdapter adapter = new EventNotifAdapter(Activity, notifList);
@@ -84,5 +82,31 @@ namespace TeamEventApp.Droid.Fragments
             // Return
             return view;
         }
+
+        // 
+        private Notification publishNotification()
+        {
+            string content = "";
+
+            if (notifContentET != null)
+            {
+                content = notifContentET.Text;
+                notifContentET.Text = "";         // flush 
+            }
+
+            // Object
+            Notification notif = new Notification
+            {
+                note = content,
+                date = DateTime.Now,
+                views = 0,
+                userId = DataBase.current_user.userId,
+                eventId = DataBase.currentEvent.eventId
+            };
+
+
+            return notif;
+        }
+   
     }
 }

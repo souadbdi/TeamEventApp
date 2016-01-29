@@ -19,8 +19,12 @@ namespace TeamEventApp
             this.groupName = name;
             this.admins.Add(user);
             this.members.Add(user);
-            this.groupId = DataBase.groups_db.Count + 1;
-            DataBase.groups_db.Add(this.groupId, this);
+
+            // Ajouter le groupe à la base de l'utilisateur
+            user.addGroup(this);
+
+            // Ajout du groupe à la BDD
+            DataBase.CreateGroup(this);
         }
 
         public List<User> addMember(User user)
@@ -45,6 +49,14 @@ namespace TeamEventApp
         {
             this.admins.Remove(user);
             return admins;
+        }
+
+
+        // Ajout d'un événement
+        public List<Event> AddEvent(Event ev)
+        {
+            events.Add(ev);
+            return events;
         }
 
     }

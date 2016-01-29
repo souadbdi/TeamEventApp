@@ -26,37 +26,31 @@
                 android:layout_gravity="right"
                 android:background="@null"
                 android:src="@drawable/Edit" />
-			<TableLayout
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:stretchColumns="*">
-				<TableRow>
-		<!-- Prénom de l'utilisateur -->
-				<TextView
-					android:id="@+id/profile_firstName"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="22dp" 
-					android:layout_span="1"
-					android:layout_gravity="center"/>
-		<!-- Nom de l'utilisateur -->
-				<TextView
-					android:id="@+id/profile_lastName"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textSize="22dp" 
-					android:layout_span="1"
-					android:layout_gravity="center"/>
-				</TableRow>
+                <TableRow>
+                <!-- Prénom de l'utilisateur -->
+                    <TextView
+                        android:id="@+id/profile_firstName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:textSize="22dp"
+                        android:text="Prénom BIZB"
+                        android:layout_gravity="center" />
+                </TableRow>
             </TableLayout>
-		
         <!-- Pseudo de l'utilisateur -->
             <TextView
                 android:id="@+id/profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22dp" />
+                android:layout_marginTop="5dp"
+                android:text="pseudo"
+                android:textSize="12dp" />
         <!-- Email text -->
             <TextView
                 android:id="@+id/profile_email"
@@ -69,7 +63,7 @@
                 android:id="@+id/profile_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp" />
         <!-- Stats section -->
             <LinearLayout
                 android:orientation="horizontal"
@@ -87,8 +81,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="30dp"
-                    android:text="@string/profile_events" 
-					android:clickable="true"/>
+                    android:text="@string/profile_events"
+                    android:clickable="true" />
                 <TextView
                     android:id="@+id/profile_groups_number"
                     android:layout_width="wrap_content"
@@ -99,28 +93,29 @@
                     android:id="@+id/profile_groups_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_groups" 
-					android:clickable="true"/>
+                    android:text="@string/profile_groups"
+                    android:clickable="true" />
             </LinearLayout>
-				<!-- Affichage des contacts-->	
-			<LinearLayout
+        <!-- Affichage des contacts-->
+            <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:gravity="center|bottom">
-				<TextView
-					android:id="@+id/profile_contacts_number"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_marginRight="5dp"
-					android:textSize="20dp" />
-				<TextView
-					android:id="@+id/profile_contacts_text"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="Contacts"
-					android:clickable="true" />
-			</LinearLayout>
+                <TextView
+                    android:id="@+id/profile_contacts_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/profile_contacts_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CONTACTS"
+                    android:clickable="true" />
+            </LinearLayout>
         </LinearLayout>
     <!-- Statut de l'utilisateur -->
         <TextView

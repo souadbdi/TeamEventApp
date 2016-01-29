@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Android.Content;
 using Android.Views;
 using Android.Widget;
+using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid.Adapters
 {
@@ -58,6 +59,18 @@ namespace TeamEventApp.Droid.Adapters
             // Name of the user
             TextView textName = row.FindViewById<TextView>(Resource.Id.userContact_name_text);
             textName.Text = usersList[position].firstName + " " + usersList[position].lastName;
+
+            // Bouton suppression d'un contact
+            ImageButton removeContactButton = row.FindViewById<ImageButton>(Resource.Id.userContact_remove_button);
+
+            if (removeContactButton != null)
+                removeContactButton.Click += delegate
+                {
+                    // Appel à une fonction statique de Invite Activity pour supprimer le contact
+
+                    ((InviteContactActivity) context).deleteUser(usersList[position]);
+
+                };
 
             return row;
         }
