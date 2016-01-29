@@ -1,16 +1,12 @@
 ﻿using System;
 
 using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 
 
 namespace TeamEventApp.Droid
 {
-	[Activity (Label = "@string/app_name", MainLauncher = true)]
+    [Activity (Label = "@string/app_name", MainLauncher = true)]
 	public class MainActivity : Activity
 	{
         
@@ -76,7 +72,7 @@ namespace TeamEventApp.Droid
             group2.addMember(user4);
             user4.addGroup(group2);
 
-            Group group3 = new Group("School Classmates", user3);
+            Group group3 = new Group("School Projects", user3);
             user3.addGroup(group3);
             group3.addMember(user6);
             user6.addGroup(group3);
