@@ -13,7 +13,7 @@ namespace TeamEventApp.Controller
         public static async Task<Event> addEvent(Event events)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/event";
+            string queryString = Url.urlLink + "Events";
             string content = JsonConvert.SerializeObject(events);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -25,7 +25,7 @@ namespace TeamEventApp.Controller
         public static async Task<Event> getEvent(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/event/" + id;
+            string queryString = Url.urlLink + "Events/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -37,7 +37,7 @@ namespace TeamEventApp.Controller
         public static async Task<List<Event>> getAllEvent()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/event";
+            string queryString = Url.urlLink + "Events";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -49,7 +49,7 @@ namespace TeamEventApp.Controller
         public static async void delEvent(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/event/" + id;
+            string queryString = Url.urlLink + "Events/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -59,7 +59,7 @@ namespace TeamEventApp.Controller
         public static async Task<Event> modifEvent(Event events)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/event";
+            string queryString = Url.urlLink + "Events";
             string content = JsonConvert.SerializeObject(events);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);

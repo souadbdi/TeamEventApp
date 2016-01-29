@@ -1,19 +1,12 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using TeamEventApp.Droid.Activities;
 
 namespace TeamEventApp.Droid.Adapters
 {
-    class UserContactListAdapter : BaseAdapter<User>
+    public class UserContactListAdapter : BaseAdapter<User>
     {
         public List<User> usersList;
         public Context context;

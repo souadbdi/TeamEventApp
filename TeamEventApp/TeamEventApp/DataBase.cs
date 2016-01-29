@@ -23,10 +23,7 @@ namespace TeamEventApp
                 if(us.email == mail && us.password == password)
                 {
                     current_user = us;
-                    return true;
                 }
-            }
-            return false;
         }
 
         public static void Inscription(User user)

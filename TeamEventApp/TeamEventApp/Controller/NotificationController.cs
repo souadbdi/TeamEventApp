@@ -13,7 +13,7 @@ namespace TeamEventApp.Controller
         public static async Task<Notification> addNotification(Notification notification)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/notification";
+            string queryString = Url.urlLink + "Notifications";
             string content = JsonConvert.SerializeObject(notification);
             HttpMethod method = HttpMethod.Post;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -25,7 +25,7 @@ namespace TeamEventApp.Controller
         public static async Task<Notification> getNotification(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/notification/" + id;
+            string queryString = Url.urlLink + "Notifications/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -37,7 +37,7 @@ namespace TeamEventApp.Controller
         public static async Task<List<Notification>> getAllNotification()
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/notification";
+            string queryString = Url.urlLink + "Notifications";
             string content = "";
             HttpMethod method = HttpMethod.Get;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -49,7 +49,7 @@ namespace TeamEventApp.Controller
         public static async void delNotification(int id)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/notification/" + id;
+            string queryString = Url.urlLink + "Notifications/" + id;
             string content = "";
             HttpMethod method = HttpMethod.Delete;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);
@@ -59,7 +59,7 @@ namespace TeamEventApp.Controller
         public static async Task<Notification> modifNotification(Notification notification)
         {
 
-            string queryString = "http://teamevent.azurewebsites.net/api/notification";
+            string queryString = Url.urlLink + "Notifications";
             string content = JsonConvert.SerializeObject(notification);
             HttpMethod method = HttpMethod.Put;
             dynamic results = await DataService.getDataFromService(queryString, method, content).ConfigureAwait(false);

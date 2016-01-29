@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TeamEventApp
 {
-    class DataService
+    public class DataService
     {
             public static async Task<dynamic> getDataFromService(string queryString, HttpMethod method, string content)
             {

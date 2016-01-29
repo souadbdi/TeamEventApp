@@ -10,6 +10,24 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
 		   android:id="@+id/groupNameTextView"/>
+    <TextView
+		   android:text="Membres"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+		   android:id="@+id/groupMembersTextView"
+       android:clickable="true"/>
+    <TextView
+       android:text="Admins"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/groupAdminsTextView"
+       android:clickable="true"/>
+    <TextView
+       android:text="Evènements"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/groupEventsTextView"
+       android:clickable="true"/>
   <ExpandableListView
      android:id="@+id/ExLV"
      android:layout_width="fill_parent"
