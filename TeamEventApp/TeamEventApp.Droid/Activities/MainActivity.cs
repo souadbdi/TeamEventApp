@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace TeamEventApp.Droid
 {
-	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/Icon")]
 	public class MainActivity : Activity
 	{
         bool connected = false;

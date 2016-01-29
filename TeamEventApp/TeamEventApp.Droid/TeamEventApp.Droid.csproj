@@ -299,5 +299,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\Delete_24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\drawable-hdpi\Buzzfeed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

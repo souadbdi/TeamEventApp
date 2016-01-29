@@ -89,7 +89,7 @@ namespace TeamEventApp.Droid.Activities
             if (yesNumberText != null)
                 yesNumberText.Click += delegate {
                     FragmentTransaction tx = FragmentManager.BeginTransaction();
-                    UsersDialogFragment usersDialog = new UsersDialogFragment();
+                    UsersDialogFragment usersDialog = new UsersDialogFragment(DataBase.currentEvent.userList);
                     usersDialog.Show(tx, "Les participants");
                 };
 
@@ -98,8 +98,8 @@ namespace TeamEventApp.Droid.Activities
             if (maybeNumberText != null)
                 maybeNumberText.Click += delegate {
                     FragmentTransaction tx = FragmentManager.BeginTransaction();
-                    UsersDialogFragment usersDialog = new UsersDialogFragment();
-                    usersDialog.Show(tx, "Les participants");
+                    UsersDialogFragment usersDialog = new UsersDialogFragment(DataBase.currentEvent.userList);
+                    usersDialog.Show(tx, "Les intéréssés");
                 };
 
             // Tous les invités à l'événement
@@ -107,8 +107,8 @@ namespace TeamEventApp.Droid.Activities
             if (guestsNumberText != null)
                 guestsNumberText.Click += delegate {
                     FragmentTransaction tx = FragmentManager.BeginTransaction();
-                    UsersDialogFragment usersDialog = new UsersDialogFragment();
-                    usersDialog.Show(tx, "Les participants");
+                    UsersDialogFragment usersDialog = new UsersDialogFragment(DataBase.currentEvent.userList);
+                    usersDialog.Show(tx, "Les invités");
                 };
 
             if (inviteFriendsText != null)

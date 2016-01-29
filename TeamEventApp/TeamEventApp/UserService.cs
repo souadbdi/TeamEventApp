@@ -41,8 +41,40 @@ namespace TeamEventApp
             return events;
         }
 
-        // Récupération des événements par groupe
 
+        // Récupération de la liste des contacts de l'utilisateur
+        public List<User> GetAllUserContacts()
+        {
+            return currentUser.contacts;
+        }
+
+        // Vérifie que deux utilisateurs sont amis
+        public bool isContactUser(User user)
+        {
+            // Si l'utilisateur c'est lui même
+            if (user == currentUser)
+                return true;
+
+            foreach(User userContact in currentUser.contacts)
+            {
+                if (user == userContact)
+                    return true;
+            }
+
+            return false;
+        }
+
+        // Ajouter utilisateurs aux contacts
+        public List<User> addUserToContacts(User user)
+        {
+            // Si le contact n'existe pas déjà
+            if (!isContactUser(user))
+                currentUser.addContact(user);
+
+            return currentUser.contacts;
+        }
+
+        // Récupération des événements par groupe
         public List<Event> GetUserEventsByGroup(long groupID)
         {
             List<Event> events = new List<Event>();

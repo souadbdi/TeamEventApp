@@ -66,6 +66,35 @@ namespace TeamEventApp.Droid.Adapters
             TextView textName = row.FindViewById<TextView>(Resource.Id.user_name_text);
             textName.Text = usersList[position].firstName + " " + usersList[position].lastName;
 
+            // Bouton d'ajout
+            Button addContactButton = row.FindViewById<Button>(Resource.Id.user_add_button);
+
+            if (addContactButton != null)
+
+            {
+                // On vérifie si c'est un contact
+                UserService uService = new UserService(DataBase.current_user);
+
+                if (uService.isContactUser(usersList[position]))
+                {
+                    addContactButton.Visibility = ViewStates.Gone;
+                }
+
+                // Sinon on connecte l'action ajouter aux contacts et on réinitialise
+
+                else
+                {
+                    addContactButton.Click += delegate
+                    {
+                        uService.addUserToContacts(usersList[position]);
+                        addContactButton.Visibility = ViewStates.Gone;      // masquer ensuite
+                    };
+                        
+                }
+
+            }
+
+
             return row;
         }
     }

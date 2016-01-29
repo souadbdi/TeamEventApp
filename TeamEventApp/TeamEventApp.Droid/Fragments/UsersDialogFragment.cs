@@ -19,6 +19,14 @@ namespace TeamEventApp.Droid.Fragments
         private List<User> usersList;
         private ListView listView;
 
+
+
+        // Constructeur qui prend en paramètres la liste des utilisateurs à afficher
+        public UsersDialogFragment (List<User> uList)
+        {
+            this.usersList = uList;
+        }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
@@ -28,41 +36,6 @@ namespace TeamEventApp.Droid.Fragments
             listView = view.FindViewById<ListView>(Resource.Id.user_listView);
 
             // Notifications list
-            usersList = new List<User> { };
-
-            usersList.Add(new User {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
-
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
-
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
-
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
-
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
 
             // Create and set the adapter
             UsersListAdapter adapter = new UsersListAdapter(Activity, usersList);
