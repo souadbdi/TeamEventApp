@@ -20,9 +20,6 @@ namespace TeamEventApp
             this.admins.Add(user);
             this.members.Add(user);
 
-            // Ajouter le groupe à la base de l'utilisateur
-            user.addGroup(this);
-
             // Ajout du groupe à la BDD
             DataBase.CreateGroup(this);
         }
@@ -30,7 +27,8 @@ namespace TeamEventApp
         public List<User> addMember(User user)
         {
             this.members.Add(user);
-            return members;
+            //user.addGroup(this);
+            return members;         
         }
 
         public List<User> removeMember(User user)

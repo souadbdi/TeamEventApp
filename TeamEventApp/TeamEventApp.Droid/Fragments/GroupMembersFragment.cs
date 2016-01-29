@@ -29,7 +29,7 @@ namespace TeamEventApp.Droid.Fragments
                     current_group = grp;
             }
 
-            //populate the list contact
+            //on remplit la liste de membres
             foreach (User user in current_group.members)
             {
                 membres.Add(user.pseudo);
@@ -40,7 +40,7 @@ namespace TeamEventApp.Droid.Fragments
             membres_listview.Adapter = adapter;
 
 
-            //affichage du contact
+            //affichage du membre
             membres_listview.ItemClick += OnListItemClick;
 
             // Actions pour l'ajout de contact
@@ -63,10 +63,18 @@ namespace TeamEventApp.Droid.Fragments
 
                 if (us.pseudo == membres[e.Position])
                 {
-                    mb_selected = us;
+                    
+                    if (us != DataBase.current_user)
+                    {
+                        mb_selected = us;
+                        Activity.StartActivity(typeof(GroupMemberActivity));
+                    }
+                        
                 }
+                
             }
-            Activity.StartActivity(typeof(GroupMemberActivity));
+           
+            
         }
     }
 }

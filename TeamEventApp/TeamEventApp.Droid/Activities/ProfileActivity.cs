@@ -97,7 +97,7 @@ namespace TeamEventApp.Droid
             {
                 FragmentTransaction tx = FragmentManager.BeginTransaction();
                 ProfilEditStatusFragment contactsDialog = new ProfilEditStatusFragment();
-                contactsDialog.Show(tx, "Modifier votre status");
+                contactsDialog.Show(tx, "Modifier votre statut");
             };
 
             // Actions pour la liste des demandes à des événements

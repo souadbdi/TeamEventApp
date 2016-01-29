@@ -54,6 +54,7 @@ namespace TeamEventApp
         {
             this.groups.Add(grp);
         }
+
         public void removeGroup(Group grp)
         {
             this.groups.Remove(grp);

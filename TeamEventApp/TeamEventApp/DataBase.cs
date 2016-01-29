@@ -4,22 +4,18 @@ namespace TeamEventApp
 {
     public class DataBase
     {
-        public static User current_user; //Utilisateur courrant  
+        public static User current_user; //Utilisateur courrant   
         public static Event currentEvent;
         public static bool connected = false;
-        //A remplir à partir du web service
 
+        //A remplir à partir du web service / table User pour savoir si le user qui se connecte est déjà enregistré
         public static Dictionary<long, User> users_db = new Dictionary<long, User>();
-
         public static Dictionary<long, Group> groups_db = new Dictionary<long, Group>();
-
         public static Dictionary<long, Event> events_db = new Dictionary<long, Event>();
 
         public static List<Group> current_user_groups_requests;
-        
-        
-        //renvoie true si le user est bien enregistré dans la BD
 
+        //renvoie true si le user est bien enregistré dans la BD
         public static bool Connect(string mail, string password)
         {
             foreach (User us in users_db.Values)
@@ -27,16 +23,11 @@ namespace TeamEventApp
                 if (us.email == mail && us.password == password)
                 {
                     current_user = us;
-                    connected = true;
-                    return connected;
+                    return true;
                 }
             }
-
-            return connected;
+            return false;
         }
-
-
-        // S'inscrire
 
         public static void Inscription(User user)
         {
@@ -79,6 +70,5 @@ namespace TeamEventApp
         {
             return new List<User>(users_db.Values);
         }
-
     }
 }
