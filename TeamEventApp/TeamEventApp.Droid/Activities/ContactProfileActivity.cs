@@ -60,7 +60,7 @@ namespace TeamEventApp.Droid.Activities
             statut.Text = contact.status;
 
             //suppression du contact
-            TextView delete = FindViewById<TextView>(Resource.Id.delete_contact_text);
+            Button delete = FindViewById<Button>(Resource.Id.delete_contact_text);
             delete.Click += delegate 
             {
                 DataBase.current_user.removeContact(contact);

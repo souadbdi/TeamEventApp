@@ -39,14 +39,22 @@ namespace TeamEventApp.Droid
 
             // Connecting actions
 
-            loginButton.Click += async delegate
+            loginButton.Click += delegate
             {
-                //bool error = false;
-                //if (!error)
-                //    error = verifText("email", email);
-                //if (!error)
-                //    error = verifText("mot de passe", pwd);
+                bool error = false;
+                if (!error)
+                    error = verifText("email", email);
+                if (!error)
+                    error = verifText("mot de passe", pwd);
 
+                if (!error)
+                {
+                    if (DataBase.Connect(email.Text, pwd.Text))
+                        StartActivity(typeof(HomeActivity));
+
+                    else
+                        Toast.MakeText(this, "Vous n'êtes pas inscrit. Veuillez-vous inscrire", ToastLength.Long).Show();
+                }
 
 
                 //if (!error)
@@ -68,7 +76,7 @@ namespace TeamEventApp.Droid
                 //        Toast.MakeText(this, "Mot de passe ou email incorrect", ToastLength.Long).Show();
                 //    }
                 //    else
-                        StartActivity(typeof(Notification));
+                //            StartActivity(typeof(Notification));
                 //}
 
                 //pwd.Text = "";

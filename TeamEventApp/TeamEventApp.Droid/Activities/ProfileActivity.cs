@@ -23,6 +23,7 @@ namespace TeamEventApp.Droid
         private TextView demandes_groupes;
         private TextView contacts;
         private TextView contacts_number;
+        private TextView logoutText;
 
         private TextView profile_events;
         private TextView profile_groups;
@@ -34,10 +35,7 @@ namespace TeamEventApp.Droid
 
             //initialisation du profil
             prenom = FindViewById<TextView>(Resource.Id.profile_firstName);
-            prenom.Text = DataBase.current_user.firstName;
-
-            nom = FindViewById<TextView>(Resource.Id.profile_lastName);
-            nom.Text = DataBase.current_user.lastName;
+            prenom.Text = DataBase.current_user.firstName + " " + DataBase.current_user.lastName;
 
             pseudo = FindViewById<TextView>(Resource.Id.profile_name);
             pseudo.Text = DataBase.current_user.pseudo;
@@ -108,6 +106,15 @@ namespace TeamEventApp.Droid
             {
                 StartActivity(typeof(UserGroupRequestActivity));
             };
+
+            //
+            logoutText = FindViewById<TextView>(Resource.Id.profile_logout);
+            if (logoutText != null)
+                logoutText.Click += delegate
+                {
+                    DataBase.Logout();
+                    StartActivity(typeof(LoginActivity));
+                };
 
             //nb de contacts
             contacts_number = FindViewById<TextView>(Resource.Id.profile_contacts_number);

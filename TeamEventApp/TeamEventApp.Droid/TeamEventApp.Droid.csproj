@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\drawable-hdpi\Buzzfeed.png" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

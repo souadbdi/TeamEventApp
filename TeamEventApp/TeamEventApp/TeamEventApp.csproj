@@ -53,6 +53,12 @@
       <HintPath>..\..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>C:\Users\hesro\Downloads\xamandroidsupportv7appcompat-22.2.0.0\xamandroidsupportv7appcompat-22.2.0.0\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>C:\Users\hesro\Downloads\xamandroidsupportv7appcompat-22.2.0.0\xamandroidsupportv7appcompat-22.2.0.0\lib\android\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

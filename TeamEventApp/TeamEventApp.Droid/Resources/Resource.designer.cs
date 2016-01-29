@@ -80,11 +80,14 @@ namespace TeamEventApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050010
-			public const int accent_color = 2131034128;
+			// aapt resource value: 0x7f05000f
+			public const int accent = 2131034127;
 			
-			// aapt resource value: 0x7f05000d
-			public const int background_color = 2131034125;
+			// aapt resource value: 0x7f050013
+			public const int accent_color = 2131034131;
+			
+			// aapt resource value: 0x7f050010
+			public const int background_color = 2131034128;
 			
 			// aapt resource value: 0x7f050000
 			public const int com_facebook_blue = 2131034112;
@@ -125,11 +128,17 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f05000c
 			public const int com_facebook_share_button_text_color = 2131034124;
 			
-			// aapt resource value: 0x7f05000e
-			public const int menu_bar_color = 2131034126;
+			// aapt resource value: 0x7f05000d
+			public const int material_blue_500 = 2131034125;
 			
-			// aapt resource value: 0x7f05000f
-			public const int text_color = 2131034127;
+			// aapt resource value: 0x7f05000e
+			public const int material_blue_700 = 2131034126;
+			
+			// aapt resource value: 0x7f050011
+			public const int menu_bar_color = 2131034129;
+			
+			// aapt resource value: 0x7f050012
+			public const int text_color = 2131034130;
 			
 			static Color()
 			{
@@ -422,11 +431,11 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080083
 			public const int List = 2131230851;
 			
-			// aapt resource value: 0x7f080096
-			public const int action_about = 2131230870;
+			// aapt resource value: 0x7f080095
+			public const int action_about = 2131230869;
 			
-			// aapt resource value: 0x7f080098
-			public const int action_add = 2131230872;
+			// aapt resource value: 0x7f080097
+			public const int action_add = 2131230871;
 			
 			// aapt resource value: 0x7f080086
 			public const int action_addAdmin = 2131230854;
@@ -440,23 +449,23 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080088
 			public const int action_changeName = 2131230856;
 			
-			// aapt resource value: 0x7f080095
-			public const int action_event_manager = 2131230869;
-			
 			// aapt resource value: 0x7f080094
-			public const int action_group_manager = 2131230868;
-			
-			// aapt resource value: 0x7f080092
-			public const int action_home = 2131230866;
+			public const int action_event_manager = 2131230868;
 			
 			// aapt resource value: 0x7f080093
-			public const int action_profile = 2131230867;
+			public const int action_group_manager = 2131230867;
+			
+			// aapt resource value: 0x7f080098
+			public const int action_home = 2131230872;
+			
+			// aapt resource value: 0x7f080092
+			public const int action_profile = 2131230866;
 			
 			// aapt resource value: 0x7f080084
 			public const int action_search = 2131230852;
 			
-			// aapt resource value: 0x7f080097
-			public const int action_settings = 2131230871;
+			// aapt resource value: 0x7f080096
+			public const int action_settings = 2131230870;
 			
 			// aapt resource value: 0x7f080019
 			public const int add_admin_btn = 2131230745;
@@ -839,26 +848,26 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080031
 			public const int profile_contact_status = 2131230769;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int profile_contacts_number = 2131230883;
+			// aapt resource value: 0x7f0800a2
+			public const int profile_contacts_number = 2131230882;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int profile_contacts_text = 2131230884;
+			// aapt resource value: 0x7f0800a3
+			public const int profile_contacts_text = 2131230883;
 			
 			// aapt resource value: 0x7f08009a
 			public const int profile_editProfile_btn = 2131230874;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int profile_editStatus_btn = 2131230886;
+			// aapt resource value: 0x7f0800a5
+			public const int profile_editStatus_btn = 2131230885;
 			
-			// aapt resource value: 0x7f08009e
-			public const int profile_email = 2131230878;
+			// aapt resource value: 0x7f08009d
+			public const int profile_email = 2131230877;
+			
+			// aapt resource value: 0x7f08009f
+			public const int profile_events_number = 2131230879;
 			
 			// aapt resource value: 0x7f0800a0
-			public const int profile_events_number = 2131230880;
-			
-			// aapt resource value: 0x7f0800a1
-			public const int profile_events_text = 2131230881;
+			public const int profile_events_text = 2131230880;
 			
 			// aapt resource value: 0x7f08009b
 			public const int profile_firstName = 2131230875;
@@ -866,8 +875,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f08006a
 			public const int profile_fragmentList = 2131230826;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int profile_groups_number = 2131230882;
+			// aapt resource value: 0x7f0800a1
+			public const int profile_groups_number = 2131230881;
 			
 			// aapt resource value: 0x7f08002e
 			public const int profile_groups_text = 2131230766;
@@ -875,92 +884,89 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080025
 			public const int profile_header_layout = 2131230757;
 			
-			// aapt resource value: 0x7f08009c
-			public const int profile_lastName = 2131230876;
-			
-			// aapt resource value: 0x7f08009f
-			public const int profile_location = 2131230879;
-			
-			// aapt resource value: 0x7f0800aa
-			public const int profile_logout = 2131230890;
-			
-			// aapt resource value: 0x7f08009d
-			public const int profile_name = 2131230877;
-			
-			// aapt resource value: 0x7f0800c2
-			public const int profile_req_list = 2131230914;
-			
-			// aapt resource value: 0x7f0800a8
-			public const int profile_req_number = 2131230888;
-			
-			// aapt resource value: 0x7f0800a7
-			public const int profile_req_text = 2131230887;
+			// aapt resource value: 0x7f08009e
+			public const int profile_location = 2131230878;
 			
 			// aapt resource value: 0x7f0800a9
-			public const int profile_settings = 2131230889;
+			public const int profile_logout = 2131230889;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int profile_status_text = 2131230885;
+			// aapt resource value: 0x7f08009c
+			public const int profile_name = 2131230876;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int reg_cnxFacebook_btn = 2131230900;
+			// aapt resource value: 0x7f0800c1
+			public const int profile_req_list = 2131230913;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int reg_confPwd_text = 2131230897;
+			// aapt resource value: 0x7f0800a7
+			public const int profile_req_number = 2131230887;
 			
-			// aapt resource value: 0x7f0800af
-			public const int reg_email_text = 2131230895;
+			// aapt resource value: 0x7f0800a6
+			public const int profile_req_text = 2131230886;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int reg_fname_text = 2131230892;
+			// aapt resource value: 0x7f0800a8
+			public const int profile_settings = 2131230888;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int reg_legend_text = 2131230891;
-			
-			// aapt resource value: 0x7f0800ad
-			public const int reg_lname_text = 2131230893;
+			// aapt resource value: 0x7f0800a4
+			public const int profile_status_text = 2131230884;
 			
 			// aapt resource value: 0x7f0800b3
-			public const int reg_or_text = 2131230899;
-			
-			// aapt resource value: 0x7f0800ae
-			public const int reg_pseudo_text = 2131230894;
+			public const int reg_cnxFacebook_btn = 2131230899;
 			
 			// aapt resource value: 0x7f0800b0
-			public const int reg_pwd_text = 2131230896;
+			public const int reg_confPwd_text = 2131230896;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int reg_signin_text = 2131230901;
+			// aapt resource value: 0x7f0800ae
+			public const int reg_email_text = 2131230894;
+			
+			// aapt resource value: 0x7f0800ab
+			public const int reg_fname_text = 2131230891;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int reg_legend_text = 2131230890;
+			
+			// aapt resource value: 0x7f0800ac
+			public const int reg_lname_text = 2131230892;
 			
 			// aapt resource value: 0x7f0800b2
-			public const int register_btn = 2131230898;
+			public const int reg_or_text = 2131230898;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int resetpass_email_text = 2131230903;
+			// aapt resource value: 0x7f0800ad
+			public const int reg_pseudo_text = 2131230893;
+			
+			// aapt resource value: 0x7f0800af
+			public const int reg_pwd_text = 2131230895;
+			
+			// aapt resource value: 0x7f0800b4
+			public const int reg_signin_text = 2131230900;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int register_btn = 2131230897;
 			
 			// aapt resource value: 0x7f0800b6
-			public const int resetpass_legend_text = 2131230902;
+			public const int resetpass_email_text = 2131230902;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int resetpass_send_btn = 2131230904;
+			// aapt resource value: 0x7f0800b5
+			public const int resetpass_legend_text = 2131230901;
+			
+			// aapt resource value: 0x7f0800b7
+			public const int resetpass_send_btn = 2131230903;
 			
 			// aapt resource value: 0x7f08000b
 			public const int right = 2131230731;
 			
-			// aapt resource value: 0x7f0800c4
-			public const int rowReq_date = 2131230916;
-			
-			// aapt resource value: 0x7f0800c7
-			public const int rowReq_refuse_btn = 2131230919;
-			
-			// aapt resource value: 0x7f0800c5
-			public const int rowReq_subtitle = 2131230917;
-			
 			// aapt resource value: 0x7f0800c3
-			public const int rowReq_title = 2131230915;
+			public const int rowReq_date = 2131230915;
 			
 			// aapt resource value: 0x7f0800c6
-			public const int rowReq_validate_btn = 2131230918;
+			public const int rowReq_refuse_btn = 2131230918;
+			
+			// aapt resource value: 0x7f0800c4
+			public const int rowReq_subtitle = 2131230916;
+			
+			// aapt resource value: 0x7f0800c2
+			public const int rowReq_title = 2131230914;
+			
+			// aapt resource value: 0x7f0800c5
+			public const int rowReq_validate_btn = 2131230917;
 			
 			// aapt resource value: 0x7f080011
 			public const int small = 2131230737;
@@ -974,8 +980,8 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080015
 			public const int textView = 2131230741;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int toolbar_main = 2131230905;
+			// aapt resource value: 0x7f0800b8
+			public const int toolbar_main = 2131230904;
 			
 			// aapt resource value: 0x7f080008
 			public const int top = 2131230728;
@@ -983,41 +989,41 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f080002
 			public const int unknown = 2131230722;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int userContact_addUsers_text = 2131230909;
-			
-			// aapt resource value: 0x7f0800bf
-			public const int userContact_add_button = 2131230911;
-			
-			// aapt resource value: 0x7f0800c0
-			public const int userContact_listView = 2131230912;
-			
-			// aapt resource value: 0x7f0800bb
-			public const int userContact_name_text = 2131230907;
+			// aapt resource value: 0x7f0800bc
+			public const int userContact_addUsers_text = 2131230908;
 			
 			// aapt resource value: 0x7f0800be
-			public const int userContact_pseudo_autoText = 2131230910;
+			public const int userContact_add_button = 2131230910;
+			
+			// aapt resource value: 0x7f0800bf
+			public const int userContact_listView = 2131230911;
 			
 			// aapt resource value: 0x7f0800ba
-			public const int userContact_pseudo_text = 2131230906;
+			public const int userContact_name_text = 2131230906;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int userContact_remove_button = 2131230908;
+			// aapt resource value: 0x7f0800bd
+			public const int userContact_pseudo_autoText = 2131230909;
 			
-			// aapt resource value: 0x7f0800c1
-			public const int userContact_valid_button = 2131230913;
+			// aapt resource value: 0x7f0800b9
+			public const int userContact_pseudo_text = 2131230905;
 			
-			// aapt resource value: 0x7f0800ca
-			public const int user_add_button = 2131230922;
+			// aapt resource value: 0x7f0800bb
+			public const int userContact_remove_button = 2131230907;
 			
-			// aapt resource value: 0x7f0800cb
-			public const int user_listView = 2131230923;
+			// aapt resource value: 0x7f0800c0
+			public const int userContact_valid_button = 2131230912;
 			
 			// aapt resource value: 0x7f0800c9
-			public const int user_name_text = 2131230921;
+			public const int user_add_button = 2131230921;
+			
+			// aapt resource value: 0x7f0800ca
+			public const int user_listView = 2131230922;
 			
 			// aapt resource value: 0x7f0800c8
-			public const int user_pseudo_text = 2131230920;
+			public const int user_name_text = 2131230920;
+			
+			// aapt resource value: 0x7f0800c7
+			public const int user_pseudo_text = 2131230919;
 			
 			// aapt resource value: 0x7f080014
 			public const int validContact = 2131230740;
@@ -1502,8 +1508,8 @@ namespace TeamEventApp.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f070017
-			public const int BlueTheme = 2131165207;
+			// aapt resource value: 0x7f07001a
+			public const int BlueTheme = 2131165210;
 			
 			// aapt resource value: 0x7f070000
 			public const int MessengerButton = 2131165184;
@@ -1547,11 +1553,20 @@ namespace TeamEventApp.Droid
 			// aapt resource value: 0x7f07000d
 			public const int MessengerButtonText_White_Small = 2131165197;
 			
-			// aapt resource value: 0x7f070015
-			public const int NoActionBar = 2131165205;
-			
 			// aapt resource value: 0x7f070016
-			public const int Widget_BlueTheme_Button = 2131165206;
+			public const int MyTheme = 2131165206;
+			
+			// aapt resource value: 0x7f070018
+			public const int MyTheme_ActionBar_TitleTextStyle = 2131165208;
+			
+			// aapt resource value: 0x7f070017
+			public const int MyTheme_ActionBarStyle = 2131165207;
+			
+			// aapt resource value: 0x7f070015
+			public const int MyTheme_Base = 2131165205;
+			
+			// aapt resource value: 0x7f070019
+			public const int Widget_BlueTheme_Button = 2131165209;
 			
 			// aapt resource value: 0x7f07000e
 			public const int com_facebook_button = 2131165198;
