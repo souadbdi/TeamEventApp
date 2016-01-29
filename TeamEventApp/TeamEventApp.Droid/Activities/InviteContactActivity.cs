@@ -20,7 +20,16 @@ namespace TeamEventApp.Droid.Activities
 
         private List<User> usersList;
         private ListView listView;
-        private string[] nameItems = new string[] { "Hesron", "Tom", "Alexis", "Alex", "Hervet"};
+
+        // Service
+
+        UserService uService;
+
+
+        // Views
+
+        ImageButton addContactImageButton;
+        Button validListButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,52 +37,67 @@ namespace TeamEventApp.Droid.Activities
 
             SetContentView(Resource.Layout.UserContactListView);
 
+            // Service
+            uService = new UserService(DataBase.current_user);
+
+            // Notifications list initialement vide
+            usersList = new List<User> { };
+
             // AutoCompleteTextView
             AutoCompleteTextView pseudoAutoText = FindViewById<AutoCompleteTextView>(Resource.Id.userContact_pseudo_autoText);
+
+            // ImageButton
+
+            addContactImageButton = FindViewById<ImageButton>(Resource.Id.userContact_add_button);
+
+            if (addContactImageButton != null)
+                addContactImageButton.Click += delegate
+                {
+                    if (pseudoAutoText.Text != "")
+                    {
+                        // Ajouter à la liste
+                        usersList = addUserToList(pseudoAutoText.Text);
+
+                        // Vider le champ
+                        pseudoAutoText.Text = "";
+
+                        // Mettre à jour la liste
+                        UserContactListAdapter updatedAdapter = new UserContactListAdapter(this, usersList);
+
+                        if (listView != null)
+                            listView.Adapter = updatedAdapter;
+                    }
+                };
+                
+            
             // ListView
             listView = FindViewById<ListView>(Resource.Id.userContact_listView);
 
-            // Notifications list
-            usersList = new List<User> { };
 
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
+            // Valider la liste
+            validListButton = FindViewById<Button>(Resource.Id.userContact_valid_button);
 
-            usersList.Add(new User
-            {
-                pseudo = "hesrondev",
-                firstName = "Paris",
-                lastName = "Ville"
-            });
+            if (validListButton != null)
+                validListButton.Click += delegate
+                {
+                    // Inviter les contacts
+                    inviteAddedContact(usersList);
 
-            usersList.Add(new User
-            {
-                pseudo = "Louange",
-                firstName = "Louange",
-                lastName = "Bizib"
-            });
+                    //Revenir sur l'activité
+                    StartActivity(typeof(EventActivity));
+                };
 
-            usersList.Add(new User
-            {
-                pseudo = "Makoma",
-                firstName = "KIOp",
-                lastName = "BEBE"
-            });
 
-            usersList.Add(new User
-            {
-                pseudo = "Marc25",
-                firstName = "Fredine",
-                lastName = "Marc"
-            });
 
-            // Create and set the adapters
+           
+
+
+            // Create and set the adapters of
             UserContactListAdapter adapter = new UserContactListAdapter(this, usersList);
-            ArrayAdapter<string> itemsAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, nameItems);
+
+
+            // On construit la liste des noms pour l'autocomplétion à partir des contacts de l'utilisateur
+            ArrayAdapter<string> itemsAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, getUserNamesTab(uService.GetAllUserContacts()));
 
             if (pseudoAutoText != null)
                 pseudoAutoText.Adapter = itemsAdapter;
@@ -82,7 +106,45 @@ namespace TeamEventApp.Droid.Activities
                 listView.Adapter = adapter;
 
 
-            // Create your application here
+            // Modification de la liste après clic sur le bouton +
+
+        }
+
+
+        // Ajouter un nom dans la liste
+        public List<User> addUserToList(string pseudoUser)
+        {
+            User user = uService.GetUserContactByPseudo(pseudoUser);
+
+            // Si on le trouve, on l'ajoute à la liste des utilisteurs temporaires
+            if (user != null)
+                usersList.Add(user);
+
+            return usersList;
+        }
+
+        // Setting of the namesList
+        private string[] getUserNamesTab(List<User> userList)
+        {
+            string[] namesTab = new string[userList.Count];
+            int i = 0;
+
+            foreach(User user in userList)
+            {
+                namesTab[i] = user.pseudo;
+                i++;
+            }
+
+            return namesTab;
+        }
+
+
+        // Inviter les contacts après validation
+
+        private void inviteAddedContact(List<User> userList)
+        {
+            foreach (User user in userList)
+                DataBase.currentEvent.addUser(user);
         }
     }
 }

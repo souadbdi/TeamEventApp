@@ -15,6 +15,19 @@ namespace TeamEventApp
             this.currentUser = user;
         }
 
+
+        // Récupérer un contact par PSEUDO
+        public User GetUserContactByPseudo (string pseudo)
+        {
+            foreach (User user in currentUser.contacts)
+            {
+                if (user.pseudo == pseudo)
+                    return user;
+            }
+
+            return null;
+        }
+
         // Ajout d'un événement / ID
         public void addUserEvent(long groupID, Event newEvent)
         {
